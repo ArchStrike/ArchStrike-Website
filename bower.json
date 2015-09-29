@@ -1,0 +1,12 @@
+{
+  "name": "Hypothetical Template",
+  "version": "1.0.0",
+  "authors": [
+    "Kevin MacMartin <prurigro@gmail.com>"
+  ],
+  "description": "A hypothetical website template",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
