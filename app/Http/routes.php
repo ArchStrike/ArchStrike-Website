@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('website.home');
 });
+
+Route::get('/builder', function () {
+    return view('website.builder');
+});

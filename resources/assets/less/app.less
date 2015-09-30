@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "var";
 @import "nav";
+@import "builder";
 
 /*
  |
@@ -20,37 +21,30 @@ body {
     line-height: 1.5;
     font-weight: 100;
     color: @c_text;
+    background-color: @c_bg;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
     outline: none !important;
 }
 
-body.index {
-    .container {
-        .content {
-            text-align: center;
+a {
+    color: @c_fg;
+    text-decoration: none;
+    &:hover { color: darken(@c_fg, 5%); }
+}
 
-            .title {
-                position: relative;
-                top: ~"calc(50vh - 131px)";
-                font-size: 96px;
+h1 {
+    border-bottom: 1px solid @c_dark;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: @c_fg;
+    font-size: 22px;
+    font-weight: 700;
+}
 
-                @media (max-width: 1225px) {
-                    top: ~"calc(50vh - 119px)";
-                    font-size: 82px;
-                }
-
-                @media (max-width: 1025px) {
-                    top: ~"calc(50vh - 97px)";
-                    font-size: 58px;
-                }
-
-                @media (max-width: (@screen-sm - 1)) {
-                    top: ~"calc(50vh - 83px)";
-                    font-size: 42px;
-                }
-            }
-        }
-    }
+p {
+    margin-left: 15px;
+    font-size: 12px;
 }

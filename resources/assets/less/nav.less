@@ -1,3 +1,46 @@
-nav {
+nav.navbar {
+    background-color: @c_bg;
+    padding: 5px 0px;
+    border-color: transparent transparent @c_fg transparent;
+    border-bottom-width: 5px;
+    border-radius: 0px;
     z-index: 1;
+
+    .navbar-brand {
+        display: inline-block;
+        position: relative;
+        left: 15px;
+        margin: 5px;
+        width: 120px;
+        height: 40px;
+        background-image: url('/img/archstrike.svg');
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    #navbar {
+        box-shadow: none;
+        border: none;
+
+        ul.nav {
+            li {
+                a {
+                    color: @c_dark;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+
+                &:hover a { color: lighten(@c_dark, 10%); }
+                &.active a { color: @c_text; }
+                &.active:hover a { color: darken(@c_text, 10%); }
+                &.active a, &.active:hover a, &:hover a, &:focus a { background-color: transparent; }
+            }
+        }
+    }
+
+    .navbar-toggle {
+        border: none;
+        &, &:hover, &:focus { background-color: transparent; }
+     }
 }
