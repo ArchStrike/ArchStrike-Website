@@ -53,9 +53,6 @@ trap 'error "script killed"' SIGINT SIGQUIT
 msg "Running: ${c_m}composer installl --no-dev"
 composer install --no-interaction --no-dev || error "${c_m}composer install --no-interaction --no-dev$c_w exited with an error status"
 
-msg "Running: ${c_m}php artisan migrate"
-php artisan migrate || error "${c_m}php artisan migrate$c_w exited with an error status"
-
 msg "Running: ${c_m}npm install"
 npm install || error "${c_m}npm install$c_w exited with an error status"
 

@@ -1,11 +1,11 @@
 {
-  "name": "Hypothetical Template",
+  "name": "ArchStrike Website",
   "version": "1.0.0",
   "authors": [
     "Kevin MacMartin <prurigro@gmail.com>"
   ],
-  "description": "A hypothetical website template",
-  "license": "MIT",
+  "description": "The ArchStrike website found at archstrike.org",
+  "license": "GPL3",
   "dependencies": {
     "bootstrap": "~3.3.5"
   }
