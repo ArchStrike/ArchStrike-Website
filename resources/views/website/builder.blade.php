@@ -34,7 +34,7 @@
                                 <td class="{{ strtolower($status_val) }}">
                                     {{-- link to the log file if it exists --}}
                                     @if(!is_null($status->log))
-                                        <a href="/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
+                                        <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
                                     @else
                                         <span>
                                     @endif
@@ -44,7 +44,7 @@
 
                                     {{-- close the link to the log file if it exists --}}
                                     @if(!is_null($status->log))
-                                        </a>
+                                        ({{ preg_replace(['/-[^-]*\.log\.html\.gz/', '/'.$name->name.'-/'], ['', ''], $status->log)}})</a>
                                     @else
                                         </span>
                                     @endif
