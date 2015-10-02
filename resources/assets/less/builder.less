@@ -4,19 +4,20 @@
         margin: 15px 10px;
         border: 1px solid @c_dark;
         border-radius: 2px;
-        background-color: lighten(@c_bg, 5%);
+        background-color: darken(@c_bg, 2%);
         border-spacing: 0;
 
+        tr:nth-child(odd) { background-color: darken(@c_bg, 8%); }
         th, tr:not(:last-child) td { border-bottom: 1px solid @c_dark; }
         th:not(:first-child), td:not(:first-child) { border-left: 1px solid @c_dark; }
         th { padding: 5px; }
         th, td { font-size: 12px; }
-        td:hover a { background-color: @c_bg; }
+        td:hover a { background-color: darken(@c_bg, 5%); }
 
         th {
             text-align: left;
             padding: 5px;
-            background-color: darken(@c_dark, 5%);
+            background-color: darken(@c_bg, 20%);
         }
 
         .fail a, .done a, .incomplete a, span {
@@ -28,7 +29,7 @@
         }
 
         .fail, .fail a { color: #ff0000; }
-        .done, .done a { color: #00b300; }
+        .done, .done a { color: #009100; }
         .incomplete, .incomplete a { color: @c_dark; }
     }
 }
