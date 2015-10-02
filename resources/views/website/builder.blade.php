@@ -15,13 +15,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(DB::table('names')->select('name', 'package')->orderBy('name', 'asc')->get() as $name)
+                @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->orderBy('package', 'asc')->get() as $package)
                     <tr>
-                        <td><span>{{ $name->name }}</span></td>
+                        <td><span>{{ $package->package }} ({{ $package->pkgver }}-{{ $package->pkgrel }})</span></td>
 
                         {{-- select the done, fail and log columns of the package id on each arch --}}
                         @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $arch)
-                            @foreach(DB::table($arch)->select('done', 'fail', 'log')->where('id', $name->package)->get() as $status)
+                            @foreach(DB::table($arch)->select('done', 'fail', 'log')->where('id', $package->id)->get() as $status)
                                 <?php
                                     if($status->fail == 1)
                                         $status_val='Fail';
@@ -44,7 +44,7 @@
 
                                     {{-- close the link to the log file if it exists --}}
                                     @if(!is_null($status->log))
-                                        ({{ preg_replace(['/-[^-]*\.log\.html\.gz/', '/'.$name->name.'-/'], ['', ''], $status->log)}})</a>
+                                        <span>({{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }})</span></a>
                                     @else
                                         </span>
                                     @endif

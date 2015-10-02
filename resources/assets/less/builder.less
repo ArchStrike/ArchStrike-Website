@@ -20,16 +20,22 @@
             background-color: darken(@c_bg, 20%);
         }
 
+        .fail, .fail a { color: #ff0000; }
+        .done, .done a { color: #009100; }
+        .incomplete, .incomplete a { color: @c_dark; }
+
         .fail a, .done a, .incomplete a, span {
             text-decoration: none;
             display: inline-block;
             padding: 5px;
             width: 100%;
             height: 100%;
-        }
 
-        .fail, .fail a { color: #ff0000; }
-        .done, .done a { color: #009100; }
-        .incomplete, .incomplete a { color: @c_dark; }
+            span {
+                display: inline;
+                font-style: italic;
+                color: @c_text;
+            }
+        }
     }
 }
