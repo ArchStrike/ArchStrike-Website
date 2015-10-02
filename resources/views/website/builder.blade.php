@@ -17,7 +17,7 @@
             <tbody>
                 @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->orderBy('package', 'asc')->get() as $package)
                     <tr>
-                        <td><span>{{ $package->package }} ({{ $package->pkgver }}-{{ $package->pkgrel }})</span></td>
+                        <td><span>{{ $package->package }} <div>{{ $package->pkgver }}-{{ $package->pkgrel }}</div></span></td>
 
                         {{-- select the done, fail and log columns of the package id on each arch --}}
                         @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $arch)
@@ -44,7 +44,7 @@
 
                                     {{-- close the link to the log file if it exists --}}
                                     @if(!is_null($status->log))
-                                        <span>({{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }})</span></a>
+                                        <div>{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }}</div></a>
                                     @else
                                         </span>
                                     @endif

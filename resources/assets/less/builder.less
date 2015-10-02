@@ -20,6 +20,14 @@
             background-color: darken(@c_bg, 20%);
         }
 
+        .fail a, .done a, .incomplete a, span {
+            div {
+                float: right;
+                font-style: italic;
+                color: @c_text;
+            }
+        }
+
         .fail, .fail a { color: #ff0000; }
         .done, .done a { color: #009100; }
         .incomplete, .incomplete a { color: @c_dark; }
@@ -30,12 +38,6 @@
             padding: 5px;
             width: 100%;
             height: 100%;
-
-            span {
-                display: inline;
-                font-style: italic;
-                color: @c_text;
-            }
         }
     }
 }
