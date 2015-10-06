@@ -15,45 +15,47 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->orderBy('package', 'asc')->get() as $package)
-                    <tr>
-                        <td><span>{{ $package->package }} <div>{{ $package->pkgver }}-{{ $package->pkgrel }}</div></span></td>
+                @cache('buildlogs', 5)
+                    @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->orderBy('package', 'asc')->get() as $package)
+                        <tr>
+                            <td><span>{{ $package->package }} <div>{{ $package->pkgver }}-{{ $package->pkgrel }}</div></span></td>
 
-                        {{-- select the done, fail and log columns of the package id on each arch --}}
-                        @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $arch)
-                            @foreach(DB::table($arch)->select('done', 'fail', 'log')->where('id', $package->id)->get() as $status)
-                                <?php
-                                    if($status->fail == 1)
-                                        $status_val='Fail';
-                                    else if ($status->done == 1)
-                                        $status_val='Done';
-                                    else
-                                        $status_val='Incomplete';
-                                ?>
-                                {{-- print the column open tag with a class based on the status --}}
-                                <td class="{{ strtolower($status_val) }}">
-                                    {{-- link to the log file if it exists --}}
-                                    @if(!is_null($status->log))
-                                        <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
-                                    @else
-                                        <span>
-                                    @endif
+                            {{-- select the done, fail and log columns of the package id on each arch --}}
+                            @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $arch)
+                                @foreach(DB::table($arch)->select('done', 'fail', 'log')->where('id', $package->id)->get() as $status)
+                                    <?php
+                                        if($status->fail == 1)
+                                            $status_val='Fail';
+                                        else if ($status->done == 1)
+                                            $status_val='Done';
+                                        else
+                                            $status_val='Incomplete';
+                                    ?>
+                                    {{-- print the column open tag with a class based on the status --}}
+                                    <td class="{{ strtolower($status_val) }}">
+                                        {{-- link to the log file if it exists --}}
+                                        @if(!is_null($status->log))
+                                            <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
+                                        @else
+                                            <span>
+                                        @endif
 
-                                    {{-- set the status to failed, done or incomplete --}}
-                                    {{ $status_val }}
+                                        {{-- set the status to failed, done or incomplete --}}
+                                        {{ $status_val }}
 
-                                    {{-- close the link to the log file if it exists --}}
-                                    @if(!is_null($status->log))
-                                        <div>{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }}</div></a>
-                                    @else
-                                        </span>
-                                    @endif
-                                </td>
+                                        {{-- close the link to the log file if it exists --}}
+                                        @if(!is_null($status->log))
+                                            <div>{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }}</div></a>
+                                        @else
+                                            </span>
+                                        @endif
+                                    </td>
+                                @endforeach
                             @endforeach
-                        @endforeach
 
-                    </tr>
-                @endforeach
+                        </tr>
+                    @endforeach
+                @endcache
             </tbody>
         </table>
     </div>

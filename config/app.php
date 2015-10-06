@@ -144,6 +144,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Custom Service Providers...
+         */
+        Flatten\FlattenServiceProvider::class,
+
     ],
 
     /*
@@ -191,6 +196,11 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Custom Facade Aliases...
+         */
+        'Flatten'   => Flatten\Facades\Flatten::class,
 
     ],
 
