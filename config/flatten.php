@@ -43,6 +43,6 @@ return [
     'timestamp' => true,
 
     // Whether to minify the HTML before caching it
-    'minify' => false,
+    'minify' => true,
 
 ];
