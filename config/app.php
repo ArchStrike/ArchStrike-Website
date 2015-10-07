@@ -147,6 +147,7 @@ return [
         /*
          * Custom Service Providers...
          */
+        Radic\BladeExtensions\BladeExtensionsServiceProvider::class,
         Flatten\FlattenServiceProvider::class,
 
     ],
@@ -200,7 +201,7 @@ return [
         /*
          * Custom Facade Aliases...
          */
-        'Flatten'   => Flatten\Facades\Flatten::class,
+        'Flatten'     => Flatten\Facades\Flatten::class,
 
     ],
 

@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/builder', function () {
     return view('website.builder');
 });
+
+Route::get('/team', function () {
+    return view('website.team');
+});

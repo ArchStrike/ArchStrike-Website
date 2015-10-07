@@ -13,6 +13,7 @@
             <ul id="cool" class="nav navbar-nav navbar-right">
                 <li><a href="/">Home</a></li>
                 <li><a href="/builder">Builder</a></li>
+                <li><a href="/team">Team</a></li>
                 <li><a href="http://wiki.archstrike.org" target="_blank">Wiki</a></li>
             </ul>
         </div>
