@@ -8,7 +8,7 @@
             <div class="home-wrapper">
                 <img src="/img/archstrike.svg" class="img-responsive home-logo" />
 
-                <div class="intro">
+                <div class="info">
                     An Arch Linux repository for security professionals and enthusiasts.<br />
                     Done <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles">the Arch Way</a> and optimized for i686, x86_64, ARMv6, and ARMv7.
                 </div>

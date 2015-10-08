@@ -34,9 +34,9 @@ body {
 }
 
 a {
-    color: @c_fg;
+    color: @c_red;
     text-decoration: underline;
-    &:hover { color: @c_fa; }
+    &:hover { color: lighten(@c_red, 15%); }
 }
 
 h1 {

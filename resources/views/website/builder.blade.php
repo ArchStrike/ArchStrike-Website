@@ -20,20 +20,17 @@
                         <tr>
                             <td><span>{{ $package->package }} <div>{{ $package->pkgver }}-{{ $package->pkgrel }}</div></span></td>
 
-                            {{-- select the done, fail and log columns of the package id on each arch --}}
                             @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $arch)
                                 @foreach(DB::table($arch)->select('done', 'fail', 'log')->where('id', $package->id)->get() as $status)
-                                    <?php
-                                        if($status->fail == 1)
-                                            $status_val='Fail';
-                                        else if ($status->done == 1)
-                                            $status_val='Done';
-                                        else
-                                            $status_val='Incomplete';
-                                    ?>
-                                    {{-- print the column open tag with a class based on the status --}}
+                                    @if($status->fail == 1)
+                                        @set('status_val','Fail')
+                                    @elseif($status->done == 1)
+                                        @set('status_val','Done')
+                                    @else
+                                        @set('status_val','Incomplete')
+                                    @endif
+
                                     <td class="{{ strtolower($status_val) }}">
-                                        {{-- link to the log file if it exists --}}
                                         @if(!is_null($status->log))
                                             <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
                                         @else
