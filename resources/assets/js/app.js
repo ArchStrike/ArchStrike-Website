@@ -8,6 +8,12 @@ $(document).ready(function() {
             break;
 
         case 'builder':
+            window.onload = function() {
+                var buildInfoList = new List('build-logs', {
+                    valueNames: ['package'],
+                    page: $('.package').length + 1
+                });
+            };
             break;
     }
 });

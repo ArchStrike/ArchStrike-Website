@@ -19,7 +19,8 @@ var jsLocal = [
 // javascript files in bower_components/
 var jsBower = [
     'jquery/dist/jquery.min.js',
-    'bootstrap/dist/js/bootstrap.min.js'
+    'bootstrap/dist/js/bootstrap.min.js',
+    'list.js/dist/list.min.js'
 ];
 
 // less import path locations other than resources/assets/less/

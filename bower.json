@@ -7,6 +7,7 @@
   "description": "The ArchStrike website found at archstrike.org",
   "license": "GPL3",
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "list.js": "~1.1.1"
   }
 }
