@@ -8,25 +8,15 @@
             <h1>Team</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1 column">
-            @include('markdown.team.arch3y')
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1 column">
-            @include('markdown.team.cthulu201')
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1 column">
-            @include('markdown.team.d1rt')
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1 column">
-            @include('markdown.team.prurigro')
-        </div>
+    <div class="team-list">
+        @foreach(['arch3y', 'cthulu201', 'd1rt', 'prurigro'] as $member)
+            <div class="member-row row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 column">
+                    <div class="profile-picture" style="background-image: url('/img/team/{{ $member }}.jpg')"></div>
+                    <div class="profile-info">@include("markdown.team.$member")</div>
+                </div>
+            </div>
+        @endforeach
     </div>
 </div>
 
