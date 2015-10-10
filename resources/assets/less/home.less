@@ -7,12 +7,11 @@
     position: absolute;
     top: 50%;
     left: 0px;
-    transform: translateY(-50%) perspective(1px);
+    transform: translateY(-50%);
     width: 100%;
     line-height: 1.4;
     text-align: center;
     font-size: 16px;
-    img.home-logo { padding: 10px; }
     .info { margin-top: 80px; }
 
     .contact {
@@ -26,21 +25,25 @@
         }
     }
 
-    img.small-logo {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        height: 50%;
-
-        @media(max-width: (@screen-sm - 1)) {
-            width: 75%;
-            height: 75%;
-        }
-    }
-
     .error {
         margin-top: 60px;
         color: @c_red;
+    }
+
+    img {
+        &.home-logo { padding: 10px; }
+
+        &.small-logo {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: 50%;
+
+            @media(max-width: (@screen-sm - 1)) {
+                width: 75%;
+                height: 75%;
+            }
+        }
     }
 
     h3 {

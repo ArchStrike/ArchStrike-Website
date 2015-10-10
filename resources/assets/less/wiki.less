@@ -1,0 +1,39 @@
+body.wiki {
+    .breadcrumb {
+        margin: 15px 5px 0px 5px;
+        background-color: fade(@c_fg, 15%);
+    }
+
+    .wiki-row {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        h1 {
+            border-bottom: none;
+            margin-bottom: 15px;
+        }
+
+        p { margin-left: 10px; }
+        ul { padding-left: 25px; }
+        ol { padding-left: 28px; }
+        code { color: @c_text; }
+
+        pre, table {
+            width: calc(100% ~"-" 20px);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        table {
+            border: 1px solid @c_dark;
+            border-spacing: 0;
+            border-radius: 2px;
+            background-color: darken(@c_bg, 2%);
+            tr:nth-child(odd) { background-color: darken(@c_bg, 5%); }
+            th, tr:not(:last-child) td { border-bottom: 1px solid @c_dark; }
+            th:not(:first-child), td:not(:first-child) { border-left: 1px solid @c_dark; }
+            th { background-color: darken(@c_bg, 20%); }
+            th, td { padding: 5px; }
+        }
+    }
+}

@@ -22,3 +22,12 @@ Route::get('/builder', function () {
 Route::get('/team', function () {
     return view('website.team');
 });
+
+Route::get('/wiki/{page?}', function ($page = 'index') {
+    // return the requested wiki page or a 404 if it doesn't exist
+    if (file_exists('../resources/views/markdown/wiki/' . $page . '.md.blade.php')) {
+        return view('website.wiki', ['page' => $page]);
+    } else {
+        return view('errors.404');
+    }
+});

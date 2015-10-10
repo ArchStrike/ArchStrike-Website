@@ -1,10 +1,12 @@
 @import "bootstrap";
+
 @import "var";
 @import "nav";
 
 @import "builder";
 @import "home";
 @import "team";
+@import "wiki";
 
 /*
  |
@@ -20,17 +22,26 @@ html, body {
 
 body {
     min-width: 300px;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     line-height: 1.5;
     font-weight: 100;
     color: @c_text;
     background-color: @c_bg;
     font-family: Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
 }
 
-* { outline: none !important; }
-code { color: @c_fa; }
+* {
+    outline: none !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+pre {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
 a {
     color: @c_red;
@@ -38,16 +49,22 @@ a {
     &:hover { color: lighten(@c_red, 15%); }
 }
 
-h1 {
-    border-bottom: 1px solid @c_dark;
-    margin-left: 15px;
-    margin-right: 15px;
+h1, h2, h3, h4, h5 {
     color: @c_fg;
-    font-size: 22px;
     font-weight: 700;
 }
 
-p {
-    margin-left: 15px;
-    font-size: 12px;
+h1 {
+    margin-bottom: 5px;
+    border-bottom: 1px solid @c_dark;
+    font-size: 24px;
 }
+
+h2, h3, h4, h5 { margin-bottom: 15px; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+h4 { font-size: 16px; }
+h5 { font-size: 14px; }
+p { font-size: 14px; }
+
+.container { padding-bottom: 15px; }
