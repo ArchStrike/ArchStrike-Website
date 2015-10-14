@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('website.home');
+    $tweets = Twitter::getUserTimeline(['screen_name' => 'ArchStrike', 'count' => 5, 'format' => 'object']);
+    return view('website.home', ['tweets' => $tweets]);
 });
 
 Route::get('/builder', function () {

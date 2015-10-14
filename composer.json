@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "radic/blade-extensions": "~6.0",
         "erusev/parsedown": "~1.5",
-        "anahkiasen/flatten": "^1.1"
+        "anahkiasen/flatten": "^1.1",
+        "thujohn/twitter": "~2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

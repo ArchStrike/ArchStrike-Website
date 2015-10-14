@@ -149,6 +149,7 @@ return [
          */
         Radic\BladeExtensions\BladeExtensionsServiceProvider::class,
         Flatten\FlattenServiceProvider::class,
+        Thujohn\Twitter\TwitterServiceProvider::class,
 
     ],
 
@@ -201,7 +202,8 @@ return [
         /*
          * Custom Facade Aliases...
          */
-        'Flatten'     => Flatten\Facades\Flatten::class,
+        'Flatten'   => Flatten\Facades\Flatten::class,
+        'Twitter'   => Thujohn\Twitter\Facades\Twitter::class,
 
     ],
 
