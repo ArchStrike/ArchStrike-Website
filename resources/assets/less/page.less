@@ -1,7 +1,6 @@
 .page-container {
     height: calc(100% ~"-" 100px);
-    .row , .row .info-column { height: 100%; }
-    .info-column { position: relative; }
+    .row  { height: 100%; }
 
     .page-wrapper {
         width: 100%;
@@ -9,43 +8,21 @@
         text-align: center;
         font-size: 15px;
         padding-bottom: 25px;
-        .info { margin-top: 80px; }
-
-        .contact {
-            margin-top: 50px;
-            margin-bottom: 50px;
-
-            a {
-                display: inline-block;
-                padding-left: 5px;
-                padding-right: 5px;
-            }
-        }
 
         .error {
             margin-top: 60px;
             color: @c_red;
         }
 
-        img {
-            &.home-logo {
-                margin-left: auto;
-                margin-right: auto;
-                width: 400px;
-                margin-top: 50px;
-                padding: 10px;
-            }
+        img.small-logo {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: 50%;
 
-            &.small-logo {
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-                height: 50%;
-
-                @media(max-width: (@screen-sm - 1)) {
-                    width: 75%;
-                    height: 75%;
-                }
+            @media(max-width: (@screen-sm - 1)) {
+                width: 75%;
+                height: 75%;
             }
         }
 
@@ -55,53 +32,6 @@
             font-family: "Montserrat", sans-serif;
             font-size: 1.25em;
             margin-top: .5em
-        }
-
-        .feed-column {
-            .tweet-box {
-                margin: 25px;
-                background-color: darken(@c_bg, 10%);
-                border: 1px solid darken(@c_bg, 15%);
-                border-radius: 3px;
-                width: 325px;
-
-                @media (max-width: (@screen-md - 1)) {
-                    position: static;
-                    width: auto;
-                    margin-top: 40px;
-                }
-
-                .tweet-box-heading, .tweet {
-                    padding: 10px;
-                    font-size: 14px;
-                }
-
-                .tweet-box-heading {
-                    font-weight: bold;
-                    background-color: darken(@c_bg, 15%);
-                }
-
-                .tweet {
-                    position: relative;
-                    text-align: left;
-                    &:not(:last-child) { border-bottom: 1px solid darken(@c_bg, 15%); }
-
-                    div {
-                        padding-bottom: 5px;
-
-                        a {
-                            text-decoration: none;
-                            font-weight: bold;
-                            color: @c_text;
-                        }
-
-                        span {
-                            font-size: 12px;
-                            float: right;
-                        }
-                    }
-                }
-            }
         }
     }
 }
