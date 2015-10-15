@@ -24,8 +24,8 @@
             <div class="col-md-4 feed-column">
                 <div class="tweet-box">
                     <div class="tweet-box-heading">Twitter Feed</div>
-                    @cache('tweets', 5)
-                        @foreach($tweets as $tweet)
+                    @cache('twitter', 5)
+                        @foreach(Twitter::getUserTimeline(['screen_name' => 'ArchStrike', 'count' => 5, 'format' => 'object']) as $tweet)
                             <div class="tweet">
                                 <div><a href="https://twitter.com/ArchStrike">ArchStrike</a> <span>{{ Twitter::ago($tweet->created_at) }}</span></div>
                                 {!! Twitter::linkify($tweet->text) !!}
