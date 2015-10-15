@@ -8,7 +8,7 @@ body.home {
         .info-column {
             height: 100%;
             position: relative;
-            padding-right: @feed-width + 50;
+            @media (min-width: @screen-md) { padding-right: @feed-width + 50; }
             .page-wrapper .info { margin-top: 80px; }
 
             img.home-logo {
@@ -30,9 +30,13 @@ body.home {
         }
 
         .feeds {
-            position: absolute;
-            top: 25px;
-            right: 25px;
+            padding-bottom: 15px;
+
+            @media (min-width: @screen-md) {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+            }
 
             .tweet-box {
                 background-color: darken(@c_bg, 10%);
