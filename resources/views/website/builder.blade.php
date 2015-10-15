@@ -20,7 +20,7 @@
                 {{--{{ Flatten::flushSection('buildlogs') }}--}}
 
                 @cache('buildlogs', 5)
-                    @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->orderBy('package', 'asc')->get() as $package)
+                    @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package)
                         <tr>
                             <td class="package">{{ $package->package }} <span>{{ $package->pkgver }}-{{ $package->pkgrel }}</span></td>
 
