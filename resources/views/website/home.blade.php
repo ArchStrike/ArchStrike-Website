@@ -24,12 +24,14 @@
             <div class="col-md-4 feed-column">
                 <div class="tweet-box">
                     <div class="tweet-box-heading">Twitter Feed</div>
-                    @foreach($tweets as $tweet)
-                        <div class="tweet">
-                            <div><a href="https://twitter.com/ArchStrike">ArchStrike</a> <span>{{ Twitter::ago($tweet->created_at) }}</span></div>
-                            {!! Twitter::linkify($tweet->text) !!}
-                        </div>
-                    @endforeach
+                    @cache('tweets', 5)
+                        @foreach($tweets as $tweet)
+                            <div class="tweet">
+                                <div><a href="https://twitter.com/ArchStrike">ArchStrike</a> <span>{{ Twitter::ago($tweet->created_at) }}</span></div>
+                                {!! Twitter::linkify($tweet->text) !!}
+                            </div>
+                        @endforeach
+                    @endcache
                 </div>
             </div>
         </div>
