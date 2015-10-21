@@ -50,6 +50,9 @@ trap 'error "script killed"' SIGINT SIGQUIT
     exit
 }
 
+msg "Running: ${c_m}php artisan down"
+php artisan down || error "${c_m}php artisan down$c_w exited with an error status"
+
 msg "Running: ${c_m}composer installl --no-dev"
 composer install --no-interaction --no-dev || error "${c_m}composer install --no-interaction --no-dev$c_w exited with an error status"
 
@@ -62,3 +65,5 @@ bower install || error "${c_m}bower install$c_w exited with an error status"
 msg "Running: ${c_m}gulp --production"
 gulp --production || error "${c_m}gulp --production$c_w exited with an error status"
 
+msg "Running: ${c_m}php artisan up"
+php artisan up || error "${c_m}php artisan up$c_w exited with an error status"
