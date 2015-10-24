@@ -28,12 +28,15 @@ body.builder {
                 background-color: darken(@c_bg, 20%);
             }
 
-            .fail a, .done a, .incomplete a, div, td.package {
+            .fail a, .done a, .incomplete a, div {
                 text-decoration: none;
                 display: inline-block;
-                padding: 5px;
                 width: 100%;
                 height: 100%;
+            }
+
+            .fail a, .done a, .incomplete a, div, .package  {
+                padding: 5px;
 
                 span {
                     float: right;
