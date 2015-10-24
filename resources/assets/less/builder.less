@@ -16,9 +16,6 @@ body.builder {
             border-spacing: 0;
             border-radius: 2px;
             background-color: darken(@c_bg, 2%);
-            tr:nth-child(odd) { background-color: darken(@c_bg, 5%); }
-            th, tr:not(:last-child) td { border-bottom: 1px solid @c_dark; }
-            th:not(:first-child), td:not(:first-child) { border-left: 1px solid @c_dark; }
             th, td { font-size: 12px; }
             td:hover { background-color: darken(@c_bg, 11%); }
 
@@ -38,7 +35,7 @@ body.builder {
             .fail a, .done a, .incomplete a, div, .package  {
                 padding: 5px;
 
-                span {
+                span:not(.label) {
                     float: right;
                     font-style: italic;
                     color: @c_text;
@@ -48,6 +45,48 @@ body.builder {
             .fail, .fail a { color: @c_red; }
             .done, .done a { color: @c_green; }
             .incomplete, .incomplete a { color: @c_dark; }
+
+            @media (min-width: @build_table_break) {
+                tr:nth-child(odd) { background-color: darken(@c_bg, 5%); }
+                th:not(:first-child), td:not(:first-child) { border-left: 1px solid @c_dark; }
+                th, tr:not(:last-child) td { border-bottom: 1px solid @c_dark; }
+                span.label { display: none; }
+            }
+
+            @media (max-width: (@build_table_break - 1)) {
+                border-bottom: none;
+
+                tr {
+                    th { display: none; }
+
+                    td {
+                        display: block;
+                        width: 100%;
+                        border-bottom: 1px solid @c_dark;
+                        &:nth-child(odd) { background-color: darken(@c_bg, 5%); }
+
+                        &.package {
+                            font-weight: bold;
+                            cursor: pointer;
+                            background-color: darken(@c_bg, 15%);
+                            &:hover { background-color: darken(@c_bg, 10%); }
+                        }
+
+                        &.build-status {
+                            display: none;
+
+                            span.label {
+                                display: inline-block;
+                                width: 50px;
+                                text-align: left;
+                                color: @c_text;
+                            }
+                        }
+                    }
+
+                    &.visible td.build-status { display: block; }
+                }
+            }
         }
     }
 }

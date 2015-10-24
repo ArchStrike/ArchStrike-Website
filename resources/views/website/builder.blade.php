@@ -17,7 +17,7 @@
             </thead>
             <tbody class="list">
                 {{-- DISABLE CACHE FOR DEBUGGING --}}
-                {{--{{ Flatten::flushSection('buildlogs') }}--}}
+                {{-- {{ Flatten::flushSection('buildlogs') }} --}}
 
                 @cache('buildlogs', 5)
                     @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package)
@@ -34,14 +34,14 @@
                                         @set('status_val','Incomplete')
                                     @endif
 
-                                    <td class="{{ strtolower($status_val) }}">
+                                    <td class="build-status {{ strtolower($status_val) }}">
                                         @if(!is_null($status->log))
                                             <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
-                                                {{ $status_val }}
+                                                <span class="label">{{ $arch }}: </span>{{ $status_val }}
                                                 <span>{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }}</span>
                                             </a>
                                         @else
-                                            <div>{{ $status_val }}</div>
+                                            <div><span class="label">{{ $arch }}: </span>{{ $status_val }}</div>
                                         @endif
                                     </td>
                                 @endforeach
