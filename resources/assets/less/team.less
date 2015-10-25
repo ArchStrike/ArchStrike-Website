@@ -32,5 +32,24 @@ body.team {
 
             &:not(:last-child) .profile-info { border-bottom: 1px solid #bbb; }
         }
+
+        @media (max-width: (@screen-sm - 1)) {
+            padding-left: 10px;
+            padding-right: 10px;
+
+            .column {
+                padding: 0px;
+
+                .profile-picture {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .profile-info {
+                    padding: 6px 0px;
+                    margin-top: 150px;
+                }
+            }
+        }
     }
 }

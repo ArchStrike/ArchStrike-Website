@@ -4,9 +4,9 @@
 
 <div class="container page-container">
     <div class="page-wrapper">
-        <div class="info-column">
+        <div class="intro-column">
             <img src="/img/archstrike.svg" class="img-responsive home-logo" />
-            <div class="info">
+            <div class="intro">
                 An&nbsp;Arch&nbsp;Linux&nbsp;repository&nbsp;for security&nbsp;professionals&nbsp;and&nbsp;enthusiasts.<br />
                 Done&nbsp;<a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles">the&nbsp;Arch&nbsp;Way</a>&nbsp;and&nbsp;optimized&nbsp;for i686,&nbsp;x86_64,&nbsp;ARMv6,&nbsp;and&nbsp;ARMv7.
             </div>
