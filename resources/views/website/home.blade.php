@@ -10,14 +10,6 @@
                 An Arch Linux repository for security professionals and enthusiasts.<br />
                 Done <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles">the Arch Way</a> and optimized for i686, x86_64, ARMv6, and ARMv7.
             </div>
-
-            <div class="contact">
-                <a href="https://github.com/ArchStrike/ArchStrike"><img src="/img/gh-logo.png" /></a>
-                <a href="https://twitter.com/ArchStrike"><img src="/img/tw-logo.png" /></a>
-                <a href="mailto:team@archstrike.org"><img src="/img/em-logo.png" /></a>
-            </div>
-
-            <h3>#archstrike @ irc.freenode.net</h3>
         </div>
     </div>
 
@@ -33,6 +25,14 @@
                 @endforeach
             @endcache
         </div>
+
+        <div class="contact">
+            <a href="https://github.com/ArchStrike/ArchStrike" title="ArchStrike Github"><img src="/img/gh-logo.png" /></a>
+            <a href="https://twitter.com/ArchStrike" title="ArchStrike Twitter"><img src="/img/tw-logo.png" /></a>
+            <a href="mailto:team@archstrike.org" title="ArchStrike Email"><img src="/img/em-logo.png" /></a>
+        </div>
+
+        <h3>#archstrike @ irc.freenode.net</h3>
     </div>
 </div>
 
