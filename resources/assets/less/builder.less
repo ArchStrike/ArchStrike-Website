@@ -17,7 +17,7 @@ body.builder {
             border-radius: 2px;
             background-color: darken(@c_bg, 2%);
             th, td { font-size: 12px; }
-            td:hover { background-color: darken(@c_bg, 11%); }
+            td:hover { background-color: darken(@c_bg, 10%); }
 
             th {
                 text-align: left;
@@ -68,7 +68,7 @@ body.builder {
                             font-weight: bold;
                             cursor: pointer;
                             background-color: darken(@c_bg, 15%);
-                            &:hover { background-color: darken(@c_bg, 10%); }
+                            user-select: none;
                         }
 
                         &.build-status {
@@ -83,7 +83,10 @@ body.builder {
                         }
                     }
 
-                    &.visible td.build-status { display: block; }
+                    &.visible {
+                        td.package { background-color: darken(@c_bg, 25%); }
+                        td.build-status { display: block; }
+                    }
                 }
             }
         }

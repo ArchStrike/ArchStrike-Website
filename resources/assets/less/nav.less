@@ -1,7 +1,7 @@
 nav.navbar {
-    background-color: darken(@c_bg, 10%);
+    background-color: @c_dark;
     padding: 5px 0px;
-    border-color: transparent transparent @c_fg transparent;
+    border-color: transparent transparent @c_fa transparent;
     border-bottom-width: 5px;
     border-radius: 0px;
     z-index: 1;
@@ -13,7 +13,7 @@ nav.navbar {
         margin: 5px;
         width: 120px;
         height: 40px;
-        background-image: url('/img/archstrike.svg');
+        background-image: url('/img/archstrike-light.svg');
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
@@ -26,15 +26,18 @@ nav.navbar {
         ul.nav {
             li {
                 a {
-                    color: @c_dark;
+                    color: @c_light_text;
                     font-size: 14px;
                     font-weight: 700;
                     text-decoration: none;
                 }
 
-                &:hover a { color: lighten(@c_dark, 10%); }
-                &.active a { color: @c_text; }
-                &.active:hover a { color: darken(@c_text, 10%); }
+                &:hover a {
+                    color: @c_bg;
+                    text-decoration: underline;
+                }
+
+                &.active a { color: @c_bg; }
                 &.active a, &.active:hover a, &:hover a, &:focus a { background-color: transparent; }
             }
         }
