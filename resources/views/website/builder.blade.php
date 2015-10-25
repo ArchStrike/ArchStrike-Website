@@ -9,6 +9,7 @@
             <thead>
                 <tr>
                     <th>Package Name</th>
+                    <th>Repository</th>
                     <th>Status ARMv6</th>
                     <th>Status ARMv7</th>
                     <th>Status i686</th>
@@ -20,9 +21,10 @@
                 {{-- {{ Flatten::flushSection('buildlogs') }} --}}
 
                 @cache('buildlogs', 5)
-                    @foreach(DB::table('abs')->select('id', 'package', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package)
+                    @foreach(DB::table('abs')->select('id', 'package', 'repo', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package)
                         <tr>
-                            <td class="package">{{ $package->package }} <span>{{ $package->pkgver }}-{{ $package->pkgrel }}</span></td>
+                            <td class="package">{{ $package->package }} <span class="version">{{ $package->pkgver }}-{{ $package->pkgrel }}</span></td>
+                            <td class="repo package-status"><span class="label">Repository: </span><span class="repo-name">{{ $package->repo }}</span></td>
 
                             @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $arch)
                                 @foreach(DB::table($arch)->select('done', 'fail', 'log')->where('id', $package->id)->get() as $status)
@@ -34,14 +36,18 @@
                                         @set('status_val','Incomplete')
                                     @endif
 
-                                    <td class="build-status {{ strtolower($status_val) }}">
+                                    <td class="build-status package-status {{ strtolower($status_val) }}">
                                         @if(!is_null($status->log))
                                             <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
-                                                <span class="label">{{ $arch }}: </span>{{ $status_val }}
-                                                <span>{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }}</span>
+                                                <span class="label">{{ $arch }}: </span>
+                                                <span class="build-status">{{ $status_val }}</span>
+                                                <span class="version">{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }}</span>
                                             </a>
                                         @else
-                                            <div><span class="label">{{ $arch }}: </span>{{ $status_val }}</div>
+                                        <div>
+                                            <span class="label">{{ $arch }}: </span>
+                                            <span class="build-status">{{ $status_val }}</span>
+                                        </div>
                                         @endif
                                     </td>
                                 @endforeach
