@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -15,7 +14,8 @@
    height="500"
    id="svg2424"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="ArchStrike.svg">
+   sodipodi:docname="archstrike.svg"
+   shape-rendering="geometricPrecision">
   <metadata
      id="metadata4168">
     <rdf:RDF>
