@@ -1,6 +1,6 @@
 ## Michael Henze
 
-**email**: [cthulhu@archstrike.org](cthulhu@archstrike.org)
+**email**: [cthulhu@archstrike.org](mailto:cthulhu@archstrike.org)
 
 **github**: [https://github.com/Cthulu201](https://github.com/Cthulu201)
 
