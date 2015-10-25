@@ -7,15 +7,15 @@
         <div class="info-column">
             <img src="/img/archstrike.svg" class="img-responsive home-logo" />
             <div class="info">
-                An Arch Linux repository for security professionals and enthusiasts.<br />
-                Done <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles">the Arch Way</a> and optimized for i686, x86_64, ARMv6, and ARMv7.
+                An&nbsp;Arch&nbsp;Linux&nbsp;repository&nbsp;for security&nbsp;professionals&nbsp;and&nbsp;enthusiasts.<br />
+                Done&nbsp;<a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles">the&nbsp;Arch&nbsp;Way</a>&nbsp;and&nbsp;optimized&nbsp;for i686,&nbsp;x86_64,&nbsp;ARMv6,&nbsp;and&nbsp;ARMv7.
             </div>
         </div>
     </div>
 
     <div class="feeds">
         <div class="tweet-box">
-            <div class="tweet-box-heading">Twitter Feed</div>
+            <div class="tweet-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank">Twitter Feed</a></div>
             @cache('twitter', 5)
                 @foreach(Twitter::getUserTimeline(['screen_name' => 'ArchStrike', 'count' => 5, 'format' => 'object']) as $tweet)
                     <div class="tweet">

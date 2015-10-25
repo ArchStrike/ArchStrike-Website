@@ -9,7 +9,7 @@ body.home {
             @media (min-width: @screen-sm) { padding-right: @feed-width + 50; }
 
             img.home-logo {
-                margin: 35px auto 75px auto;
+                margin: 75px auto;
                 width: 500px;
                 padding: 10px;
             }
@@ -42,6 +42,12 @@ body.home {
                 .tweet-box-heading {
                     font-weight: bold;
                     background-color: darken(@c_bg, 15%);
+
+                    a {
+                        color: @c_text;
+                        text-decoration: none;
+                        &:hover { text-decoration: underline; }
+                    }
                 }
 
                 .tweet {
@@ -74,25 +80,8 @@ body.home {
 
                 a {
                     display: inline-block;
-                    padding-left: 35px;
-                    padding-right: 35px;
-                }
-
-                @media (max-width: 500px), (min-width: @screen-sm) {
-                    width: 100%;
-
-                    a {
-                        position: absolute;
-                        top: 0px;
-                        padding: 0px;
-                        &:first-child { left: 35px; }
-                        &:last-child { right: 35px; }
-
-                        &:nth-child(2) {
-                            left: 50%;
-                            transform: translateX(-50%);
-                        }
-                    }
+                    padding-left: 25px;
+                    padding-right: 25px;
                 }
             }
 
