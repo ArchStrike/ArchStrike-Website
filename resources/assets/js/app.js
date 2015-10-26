@@ -3,10 +3,12 @@ $(document).ready(function() {
     $('#navbar a[href="/' + SiteVars.page + '"]').parent().addClass('active');
 
     // enable the sticky footer
-    $('footer').stickyFooter({
-        class: 'sticky-footer',
-        content: '#page-content'
-    });
+    window.onload = function() {
+        $('footer').stickyFooter({
+            class: 'sticky-footer',
+            content: '#page-content'
+        });
+    };
 
     // page-specific js
     switch (SiteVars.page) {
