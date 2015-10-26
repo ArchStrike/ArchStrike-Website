@@ -1,6 +1,7 @@
 footer {
     width: 100%;
-    padding: 5px 10px;
+    height: @footer_height;
+    padding: 0px 15px;
     font-size: 12px;
     background-color: @c_dark_bg;
     color: @c_light_text;
@@ -13,4 +14,5 @@ footer {
 
     .footer-left { float: left; }
     .footer-right { float: right; }
+    .footer-left, .footer-right { line-height: @footer_height; }
 }
