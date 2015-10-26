@@ -8,9 +8,9 @@
             <h1>ArchStrike Wiki</h1>
             <div class="breadcrumb">
                 @if($page == 'index')
-                    home
+                    Home
                 @else
-                    <a href="/wiki">home</a> &gt; {{ $page }}
+                    <a href="/wiki">Home</a> &gt; {{ ucfirst($page) }}
                 @endif
             </div>
         </div>

@@ -1,41 +1,11 @@
-# First Heading
+# Home
 
-## Second Heading
+Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentation.
 
-### Third Heading
+## Sections
 
-#### Fourth Heading
+[Setup ArchStrike](/wiki/setup) - How to add the **ArchStrike** repository to Arch Linux.
 
-##### Fifth Heading
+[Repositories](/wiki/repositories) - A rundown of each of the **ArchStrike** repositories.
 
-A paragraph of text with a [link to /wiki/example](/wiki/example), **bold text**, _italic text_, and _**bold and italic text**_.
-
-## An Unordered List
-
-* yes
-* no
-* maybe
-
-## An Ordered List
-
-1. one
-1. two
-1. three
-
-## A Table
-
-| one  | two | three | four |
-|------|-----|-------|------|
-| haro | hey | what  | cool |
-| huh  | arg | neat  | yes  |
-| haro | hey | what  | cool |
-
-## Some Code
-
-```bash
-#!/usr/bin/env bash
-
-echo "Hello World"
-```
-
-This is some `inline code`.
+[Contributing](/wiki/contributing) - How to contribute to the **ArchStrike** project.
