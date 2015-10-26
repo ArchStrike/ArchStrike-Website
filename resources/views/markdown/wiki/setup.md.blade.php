@@ -61,7 +61,7 @@ with a new block that uses the mirrorlist instead:
 Include = /etc/pacman.d/archstrike-mirrorlist
 ```
 
-**Note**: To use the `archstrike-testing` repository you should _also_ add the follow block (See the [repositories](/wiki/repositories) page for more information):
+**Note**: To use the `archstrike-testing` repository you should _also_ add the following block (See the [repositories](/wiki/repositories) page for more information):
 
 ```conf
 [archstrike-testing]
