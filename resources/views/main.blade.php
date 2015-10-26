@@ -16,7 +16,11 @@
         <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
     </head>
     <body class="{{ Request::path() == '/' ? 'home' : preg_replace('/\/.*/', '', Request::path()) }}">
-        @include('elements.nav')
-        @yield('page')
+        <div id="page-content">
+            @include('elements.nav')
+            @yield('page')
+        </div>
+
+        @include('elements.footer')
     </body>
 </html>

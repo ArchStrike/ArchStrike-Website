@@ -21,6 +21,7 @@ var jsLocal = [
 var jsBower = [
     'jquery/dist/jquery.min.js',
     'bootstrap/dist/js/bootstrap.min.js',
+    'jQuery.stickyFooter/assets/js/jquery.stickyfooter.min.js',
     'list.js/dist/list.min.js'
 ];
 

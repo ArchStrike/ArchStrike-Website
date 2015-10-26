@@ -2,6 +2,7 @@
 
 @import "var";
 @import "nav";
+@import "footer";
 
 @import "page";
 @import "error";
@@ -28,8 +29,8 @@ body {
     padding: 0px;
     line-height: 1.5;
     font-weight: 100;
-    color: @c_text;
-    background-color: @c_bg;
+    color: @c_dark_text;
+    background-color: @c_light_bg;
     font-family: Arial, Helvetica, sans-serif;
     text-rendering: optimizeLegibility;
 }
@@ -46,8 +47,8 @@ pre {
 }
 
 pre, code {
-    background-color: @c_dark;
-    color: @c_bg;
+    background-color: @c_dark_bg;
+    color: @c_light_bg;
 }
 
 a {
@@ -57,13 +58,13 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-    color: @c_fg;
+    color: @c_shading;
     font-weight: 700;
 }
 
 h1 {
     margin-bottom: 5px;
-    border-bottom: 1px solid @c_dark;
+    border-bottom: 1px solid @c_dark_bg;
     font-size: 24px;
 }
 

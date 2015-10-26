@@ -2,7 +2,7 @@
 
 @section('page')
 
-<div class="container">
+<div class="container page-container">
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1 column">
             <h1>ArchStrike Wiki</h1>

@@ -12,17 +12,17 @@ body.builder {
             width: 100%;
             margin-top: 15px;
             margin-bottom: 15px;
-            border: 1px solid @c_dark;
+            border: 1px solid @c_dark_bg;
             border-spacing: 0;
             border-radius: 2px;
-            background-color: darken(@c_bg, 2%);
+            background-color: darken(@c_light_bg, 2%);
             th, td { font-size: 12px; }
-            td:hover { background-color: darken(@c_bg, 10%); }
+            td:hover { background-color: darken(@c_light_bg, 10%); }
 
             th {
                 text-align: left;
                 padding: 5px;
-                background-color: darken(@c_bg, 20%);
+                background-color: darken(@c_light_bg, 20%);
             }
 
             .fail a, .done a, .incomplete a, div {
@@ -38,19 +38,19 @@ body.builder {
                 span.version {
                     float: right;
                     font-style: italic;
-                    color: @c_text;
+                    color: @c_dark_text;
                 }
             }
 
             .fail, .fail a { color: @c_red; }
             .done, .done a { color: @c_green; }
-            .incomplete, .incomplete a { color: @c_dark; }
+            .incomplete, .incomplete a { color: @c_dark_bg; }
 
             @media (min-width: @build_table_break) {
                 .repo { width: 105px; }
-                tr:nth-child(odd) { background-color: darken(@c_bg, 5%); }
-                th:not(:first-child), td:not(:first-child) { border-left: 1px solid @c_dark; }
-                th, tr:not(:last-child) td { border-bottom: 1px solid @c_dark; }
+                tr:nth-child(odd) { background-color: darken(@c_light_bg, 5%); }
+                th:not(:first-child), td:not(:first-child) { border-left: 1px solid @c_dark_bg; }
+                th, tr:not(:last-child) td { border-bottom: 1px solid @c_dark_bg; }
                 .label { display: none; }
             }
 
@@ -64,14 +64,14 @@ body.builder {
                     td {
                         display: block;
                         width: 100%;
-                        border-bottom: 1px solid @c_dark;
+                        border-bottom: 1px solid @c_dark_bg;
 
                         &.package {
                             font-weight: bold;
                             cursor: pointer;
-                            background-color: darken(@c_bg, 15%);
+                            background-color: darken(@c_light_bg, 15%);
                             user-select: none;
-                            &:hover { background-color: darken(@c_bg, 35%); }
+                            &:hover { background-color: darken(@c_light_bg, 35%); }
                         }
 
                         &.package-status {
@@ -83,15 +83,15 @@ body.builder {
                                 display: inline-block;
                                 width: 65px;
                                 text-align: left;
-                                color: @c_text;
+                                color: @c_dark_text;
                             }
                         }
                     }
 
-                    &:first-child td:first-child { border-top: 1px solid @c_dark; }
+                    &:first-child td:first-child { border-top: 1px solid @c_dark_bg; }
 
                     &.visible {
-                        .package { background-color: darken(@c_bg, 25%); }
+                        .package { background-color: darken(@c_light_bg, 25%); }
                         .package-status { display: block; }
                     }
                 }

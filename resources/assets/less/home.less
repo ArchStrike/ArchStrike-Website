@@ -6,7 +6,10 @@ body.home {
         width: 100%;
 
         .intro-column {
-            @media (min-width: @screen-sm) { padding-right: @feed-width + 50; }
+            @media (min-width: @screen-sm) {
+                width: calc(100% ~"-" (@feed-width + 15));
+                float: left;
+            }
 
             img.home-logo {
                 margin: 75px auto;
@@ -15,16 +18,12 @@ body.home {
             }
         }
 
-        .feeds {
-            @media (min-width: @screen-sm) {
-                position: absolute;
-                top: 25px;
-                right: 25px;
-            }
+        .feed-column {
+            @media (min-width: @screen-sm) { float: right; }
 
             .tweet-box {
-                background-color: darken(@c_bg, 10%);
-                border: 1px solid darken(@c_bg, 15%);
+                background-color: darken(@c_light_bg, 10%);
+                border: 1px solid darken(@c_light_bg, 15%);
                 border-radius: 3px;
                 width: @feed-width;
 
@@ -41,10 +40,10 @@ body.home {
 
                 .tweet-box-heading {
                     font-weight: bold;
-                    background-color: darken(@c_bg, 15%);
+                    background-color: darken(@c_light_bg, 15%);
 
                     a {
-                        color: @c_text;
+                        color: @c_dark_text;
                         text-decoration: none;
                         &:hover { text-decoration: underline; }
                     }
@@ -53,7 +52,7 @@ body.home {
                 .tweet {
                     position: relative;
                     text-align: left;
-                    &:not(:last-child) { border-bottom: 1px solid darken(@c_bg, 15%); }
+                    &:not(:last-child) { border-bottom: 1px solid darken(@c_light_bg, 15%); }
 
                     div {
                         padding-bottom: 5px;
@@ -61,7 +60,7 @@ body.home {
                         a {
                             text-decoration: none;
                             font-weight: bold;
-                            color: @c_text;
+                            color: @c_dark_text;
                         }
 
                         span {
