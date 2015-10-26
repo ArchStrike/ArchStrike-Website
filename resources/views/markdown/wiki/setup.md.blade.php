@@ -68,8 +68,6 @@ Include = /etc/pacman.d/archstrike-mirrorlist
 Include = /etc/pacman.d/archstrike-mirrorlist
 ```
 
-
-
 Refresh the pacman package database again to reflect the changes above by running:
 
 ```bash
