@@ -18,7 +18,7 @@ function initBuildTable() {
     // empty the filter list
     $pkgFilter.val('');
 
-    window.onload = function() {
+    $(window).on('load', function() {
         // initialize the package name filter
         var buildInfoList = new List('build-logs', {
             valueNames: [ 'package' ],
@@ -31,5 +31,5 @@ function initBuildTable() {
                 $(window).trigger('resize');
             }, 100);
         });
-    };
+    });
 }
