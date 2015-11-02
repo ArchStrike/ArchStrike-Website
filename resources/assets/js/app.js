@@ -19,6 +19,9 @@ $(document).ready(function() {
             initBuildTable();
             break;
 
+        case 'packages':
+            break;
+
         case 'team':
             break;
 

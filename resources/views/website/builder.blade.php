@@ -21,9 +21,9 @@
                 <?php //Flatten::flushSection('buildlogs') ?>
 
                 @cache('buildlogs', 5)
-                    @foreach(DB::table('abs')->select('id', 'package', 'repo', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package)
+                    @foreach(App\Abs::select('id', 'package', 'repo', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package)
                         <tr>
-                            <td class="package">{{ $package->package }} <span class="version">{{ $package->pkgver }}-{{ $package->pkgrel }}</span></td>
+                            <td class="package"><a href="/packages/{{ $package->package }}">{{ $package->package }}</a> <span class="version">{{ $package->pkgver }}-{{ $package->pkgrel }}</span></td>
                             <td class="repo package-status"><span class="label">Repository: </span><span class="repo-name">{{ $package->repo }}</span></td>
 
                             @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $index => $arch)

@@ -12,7 +12,17 @@ footer {
         bottom: 0px;
     }
 
-    .footer-left { float: left; }
+    .footer-left {
+        float: left;
+
+        @media (min-width: 385px) {
+            &:after {
+                content: "\00a0Security Distribution";
+                display: inline-block;
+            }
+        }
+    }
+
     .footer-right { float: right; }
     .footer-left, .footer-right { line-height: @footer_height; }
 }

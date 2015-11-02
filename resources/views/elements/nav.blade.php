@@ -13,6 +13,7 @@
             <ul id="cool" class="nav navbar-nav navbar-right">
                 <li><a href="/">Home</a></li>
                 <li><a href="/builder">Builder</a></li>
+                <li><a href="/packages">Packages</a></li>
                 <li><a href="/team">Team</a></li>
                 <li><a href="/wiki">Wiki</a></li>
             </ul>
