@@ -28,7 +28,7 @@
                         <tbody>
                             @foreach($packages as $package)
                                 <tr>
-                                    <td><a href="/packages/{{ $package['pkgname'] }}">{{ $package['pkgname'] }}</a></td>
+                                    <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
                                     <td>{{ $package['pkgdesc'] }}</td>
                                 </tr>
                             @endforeach
@@ -37,7 +37,7 @@
 
                     <p class="page-list">
                         Page:
-                        @for($x = 0; $x <= $pages; $x++)
+                        @for($x=0; $x<=$pages; $x++)
                             @if($x == $page)
                                 {{ $x }}
                             @else
@@ -60,7 +60,7 @@
     @else
         <div class="row">
             <div class="col-xs-12 col-md-10 col-md-offset-1 column">
-                <h1>{{ $package->pkgname }}</h1>
+                <h1>{{ $package->package }}</h1>
                 <table class="package-table">
                     <tbody>
                         <tr>
