@@ -25,10 +25,12 @@
                 </thead>
                 <tbody>
                     @foreach($packages as $package)
-                        <tr>
-                            <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
-                            <td>{{ $package['pkgdesc'] }}</td>
-                        </tr>
+                        @if(!empty($package['pkgdesc']))
+                            <tr>
+                                <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
+                                <td>{{ $package['pkgdesc'] }}</td>
+                            </tr>
+                        @endif
                     @endforeach
                 </tbody>
             </table>
