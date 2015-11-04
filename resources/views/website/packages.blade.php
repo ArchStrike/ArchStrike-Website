@@ -42,7 +42,7 @@
 
                 @for($x=0; $x<=$pages; $x++)
                     @if($x == $page)
-                        {{ $x }}
+                        <span class="current-page">{{ $x }}</span>
                     @else
                         <a class="page-link" href="/packages/page/{{ $x }}">{{ $x }}</a>
                     @endif
