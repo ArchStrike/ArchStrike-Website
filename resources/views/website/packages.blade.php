@@ -14,39 +14,40 @@
         </div>
     @elseif($package === true)
         @if($packages !== false)
-            <div class="row">
-                <div class="col-xs-12 col-md-10 col-md-offset-1 column">
-                    <h1>Packages</h1>
+            <h1>Packages</h1>
 
-                    <table class="packages-table">
-                        <thead>
-                            <tr>
-                                <th>Package</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($packages as $package)
-                                <tr>
-                                    <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
-                                    <td>{{ $package['pkgdesc'] }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+            <table class="packages-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($packages as $package)
+                        <tr>
+                            <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
+                            <td>{{ $package['pkgdesc'] }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
 
-                    <p class="page-list">
-                        Page:
-                        @for($x=0; $x<=$pages; $x++)
-                            @if($x == $page)
-                                {{ $x }}
-                            @else
-                                <a href="/packages/page/{{ $x }}">{{ $x }}</a>
-                            @endif
-                        @endfor
-                    </p>
-                </div>
-            </div>
+            <p class="page-list">
+                @if($page > 0)
+                    <a class="page-prev" href="/packages/page/{{ $page - 1 }}">Prev</a>
+                @endif
+                @for($x=0; $x<=$pages; $x++)
+                    @if($x == $page)
+                        {{ $x }}
+                    @else
+                        <a class="page-link" href="/packages/page/{{ $x }}">{{ $x }}</a>
+                    @endif
+                @endfor
+                @if($page < $pages)
+                    <a class="page-next" href="/packages/page/{{ $page + 1 }}">Next</a>
+                @endif
+            </p>
         @else
             <div class="row error-row">
                 <div class="col-xs-12 col-md-10 error-column">

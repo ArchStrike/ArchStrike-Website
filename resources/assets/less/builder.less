@@ -19,6 +19,11 @@ body.builder {
             th, td { font-size: 12px; }
             td:hover { background-color: darken(@c_light_bg, 7%); }
 
+            td.package a {
+                text-decoration: none;
+                &:hover { text-decoration: underline; }
+            }
+
             th {
                 text-align: left;
                 padding: 5px;
