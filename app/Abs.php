@@ -15,26 +15,31 @@ class ABS extends Model
     // the abs table
     protected $table = 'abs';
 
+    // returns true if $package exists and isn't deleted, and false if it does not
     public static function exists($package)
     {
         return self::where('package', $package)->where('del', 0)->exists();
     }
 
+    // returns the number of packages in the table that aren't deleted
     public static function getNumPackages()
     {
         return self::where('del', 0)->count();
     }
 
+    // returns the number of pages of packages if each page has $perpage packages
     public static function getNumPages($perpage)
     {
         return floor(self::getNumPackages() / $perpage);
     }
 
+    // returns the first row where the package name is $package
     public static function getPackage($package)
     {
         return self::where('package', $package)->where('del', 0)->first();
     }
 
+    // returns $perpage packages from the $pagenum page
     public static function getPackages($pagenum, $perpage)
     {
         if (($pagenum > self::getNumPages($perpage)) || ($pagenum < 0)) {
@@ -64,6 +69,7 @@ class ABS extends Model
         return $packages;
     }
 
+    // returns a cached array of packages and their build status for each architecture
     public static function getBuildList()
     {
         $buildlist = Cache::remember('buildlist', 5, function() {

@@ -6,6 +6,6 @@ use App\Arch;
 
 class I686 extends Arch
 {
-    // The i686 Table
+    // the i686 table
     protected $table = 'i686';
 }

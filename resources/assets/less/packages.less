@@ -8,22 +8,19 @@ body.packages {
         width: 100%;
         margin: 15px 0px 24px 0px;
         thead tr { background-color: darken(@c_light_bg, 20%); }
-        tbody tr:nth-child(odd) { background-color: darken(@c_light_bg, 5%); }
+
+        tbody tr {
+            background-color: darken(@c_light_bg, 3%);
+            &:nth-child(odd) { background-color: darken(@c_light_bg, 6%); }
+        }
 
         th, td {
             vertical-align: top;
             padding: 2px 8px;
         }
 
-        &.packages-table {
-
-        }
-
         &.package-table {
-            tr {
-                th { background-color: darken(@c_light_bg, 10%); }
-                &:nth-child(odd) th { background-color: darken(@c_light_bg, 20%); }
-            }
+            th { width: 100px; }
         }
     }
 

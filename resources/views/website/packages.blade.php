@@ -39,6 +39,7 @@
                 @if($page > 0)
                     <a class="page-prev" href="/packages/page/{{ $page - 1 }}">Prev</a>
                 @endif
+
                 @for($x=0; $x<=$pages; $x++)
                     @if($x == $page)
                         {{ $x }}
@@ -46,6 +47,7 @@
                         <a class="page-link" href="/packages/page/{{ $x }}">{{ $x }}</a>
                     @endif
                 @endfor
+
                 @if($page < $pages)
                     <a class="page-next" href="/packages/page/{{ $page + 1 }}">Next</a>
                 @endif
@@ -70,23 +72,35 @@
                             <th>Description:</th>
                             <td>{{ $pkgdesc }}</td>
                         </tr>
+
                         <tr>
                             <th>Repository:</th>
                             <td>{{ $package->repo }}</td>
                         </tr>
+
                         <tr>
                             <th>Version:</th>
                             <td>{{ $package->pkgver }}-{{ $package->pkgrel }}</td>
                         </tr>
+
                         @if(!empty($package->provides))
                             <tr>
                                 <th>Provides:</th>
                                 <td>{{ $package->provides }}</td>
                             </tr>
                         @endif
+
+                        <tr>
+                            <th>Sources:</th>
+                            <td>
+                                <a href="https://github.com/ArchStrike/ArchStrike/blob/master/{{ $package->repo }}/{{ $package->package }}" target="_blank">Package Files</a> /
+                                <a href="https://github.com/ArchStrike/ArchStrike/blob/master/{{ $package->repo }}/{{ $package->package }}/PKGBUILD" target="_blank">PKGBUILD</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-                <table>
+
+                <table class="dependencies-table">
                     <thead>
                         <tr>
                             <th>Dependencies:</th>
@@ -100,6 +114,7 @@
                                 </tr>
                             @endforeach
                         @endif
+
                         @if(!empty($package->makedepends))
                             @foreach(explode(' ', $package->makedepends) as $dep)
                                 <tr>

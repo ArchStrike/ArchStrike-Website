@@ -6,6 +6,6 @@ use App\Arch;
 
 class Armv6 extends Arch
 {
-    // The armv6 Table
+    // the armv6 table
     protected $table = 'armv6';
 }
