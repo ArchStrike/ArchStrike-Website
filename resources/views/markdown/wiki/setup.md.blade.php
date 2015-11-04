@@ -32,8 +32,8 @@ Initialize the pacman keyring and start dirmngr, then import and sign the key us
 ```bash
 # pacman-key --init
 # dirmngr < /dev/null
-# pacman-key -r B84C1B2F
-# pacman-key --lsign-key B84C1B2F
+# pacman-key -r F32D93DA
+# pacman-key --lsign-key F32D93DA
 ```
 
 ### 3. Install required packages
