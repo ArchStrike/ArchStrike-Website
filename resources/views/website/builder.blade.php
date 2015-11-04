@@ -17,44 +17,29 @@
                 </tr>
             </thead>
             <tbody class="list">
-                {{-- DISABLE CACHE FOR DEBUGGING --}}
-                <?php //Flatten::flushSection('buildlogs') ?>
+                @foreach($buildlist as $build)
+                    <tr>
+                        <td class="package"><a href="/packages/{{ $build['package'] }}">{{ $build['package'] }}</a> <span class="version">{{ $build['pkgver'] }}-{{ $build['pkgrel'] }}</span></td>
+                        <td class="repo package-status"><span class="label">Repository: </span><span class="repo-name">{{ $build['repo'] }}</span></td>
 
-                @cache('buildlogs', 5)
-                    @foreach(App\Abs::select('id', 'package', 'repo', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package)
-                        <tr>
-                            <td class="package"><a href="/packages/{{ $package->package }}">{{ $package->package }}</a> <span class="version">{{ $package->pkgver }}-{{ $package->pkgrel }}</span></td>
-                            <td class="repo package-status"><span class="label">Repository: </span><span class="repo-name">{{ $package->repo }}</span></td>
-
-                            @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $index => $arch)
-                                @foreach(DB::table($arch)->select('done', 'fail', 'log')->where('id', $package->id)->get() as $status)
-                                    @if($status->fail == 1)
-                                        @set('status_val','Fail')
-                                    @elseif($status->done == 1)
-                                        @set('status_val','Done')
-                                    @else
-                                        @set('status_val','Incomplete')
-                                    @endif
-
-                                    <td class="build-status package-status {{ strtolower($status_val) }}">
-                                        @if(!is_null($status->log))
-                                            <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $status->log) }}" target="_blank">
-                                                <span class="label">{{ $arch }}: </span>
-                                                <span class="status">{{ $status_val }}</span>
-                                                <span class="version">{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $package->package . '-/' ], [ '', '' ], $status->log) }}</span>
-                                            </a>
-                                        @else
-                                        <div>
-                                            <span class="label">{{ $arch }}: </span>
-                                            <span class="status">{{ $status_val }}</span>
-                                        </div>
-                                        @endif
-                                    </td>
-                                @endforeach
-                            @endforeach
-                        </tr>
-                    @endforeach
-                @endcache
+                        @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $index => $arch)
+                            <td class="build-status package-status {{ strtolower($build[$arch]) }}">
+                                @if(!is_null($build[$arch . '_log']))
+                                    <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $build[$arch . '_log']) }}" target="_blank">
+                                        <span class="label">{{ $arch }}: </span>
+                                        <span class="status">{{ $build[$arch] }}</span>
+                                        <span class="version">{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $build['package'] . '-/' ], [ '', '' ], $build[$arch . '_log']) }}</span>
+                                    </a>
+                                @else
+                                    <div>
+                                        <span class="label">{{ $arch }}: </span>
+                                        <span class="status">{{ $build['i686'] }}</span>
+                                    </div>
+                                @endif
+                            </td>
+                        @endforeach
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

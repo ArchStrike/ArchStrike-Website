@@ -4,67 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a50321b8f3ed7ec632055102909ba3c7",
+    "hash": "2c1ce85a86eb13e055686cf5e753ae10",
     "packages": [
-        {
-            "name": "anahkiasen/flatten",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Anahkiasen/flatten.git",
-                "reference": "770391b5179840d882e4d40cad3aca839d7c5412"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Anahkiasen/flatten/zipball/770391b5179840d882e4d40cad3aca839d7c5412",
-                "reference": "770391b5179840d882e4d40cad3aca839d7c5412",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/cache": "5.0.*|5.1.*",
-                "illuminate/config": "5.0.*|5.1.*",
-                "illuminate/container": "5.0.*|5.1.*",
-                "illuminate/contracts": "5.0.*|5.1.*",
-                "illuminate/http": "5.0.*|5.1.*",
-                "illuminate/support": "5.0.*|5.1.*",
-                "mrclay/minify": "^2.2"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "^1.10",
-                "illuminate/view": "5.0.*|5.1.*",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.8",
-                "symfony/var-dumper": "^2.7"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Flatten\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Fabre",
-                    "email": "ehtnam6@gmail.com"
-                }
-            ],
-            "description": "A package for the Illuminate framework that flattens pages to plain HTML",
-            "keywords": [
-                "cache",
-                "laravel",
-                "performance"
-            ],
-            "time": "2015-10-21 14:09:12"
-        },
         {
             "name": "anahkiasen/underscore-php",
             "version": "2.0.0",
@@ -570,16 +511,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.20",
+            "version": "v5.1.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "435af155ed15a6b1d03a0d0a46ae4c347d96b0d7"
+                "reference": "a4ea877d2bb6a68796b244a741594968796c1c4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/435af155ed15a6b1d03a0d0a46ae4c347d96b0d7",
-                "reference": "435af155ed15a6b1d03a0d0a46ae4c347d96b0d7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a4ea877d2bb6a68796b244a741594968796c1c4e",
+                "reference": "a4ea877d2bb6a68796b244a741594968796c1c4e",
                 "shasum": ""
             },
             "require": {
@@ -593,7 +534,7 @@
                 "monolog/monolog": "~1.11",
                 "mtdowling/cron-expression": "~1.0",
                 "nesbot/carbon": "~1.19",
-                "paragonie/random_compat": "^1.0.4",
+                "paragonie/random_compat": "^1.0.6",
                 "php": ">=5.5.9",
                 "psy/psysh": "~0.5.1",
                 "swiftmailer/swiftmailer": "~5.1",
@@ -695,7 +636,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-10-14 15:49:40"
+            "time": "2015-11-03 16:32:33"
         },
         {
             "name": "league/flysystem",
@@ -857,51 +798,6 @@
                 "psr-3"
             ],
             "time": "2015-10-14 12:51:02"
-        },
-        {
-            "name": "mrclay/minify",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mrclay/minify.git",
-                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mrclay/minify/zipball/3c11ba8232a2155a1a29552aafc528be5fb0a662",
-                "reference": "3c11ba8232a2155a1a29552aafc528be5fb0a662",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pcre": "*",
-                "php": ">=5.2.1"
-            },
-            "require-dev": {
-                "tubalmartin/cssmin": "~2.4.8"
-            },
-            "suggest": {
-                "tubalmartin/cssmin": "Support minify with CSSMin (YUI PHP port)"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "min/lib/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Stephen Clay",
-                    "email": "steve@mrclay.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
-            "homepage": "http://code.google.com/p/minify/",
-            "time": "2014-10-30 22:58:02"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -2130,16 +2026,16 @@
         },
         {
             "name": "thujohn/twitter",
-            "version": "2.0.4",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thujohn/twitter.git",
-                "reference": "40a5af806b87a54d607af6bb28e60cc4d6f51803"
+                "reference": "7a921187081aa2250abb1c5bea3c4c3103b8b4f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thujohn/twitter/zipball/40a5af806b87a54d607af6bb28e60cc4d6f51803",
-                "reference": "40a5af806b87a54d607af6bb28e60cc4d6f51803",
+                "url": "https://api.github.com/repos/thujohn/twitter/zipball/7a921187081aa2250abb1c5bea3c4c3103b8b4f9",
+                "reference": "7a921187081aa2250abb1c5bea3c4c3103b8b4f9",
                 "shasum": ""
             },
             "require": {
@@ -2170,7 +2066,7 @@
                 "laravel5",
                 "twitter"
             ],
-            "time": "2015-03-23 12:29:01"
+            "time": "2015-09-28 21:01:35"
         },
         {
             "name": "vlucas/phpdotenv",

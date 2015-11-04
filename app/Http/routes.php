@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/builder', function () {
-    return view('website.builder');
+    return view('website.builder', ['buildlist' => Abs::getBuildList()]);
 });
 
 Route::get('/packages/{pkgrequest?}/{page?}', function ($pkgrequest = 'page', $page = 0) {
