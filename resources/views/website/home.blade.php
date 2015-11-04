@@ -27,8 +27,8 @@
         </div>
 
         <div class="contact">
-            <a href="https://github.com/ArchStrike/ArchStrike" title="ArchStrike Github"><img src="/img/gh-logo.png" /></a>
-            <a href="https://twitter.com/ArchStrike" title="ArchStrike Twitter"><img src="/img/tw-logo.png" /></a>
+            <a href="https://github.com/ArchStrike" title="ArchStrike Github" target="_blank"><img src="/img/gh-logo.png" /></a>
+            <a href="https://twitter.com/ArchStrike" title="ArchStrike Twitter" target="_blank"><img src="/img/tw-logo.png" /></a>
             <a href="mailto:team@archstrike.org" title="ArchStrike Email"><img src="/img/em-logo.png" /></a>
         </div>
 
