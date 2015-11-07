@@ -33,12 +33,6 @@ class ABS extends Model
         return floor(self::getNumPackages() / $perpage);
     }
 
-    // returns the first row where the package name is $package
-    public static function getPackage($package)
-    {
-        return self::where('package', $package)->where('del', 0)->first();
-    }
-
     // returns $perpage packages from the $pagenum page
     public static function getPackages($pagenum, $perpage)
     {
@@ -67,6 +61,12 @@ class ABS extends Model
         }
 
         return $packages;
+    }
+
+    // returns the first row where the package name is $package
+    public static function getPackage($package)
+    {
+        return self::where('package', $package)->where('del', 0)->first();
     }
 
     // returns a cached array of packages and their build status for each architecture
