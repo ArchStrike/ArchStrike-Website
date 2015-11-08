@@ -10,8 +10,8 @@
                 <tr>
                     <th>Package Name</th>
                     <th>Repository</th>
-                    <th>Status ARMv6</th>
-                    <th>Status ARMv7</th>
+                    <th>Status ARMv6h</th>
+                    <th>Status ARMv7h</th>
                     <th>Status i686</th>
                     <th>Status x86_64</th>
                 </tr>
@@ -24,7 +24,7 @@
 
                         @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $index => $arch)
                             <td class="build-status package-status {{ strtolower($build[$arch]) }}">
-                                @if(!is_null($build[$arch . '_log']))
+                                @if($build[$arch] != 'Skip' && !is_null($build[$arch . '_log']))
                                     <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $build[$arch . '_log']) }}" target="_blank">
                                         <span class="label">{{ $arch }}: </span>
                                         <span class="status">{{ $build[$arch] }}</span>
@@ -33,7 +33,7 @@
                                 @else
                                     <div>
                                         <span class="label">{{ $arch }}: </span>
-                                        <span class="status">{{ $build['i686'] }}</span>
+                                        <span class="status">{{ $build[$arch] }}</span>
                                     </div>
                                 @endif
                             </td>

@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Arch extends Model
 {
+    // return the table name
+    public static function getTableName()
+    {
+        return with(new static)->getTable();
+    }
+
     // returns the build status for the package with the id equal to $id
     public static function getStatus($id)
     {

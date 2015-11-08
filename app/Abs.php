@@ -73,21 +73,32 @@ class ABS extends Model
     public static function getBuildList()
     {
         $buildlist = Cache::remember('buildlist', 5, function() {
+            $skip_term = 'Skip';
             $packages = [];
 
-            foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel')->where('del', 0)->orderBy('package', 'asc')->get() as $package) {
+            foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->orderBy('package', 'asc')->get() as $package) {
+                $skip = str_split(decbin($package->skip) + 100000000);
+
+                $skip_arch = [
+                    'all' => $skip[8] == 1,
+                    'armv7' => $skip[6] == 1,
+                    'armv6' => $skip[4] == 1,
+                    'i686' => $skip[2] == 1,
+                    'x86_64' => $skip[1] == 1
+                ];
+
                 $addpkg = [
                     'package' => $package->package,
                     'repo' => $package->repo,
                     'pkgver' => $package->pkgver,
                     'pkgrel' => $package->pkgrel,
-                    'i686' => I686::getStatus($package->id),
+                    'i686' => $skip_arch['all'] || $skip_arch['i686'] ? I686::getStatus($package->id) : $skip_term,
                     'i686_log' => I686::getLog($package->id),
-                    'x86_64' => X86_64::getStatus($package->id),
+                    'x86_64' => $skip_arch['all'] || $skip_arch['x86_64'] ? X86_64::getStatus($package->id) : $skip_term,
                     'x86_64_log' => X86_64::getLog($package->id),
-                    'armv6' => Armv6::getStatus($package->id),
+                    'armv6' => $skip_arch['all'] || $skip_arch['armv6'] ? Armv6::getStatus($package->id) : $skip_term,
                     'armv6_log' => Armv6::getLog($package->id),
-                    'armv7' => Armv7::getStatus($package->id),
+                    'armv7' => $skip_arch['all'] || $skip_arch['armv7'] ? Armv7::getStatus($package->id) : $skip_term,
                     'armv7_log' => Armv7::getLog($package->id)
                 ];
 
