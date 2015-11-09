@@ -69,6 +69,22 @@ class ABS extends Model
         return self::where('package', $package)->where('del', 0)->first();
     }
 
+    // takes a skip integer and returns an array of skip values for each arch
+    public static function getSkip($skip)
+    {
+        $skip = str_split(decbin($skip) + 100000000);
+
+        $skip_arch = [
+            'all' => $skip[8] == 1,
+            'armv7' => $skip[6] == 1,
+            'armv6' => $skip[4] == 1,
+            'i686' => $skip[2] == 1,
+            'x86_64' => $skip[1] == 1
+        ];
+
+        return $skip_arch;
+    }
+
     // returns a cached array of packages and their build status for each architecture
     public static function getBuildList()
     {
@@ -77,15 +93,7 @@ class ABS extends Model
             $packages = [];
 
             foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->orderBy('package', 'asc')->get() as $package) {
-                $skip = str_split(decbin($package->skip) + 100000000);
-
-                $skip_arch = [
-                    'all' => $skip[8] == 1,
-                    'armv7' => $skip[6] == 1,
-                    'armv6' => $skip[4] == 1,
-                    'i686' => $skip[2] == 1,
-                    'x86_64' => $skip[1] == 1
-                ];
+                $skip_arch = self::getSkip($package->skip);
 
                 $addpkg = [
                     'package' => $package->package,

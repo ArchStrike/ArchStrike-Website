@@ -21,6 +21,13 @@ body.packages {
 
         &.package-table {
             th { width: 100px; }
+
+            .architectures {
+                span:not(:last-child):after {
+                    content: ", ";
+                    display: inline;
+                }
+            }
         }
     }
 

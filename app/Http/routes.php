@@ -33,8 +33,11 @@ Route::get('/packages/{pkgrequest?}/{page?}', function ($pkgrequest = 'page', $p
             'page' => $page
         ]);
     } else if (Abs::exists($pkgrequest)) {
+        $package = Abs::getPackage($pkgrequest);
+
         return view('website.packages', [
-            'package' => Abs::getPackage($pkgrequest),
+            'package' => $package,
+            'skip_arch' => Abs::getSkip($package->skip),
             'pkgdesc' => Files::getDescription($pkgrequest)
         ]);
     } else {

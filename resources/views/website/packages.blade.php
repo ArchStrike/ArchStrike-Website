@@ -68,6 +68,21 @@
                 <h1>{{ $package->package }}</h1>
                 <table class="package-table">
                     <tbody>
+                        <tr class="architectures">
+                            <th>Architectures:</th>
+                            <td>
+                                @if($skip_arch['all'])
+                                    all
+                                @else
+                                    @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $arch)
+                                        @if($skip_arch[$arch])
+                                            <span>{{ $arch }}</span>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </td>
+                        </tr>
+
                         <tr>
                             <th>Description:</th>
                             <td>{{ $pkgdesc }}</td>
