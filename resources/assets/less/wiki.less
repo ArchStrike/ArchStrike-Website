@@ -1,9 +1,16 @@
 body.wiki {
     .breadcrumb {
         margin: 15px 0px 0px 0px;
-        background-color: fade(@c_shading, 15%);
-        border-radius: 1px;
+        border-radius: 2px;
         font-size: 11px;
+        font-weight: bold;
+        background-color: @c_dark_bg;
+        &, a { color: @c_light_text; }
+
+        span {
+            position: relative;
+            bottom: 2px;
+        }
     }
 
     .wiki-row {
@@ -25,7 +32,6 @@ body.wiki {
             color: @c_dark_text;
         }
 
-        h2, h3, h4, h5 { font-weight: normal; }
         p { margin-left: 10px; }
         ul { padding-left: 25px; }
         ol { padding-left: 28px; }
