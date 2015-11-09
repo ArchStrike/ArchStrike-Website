@@ -37,7 +37,7 @@ Route::get('/packages/{pkgrequest?}/{page?}', function ($pkgrequest = 'page', $p
 
         return view('website.packages', [
             'package' => $package,
-            'skip_arch' => Abs::getSkip($package->skip),
+            'skip_arch' => Abs::getSkipStates($package->skip),
             'pkgdesc' => Files::getDescription($pkgrequest)
         ]);
     } else {

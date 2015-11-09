@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cache;
+use App\Architectures;
 use App\Files;
 use App\I686;
 use App\X86_64;
@@ -14,6 +15,9 @@ class ABS extends Model
 {
     // the abs table
     protected $table = 'abs';
+
+    // the term used for skipped packages
+    public static $skip_term = 'Skip';
 
     // returns true if $package exists and isn't deleted, and false if it does not
     public static function exists($package)
@@ -70,43 +74,51 @@ class ABS extends Model
     }
 
     // takes a skip integer and returns an array of skip values for each arch
-    public static function getSkip($skip)
+    public static function getSkipStates($skip)
     {
-        $skip = str_split(decbin($skip) + 100000000);
+        // get the skip values for each architecture
+        $skip_values = Cache::rememberForever('skip_values', function() {
+            return [
+                'all' => 1,
+                'armv7' => Architectures::getSkipValue('armv7'),
+                'armv6' => Architectures::getSkipValue('armv6'),
+                'i686' => Architectures::getSkipValue('i686'),
+                'x86_64' => Architectures::getSkipValue('x86_64')
+            ];
+        });
 
-        $skip_arch = [
-            'all' => $skip[8] == 1,
-            'armv7' => $skip[6] == 1,
-            'armv6' => $skip[4] == 1,
-            'i686' => $skip[2] == 1,
-            'x86_64' => $skip[1] == 1
+        // return an array of supported and skipped architectures for the supplied skip value
+        return [
+            'all' => ($skip & $skip_values['all']) == $skip_values['all'],
+            'armv7' => ($skip & $skip_values['armv7']) == $skip_values['armv7'],
+            'armv6' => ($skip & $skip_values['armv6']) == $skip_values['armv6'],
+            'i686' => ($skip & $skip_values['i686']) == $skip_values['i686'],
+            'x86_64' => ($skip & $skip_values['x86_64']) == $skip_values['x86_64']
         ];
-
-        return $skip_arch;
     }
 
     // returns a cached array of packages and their build status for each architecture
     public static function getBuildList()
     {
+
         $buildlist = Cache::remember('buildlist', 5, function() {
-            $skip_term = 'Skip';
             $packages = [];
 
             foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->orderBy('package', 'asc')->get() as $package) {
-                $skip_arch = self::getSkip($package->skip);
+                $skip_states = self::getSkipStates($package->skip);
 
                 $addpkg = [
                     'package' => $package->package,
                     'repo' => $package->repo,
                     'pkgver' => $package->pkgver,
                     'pkgrel' => $package->pkgrel,
-                    'i686' => $skip_arch['all'] || $skip_arch['i686'] ? I686::getStatus($package->id) : $skip_term,
+                    'i686' => $skip_states['all'] || $skip_states['i686'] ? I686::getStatus($package->id) : self::$skip_term,
                     'i686_log' => I686::getLog($package->id),
-                    'x86_64' => $skip_arch['all'] || $skip_arch['x86_64'] ? X86_64::getStatus($package->id) : $skip_term,
+                    'x86_64' => $skip_states['all'] || $skip_states['x86_64'] ? X86_64::getStatus($package->id) : self::$skip_term,
                     'x86_64_log' => X86_64::getLog($package->id),
-                    'armv6' => $skip_arch['all'] || $skip_arch['armv6'] ? Armv6::getStatus($package->id) : $skip_term,
+                    'armv6' => $skip_states['all'] || $skip_states['armv6'] ? Armv6::getStatus($package->id) : self::$skip_term,
                     'armv6_log' => Armv6::getLog($package->id),
-                    'armv7' => $skip_arch['all'] || $skip_arch['armv7'] ? Armv7::getStatus($package->id) : $skip_term,
+                    'armv7' => $skip_states['all'] || $skip_states['armv7'] ? Armv7::getStatus($package->id) : self::$skip_term,
                     'armv7_log' => Armv7::getLog($package->id)
                 ];
 
