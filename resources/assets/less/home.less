@@ -40,11 +40,16 @@ body.home {
                 }
 
                 .tweet-box-heading {
+                    position: relative;
+                    right: 1px;
+                    width: calc(100% ~"+" 2px);
                     font-weight: bold;
-                    background-color: darken(@c_light_bg, 15%);
+                    background-color: @c_dark_bg;
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
 
                     a {
-                        color: @c_dark_text;
+                        color: @c_light_text;
                         text-decoration: none;
                         &:hover { text-decoration: underline; }
                     }
