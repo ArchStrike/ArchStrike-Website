@@ -12,22 +12,29 @@ body.builder {
             width: 100%;
             margin-top: 15px;
             margin-bottom: 15px;
-            border: 1px solid lighten(@c_shading, 30%);
+            border: 1px solid @c_dark_bg;
             border-spacing: 0;
             border-radius: 2px;
             background-color: darken(@c_light_bg, 2%);
             th, td { font-size: 12px; }
             td:hover { background-color: darken(@c_light_bg, 7%); }
 
-            td.package a {
-                text-decoration: none;
-                &:hover { text-decoration: underline; }
-            }
-
             th {
                 text-align: left;
                 padding: 5px;
-                background-color: darken(@c_light_bg, 20%);
+                background-color: @c_dark_bg;
+                color: @c_light_text;
+            }
+
+            td {
+                &.package a {
+                    text-decoration: none;
+                    &:hover { text-decoration: underline; }
+                }
+
+                @media (min-width: @build_table_break) {
+                    &.build-status { width: 17%; }
+                }
             }
 
             .fail a, .done a, .incomplete a, div {
@@ -60,6 +67,7 @@ body.builder {
             }
 
             @media (max-width: (@build_table_break - 1)) {
+                border-color: lighten(@c_shading, 30%);
                 border-top: none;
                 border-bottom: none;
 
