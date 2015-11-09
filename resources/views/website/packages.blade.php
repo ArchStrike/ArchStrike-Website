@@ -67,6 +67,12 @@
             <div class="col-xs-12 col-md-10 col-md-offset-1 column">
                 <h1>{{ $package->package }}</h1>
                 <table class="package-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Package Details:</th>
+                        </tr>
+                    </thead>
+
                     <tbody>
                         <tr class="architectures">
                             <th>Architectures:</th>

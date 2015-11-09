@@ -7,7 +7,11 @@ body.packages {
     table {
         width: 100%;
         margin: 15px 0px 24px 0px;
-        thead tr { background-color: darken(@c_light_bg, 20%); }
+
+        thead tr {
+            background-color: @c_dark_bg;
+            color: @c_light_text;
+        }
 
         tbody tr {
             background-color: darken(@c_light_bg, 3%);
