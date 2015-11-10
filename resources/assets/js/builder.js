@@ -21,7 +21,15 @@ function initBuildTable() {
     $(window).on('load', function() {
         // initialize the package name filter
         var buildInfoList = new List('build-logs', {
-            valueNames: [ 'package' ],
+            valueNames: [
+                'package',
+                'package-sort',
+                'repo-sort',
+                'armv6-sort',
+                'armv7-sort',
+                'i686-sort',
+                'x86_64-sort'
+            ],
             page: $package.length + 1
         });
 
