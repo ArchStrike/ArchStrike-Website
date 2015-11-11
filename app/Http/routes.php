@@ -54,6 +54,6 @@ Route::get('/wiki/{page?}', function ($page = 'index') {
     if (file_exists(base_path() . '/resources/views/markdown/wiki/' . $page . '.md.blade.php')) {
         return view('website.wiki', ['page' => $page]);
     } else {
-        return view('errors.404');
+        abort(404);
     }
 });
