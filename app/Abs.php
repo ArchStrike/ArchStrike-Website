@@ -107,7 +107,7 @@ class ABS extends Model
             foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->orderBy('package', 'asc')->get() as $package) {
                 $skip_states = self::getSkipStates($package->skip);
 
-                $addpkg = [
+                $pkg = [
                     'package' => $package->package,
                     'repo' => $package->repo,
                     'pkgver' => $package->pkgver,
@@ -122,7 +122,10 @@ class ABS extends Model
                     'armv7_log' => Armv7::getLog($package->id)
                 ];
 
-                array_push($packages, $addpkg);
+                // only add the package if one of the architectures doesn't have a status of Done or Skip
+                if ((($pkg['i686'] != 'Done') && ($pkg['i686'] != 'Skip')) || (($pkg['x86_64'] != 'Done') && ($pkg['x86_64'] != 'Skip')) || (($pkg['armv6'] != 'Done') && ($pkg['armv6'] != 'Skip')) || (($pkg['armv7'] != 'Done') && ($pkg['armv7'] != 'Skip'))) {
+                    array_push($packages, $pkg);
+                }
             }
 
             return $packages;
