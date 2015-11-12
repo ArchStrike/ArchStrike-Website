@@ -14,7 +14,7 @@
         </div>
     @elseif($package === true)
         @if($packages !== false)
-            <h1>Packages <a href="/builder" title="Package build status for each package on each arch" class="heading-link">ArchStrike Builds</a></h1>
+            <h1>Packages <a href="/builder" title="View a list of failed and incomplete builds" class="heading-link">ArchStrike Build Issue List</a></h1>
 
             <table class="packages-table">
                 <thead>
