@@ -45,7 +45,7 @@ class ABS extends Model
         }
 
         $pkglist = Cache::remember('pkglist', 5, function() {
-            return self::select('package')->where('del', 0)->orderBy('package', 'asc')->get();
+            return self::select('package', 'repo')->where('del', 0)->orderBy('package', 'asc')->get();
         });
 
         $packages = [];
@@ -60,6 +60,7 @@ class ABS extends Model
         for ($x = $startval; $x <= $endval; $x++) {
             array_push($packages, [
                 'package' => $pkglist[$x]->package,
+                'repo' => $pkglist[$x]->repo,
                 'pkgdesc' => Files::getDescription($pkglist[$x]->package)
             ]);
         }

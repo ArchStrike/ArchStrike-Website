@@ -20,6 +20,7 @@
                 <thead>
                     <tr>
                         <th>Package</th>
+                        <th>Repository</th>
                         <th>Description</th>
                     </tr>
                 </thead>
@@ -28,6 +29,7 @@
                         @if(!empty($package['pkgdesc']))
                             <tr>
                                 <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
+                                <td>{{ $package['repo'] }}</td>
                                 <td>{{ $package['pkgdesc'] }}</td>
                             </tr>
                         @endif
