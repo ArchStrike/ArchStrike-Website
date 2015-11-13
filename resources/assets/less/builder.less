@@ -3,9 +3,10 @@ body.builder {
         margin-left: 15px;
         margin-right: 15px;
 
-        input {
+        #package-filter {
             padding-left: 5px;
             padding-right: 5px;
+            @media (max-width: (@screen-sm - 1)) { width: 100%; }
         }
 
         table {
