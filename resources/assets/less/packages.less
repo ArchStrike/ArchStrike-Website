@@ -8,6 +8,10 @@ body.packages {
         position: relative;
         top: 5px;
         button { margin-left: 3px; }
+
+        @media (max-width: (@screen-sm - 1)) {
+            input { width: calc(100% ~"-" 70px); }
+        }
     }
 
     table {
@@ -29,7 +33,16 @@ body.packages {
             padding: 2px 8px;
         }
 
-        &.packages-table th:last-child { width: 130px; }
+        &.packages-table {
+            .repo-col {
+                width: 130px;
+                @media (max-width: 600px) { display: none; }
+            }
+
+            .vers-col {
+                @media (max-width: 450px) { display: none; }
+            }
+        }
 
         &.package-table {
             th { width: 100px; }
