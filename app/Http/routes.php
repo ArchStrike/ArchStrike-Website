@@ -32,7 +32,7 @@ Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $ar
             'pages' => Abs::getNumPages($perpage),
             'page' => $arg
         ]);
-    } else if ($pkgrequest = 'search') {
+    } else if ($pkgrequest == 'search') {
         return view('website.packages', [
             'package' => true,
             'packages' => Abs::searchPackages($arg),
