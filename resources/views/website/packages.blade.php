@@ -16,44 +16,55 @@
         @if($packages !== false)
             <h1>Packages <a href="/builder" title="View a list of failed and incomplete builds" class="heading-link">ArchStrike Build Issue List</a></h1>
 
+            <form id="package-search">
+                <input placeholder="" />
+                <button type="button">Search</button>
+            </form>
+
             <table class="packages-table">
                 <thead>
                     <tr>
                         <th>Package</th>
-                        <th>Repository</th>
+                        <th>Version</th>
                         <th>Description</th>
+                        <th>Repository</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($packages as $package)
-                        @if(!empty($package['pkgdesc']))
-                            <tr>
-                                <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
-                                <td>{{ $package['repo'] }}</td>
-                                <td>{{ $package['pkgdesc'] }}</td>
-                            </tr>
-                        @endif
-                    @endforeach
+                    @if(!empty($packages))
+                        @foreach($packages as $package)
+                            @if(!empty($package['pkgdesc']))
+                                <tr>
+                                    <td><a href="/packages/{{ $package['package'] }}">{{ $package['package'] }}</a></td>
+                                    <td>{{ $package['pkgver'] }}</td>
+                                    <td>{{ $package['pkgdesc'] }}</td>
+                                    <td>{{ $package['repo'] }}</td>
+                                </tr>
+                            @endif
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
 
-            <p class="page-list">
-                @if($page > 0)
-                    <a class="page-prev" href="/packages/page/{{ $page - 1 }}">Prev</a>
-                @endif
-
-                @for($x=0; $x<=$pages; $x++)
-                    @if($x == $page)
-                        <span class="current-page">{{ $x }}</span>
-                    @else
-                        <a class="page-link" href="/packages/page/{{ $x }}">{{ $x }}</a>
+            @if($pages > 1)
+                <p class="page-list">
+                    @if($page > 0)
+                        <a class="page-prev" href="/packages/page/{{ $page - 1 }}">Prev</a>
                     @endif
-                @endfor
 
-                @if($page < $pages)
-                    <a class="page-next" href="/packages/page/{{ $page + 1 }}">Next</a>
-                @endif
-            </p>
+                    @for($x=0; $x<=$pages; $x++)
+                        @if($x == $page)
+                            <span class="current-page">{{ $x }}</span>
+                        @else
+                            <a class="page-link" href="/packages/page/{{ $x }}">{{ $x }}</a>
+                        @endif
+                    @endfor
+
+                    @if($page < $pages)
+                        <a class="page-next" href="/packages/page/{{ $page + 1 }}">Next</a>
+                    @endif
+                </p>
+            @endif
         @else
             <div class="row error-row">
                 <div class="col-xs-12 col-md-10 error-column">

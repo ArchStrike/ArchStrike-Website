@@ -22,15 +22,21 @@ Route::get('/builder', function () {
     return view('website.builder', ['buildlist' => Abs::getBuildList()]);
 });
 
-Route::get('/packages/{pkgrequest?}/{page?}', function ($pkgrequest = 'page', $page = 0) {
+Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $arg = 0) {
     $perpage = 50; // number of packages per page
 
-    if ($pkgrequest == 'page') {
+    if (($pkgrequest == 'page') || (($pkgrequest == 'search') && ($arg === 0))) {
         return view('website.packages', [
             'package' => true,
-            'packages' => Abs::getPackages($page, $perpage),
+            'packages' => Abs::getPackages($arg, $perpage),
             'pages' => Abs::getNumPages($perpage),
-            'page' => $page
+            'page' => $arg
+        ]);
+    } else if ($pkgrequest = 'search') {
+        return view('website.packages', [
+            'package' => true,
+            'packages' => Abs::searchPackages($arg),
+            'pages' => 1
         ]);
     } else if (Abs::exists($pkgrequest)) {
         $package = Abs::getPackage($pkgrequest);

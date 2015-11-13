@@ -14,6 +14,7 @@ elixir.config.autoprefix = { remove: false, cascade: false, browsers: ['last 2 v
 var jsLocal = [
     'site-vars.js',
     'builder.js',
+    'packages.js',
     'app.js'
 ];
 

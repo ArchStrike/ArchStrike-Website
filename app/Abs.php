@@ -22,13 +22,16 @@ class ABS extends Model
     // returns true if $package exists and isn't deleted, and false if it does not
     public static function exists($package)
     {
-        return self::where('package', $package)->where('del', 0)->exists();
+        return self::where('package', $package)
+            ->where('del', 0)
+            ->exists();
     }
 
     // returns the number of packages in the table that aren't deleted
     public static function getNumPackages()
     {
-        return self::where('del', 0)->count();
+        return self::where('del', 0)
+            ->count();
     }
 
     // returns the number of pages of packages if each page has $perpage packages
@@ -45,7 +48,10 @@ class ABS extends Model
         }
 
         $pkglist = Cache::remember('pkglist', 5, function() {
-            return self::select('package', 'repo')->where('del', 0)->orderBy('package', 'asc')->get();
+            return self::select('package', 'pkgver', 'repo')
+                ->where('del', 0)
+                ->orderBy('package', 'asc')
+                ->get();
         });
 
         $packages = [];
@@ -60,8 +66,30 @@ class ABS extends Model
         for ($x = $startval; $x <= $endval; $x++) {
             array_push($packages, [
                 'package' => $pkglist[$x]->package,
+                'pkgver' => $pkglist[$x]->pkgver,
                 'repo' => $pkglist[$x]->repo,
                 'pkgdesc' => Files::getDescription($pkglist[$x]->package)
+            ]);
+        }
+
+        return $packages;
+    }
+
+    // returns a list of packages based on a search term
+    public static function searchPackages($term)
+    {
+        $packages = [];
+        $search = self::select('package', 'pkgver', 'repo')
+            ->where('del', 0)
+            ->where('package', 'like', "%$term%")
+            ->get();
+
+        foreach($search as $package) {
+            array_push($packages, [
+                'package' => $package->package,
+                'pkgver' => $package->pkgver,
+                'repo' => $package->repo,
+                'pkgdesc' => Files::getDescription($package->package)
             ]);
         }
 

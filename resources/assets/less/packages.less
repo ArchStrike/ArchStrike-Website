@@ -4,6 +4,12 @@ body.packages {
         &:hover { text-decoration: underline; }
     }
 
+    #package-search {
+        position: relative;
+        top: 5px;
+        button { margin-left: 3px; }
+    }
+
     table {
         width: 100%;
         margin: 15px 0px 24px 0px;
@@ -23,9 +29,7 @@ body.packages {
             padding: 2px 8px;
         }
 
-        &.packages-table {
-            th:nth-child(2) { width: 130px; }
-        }
+        &.packages-table th:last-child { width: 130px; }
 
         &.package-table {
             th { width: 100px; }

@@ -20,6 +20,7 @@ $(document).ready(function() {
             break;
 
         case 'packages':
+            initPackageSearch();
             break;
 
         case 'team':
