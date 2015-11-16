@@ -48,11 +48,11 @@
 
             @if($pages > 1)
                 <p class="page-list">
-                    @if($page > 0)
+                    @if($page > 1)
                         <a class="page-prev" href="/packages/page/{{ $page - 1 }}">Prev</a>
                     @endif
 
-                    @for($x=0; $x<=$pages; $x++)
+                    @for($x=1; $x<=$pages; $x++)
                         @if($x == $page)
                             <span class="current-page">{{ $x }}</span>
                         @else

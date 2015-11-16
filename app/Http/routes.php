@@ -28,8 +28,8 @@ Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $ar
     if (($pkgrequest == 'page') || (($pkgrequest == 'search') && ($arg === 0))) {
         return view('website.packages', [
             'package' => true,
-            'packages' => Abs::getPackages($arg, $perpage),
-            'pages' => Abs::getNumPages($perpage),
+            'packages' => Abs::getPackages(($arg - 1), $perpage),
+            'pages' => Abs::getNumPages($perpage) + 1,
             'page' => $arg
         ]);
     } else if ($pkgrequest == 'search') {
