@@ -24,6 +24,7 @@ class ABS extends Model
     {
         return self::where('package', $package)
             ->where('del', 0)
+            ->where('abs', 0)
             ->exists();
     }
 
@@ -31,6 +32,7 @@ class ABS extends Model
     public static function getNumPackages()
     {
         return self::where('del', 0)
+            ->where('abs', 0)
             ->count();
     }
 
@@ -50,6 +52,7 @@ class ABS extends Model
         $pkglist = Cache::remember('pkglist', 5, function() {
             return self::select('package', 'pkgver', 'repo')
                 ->where('del', 0)
+                ->where('abs', 0)
                 ->orderBy('package', 'asc')
                 ->get();
         });
@@ -81,6 +84,7 @@ class ABS extends Model
         $packages = [];
         $search = self::select('package', 'pkgver', 'repo')
             ->where('del', 0)
+            ->where('abs', 0)
             ->where('package', 'like', "%$term%")
             ->get();
 
@@ -99,7 +103,10 @@ class ABS extends Model
     // returns the first row where the package name is $package
     public static function getPackage($package)
     {
-        return self::where('package', $package)->where('del', 0)->first();
+        return self::where('package', $package)
+            ->where('del', 0)
+            ->where('abs', 0)
+            ->first();
     }
 
     // takes a skip integer and returns an array of skip values for each arch
@@ -133,7 +140,7 @@ class ABS extends Model
         $buildlist = Cache::remember('buildlist', 5, function() {
             $packages = [];
 
-            foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->orderBy('package', 'asc')->get() as $package) {
+            foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->where('abs', 0)->orderBy('package', 'asc')->get() as $package) {
                 $skip_states = self::getSkipStates($package->skip);
 
                 $pkg = [
