@@ -22,10 +22,10 @@ Route::get('/builder', function () {
     return view('website.builder', ['buildlist' => Abs::getBuildList()]);
 });
 
-Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $arg = 0) {
+Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $arg = 1) {
     $perpage = 50; // number of packages per page
 
-    if (($pkgrequest == 'page') || (($pkgrequest == 'search') && ($arg === 0))) {
+    if (($pkgrequest == 'page') || (($pkgrequest == 'search') && ($arg === 1))) {
         return view('website.packages', [
             'package' => true,
             'packages' => Abs::getPackages(($arg - 1), $perpage),
