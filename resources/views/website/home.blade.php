@@ -7,8 +7,8 @@
         <div class="intro-column">
             <img src="/img/archstrike.svg" class="img-responsive home-logo" />
             <div class="intro">
-                An&nbsp;<a href="https://www.archlinux.org" target="_blank">Arch&nbsp;Linux</a>&nbsp;repository&nbsp;for security&nbsp;professionals&nbsp;and&nbsp;enthusiasts.<br />
-                Done&nbsp;the&nbsp;<a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank">Arch&nbsp;Way</a>&nbsp;and&nbsp;optimized&nbsp;for i686,&nbsp;x86_64,&nbsp;ARMv6,&nbsp;and&nbsp;ARMv7.
+                A security layer for <a href="https://www.archlinux.org" target="_blank">Arch Linux</a> done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank">Arch Way</a><br />
+                and optimized for i686, x86_64, ARMv6, and ARMv7
             </div>
         </div>
     </div>
