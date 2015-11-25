@@ -25,7 +25,7 @@
                         @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $index => $arch)
                             <td class="build-status package-status {{ strtolower($build[$arch]) }}">
                                 @if($build[$arch] != 'Skip' && !is_null($build[$arch . '_log']))
-                                    <a href="http://archstrike.org:81/in-log/{{ preg_replace('/\.gz$/', '', $build[$arch . '_log']) }}" target="_blank">
+                                    <a href="https://logs.archstrike.org/{{ preg_replace('/\.gz$/', '', $build[$arch . '_log']) }}">
                                         <span class="label">{{ $arch }}: </span>
                                         <span class="status {{ $arch }}-sort">{{ $build[$arch] }}</span>
                                         <span class="version">{{ preg_replace([ '/-[^-]*\.log\.html\.gz/', '/' . $build['package'] . '-/' ], [ '', '' ], $build[$arch . '_log']) }}</span>
