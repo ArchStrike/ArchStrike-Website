@@ -3,11 +3,9 @@ $(document).ready(function() {
     $('#navbar a[href="/' + SiteVars.page + '"]').parent().addClass('active');
 
     // enable the sticky footer
-    $(window).on('load', function() {
-        $('footer').stickyFooter({
-            class: 'sticky-footer',
-            content: '#page-content'
-        });
+    $('footer').stickyFooter({
+        class: 'sticky-footer',
+        content: '#page-content'
     });
 
     // page-specific js
