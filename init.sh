@@ -57,7 +57,7 @@ msg "Running: ${c_m}composer installl --no-dev"
 composer install --no-interaction --no-dev || error "${c_m}composer install --no-interaction --no-dev$c_w exited with an error status"
 
 msg "Running: ${c_m}npm install"
-npm install || error "${c_m}npm install$c_w exited with an error status"
+npm install --production || error "${c_m}npm install$c_w exited with an error status"
 
 msg "Running: ${c_m}bower install"
 bower install || error "${c_m}bower install$c_w exited with an error status"
