@@ -8,6 +8,11 @@ $(document).ready(function() {
         content: '#page-content'
     });
 
+    // trigger a resize after everything has loaded to ensure the sticky footer runs
+    $(window).load(function() {
+        $(this).trigger('resize');
+    });
+
     // page-specific js
     switch (SiteVars.page) {
         case '': // home page
