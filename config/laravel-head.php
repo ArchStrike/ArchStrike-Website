@@ -29,7 +29,7 @@ return array(
 
     'title' => array(
 
-        'sitename' => 'ArchStrike Security Layer',
+        'sitename' => 'ArchStrike',
 
         'show_sitename' => true,
 

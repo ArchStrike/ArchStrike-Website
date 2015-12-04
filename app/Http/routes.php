@@ -62,7 +62,11 @@ Route::get('/team', function () {
 });
 
 Route::get('/wiki/{page?}', function ($page = 'index') {
-    Head::setTitle('Wiki');
+    if ($page == 'index') {
+        Head::setTitle('Wiki');
+    } else {
+        Head::setTitle('Wiki: ' . ucfirst($page));
+    }
 
     // return the requested wiki page or a 404 if it doesn't exist
     if (file_exists(base_path() . '/resources/views/markdown/wiki/' . $page . '.md.blade.php')) {
