@@ -19,11 +19,15 @@ Route::get('/', function () {
 });
 
 Route::get('/builder', function () {
+    Head::setTitle('Builder');
+
     return view('website.builder', ['buildlist' => Abs::getBuildList()]);
 });
 
 Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $arg = 1) {
     $perpage = 50; // number of packages per page
+
+    Head::setTitle('Packages');
 
     if (($pkgrequest == 'page') || (($pkgrequest == 'search') && ($arg === 1))) {
         return view('website.packages', [
@@ -52,10 +56,14 @@ Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $ar
 });
 
 Route::get('/team', function () {
+    Head::setTitle('Team');
+
     return view('website.team');
 });
 
 Route::get('/wiki/{page?}', function ($page = 'index') {
+    Head::setTitle('Wiki');
+
     // return the requested wiki page or a 404 if it doesn't exist
     if (file_exists(base_path() . '/resources/views/markdown/wiki/' . $page . '.md.blade.php')) {
         return view('website.wiki', ['page' => $page]);

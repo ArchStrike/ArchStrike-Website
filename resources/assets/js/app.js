@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // set nav item for the current page active
-    $('#navbar a[href="/' + SiteVars.page + '"]').parent().addClass('active');
+    $('#navbar a[href="/' + (SiteVars.page == 'builder' ? 'packages' : SiteVars.page) + '"]').parent().addClass('active');
 
     // enable the sticky footer
     $('footer').stickyFooter({

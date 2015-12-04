@@ -150,6 +150,7 @@ return [
         Radic\BladeExtensions\BladeExtensionsServiceProvider::class,
         Flatten\FlattenServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
+        Gwnobots\LaravelHead\LaravelHeadServiceProvider::class,
 
     ],
 

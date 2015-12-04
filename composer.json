@@ -10,7 +10,8 @@
         "radic/blade-extensions": "~6.0",
         "erusev/parsedown": "~1.5",
         "thujohn/twitter": "~2.0",
-        "anahkiasen/flatten": "^1.1"
+        "anahkiasen/flatten": "^1.1",
+        "gwnobots/laravel-head": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
