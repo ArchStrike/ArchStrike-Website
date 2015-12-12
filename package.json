@@ -1,11 +1,11 @@
 {
   "private": true,
   "devDependencies": {
-    "laravel-elixir-livereload": "git://github.com/prurigro/laravel-elixir-livereload"
+    "laravel-elixir-livereload": "^1.1.0"
   },
   "dependencies": {
     "gulp": "^3.9.0",
-    "laravel-elixir": "^4.1.0",
+    "laravel-elixir": "^3.4.0",
     "less-plugin-glob": "^1.1.1"
   }
 }
