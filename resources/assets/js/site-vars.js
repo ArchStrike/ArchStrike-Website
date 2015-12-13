@@ -1,3 +1,3 @@
 var SiteVars = {
-    page: location.href.replace(/https*:\/\/[^\/]*\//, '').replace(/(\/|#|\?).*/, '')
+    page: location.href.replace(/^[^:]*:\/\/[^\/]*\//, '').replace(/(\/|#|\?).*/, '')
 };
