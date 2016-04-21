@@ -1,4 +1,4 @@
 <footer>
     <div class="footer-left">ArchStrike</div>
-    <div class="footer-right">Copyright © 2015 The ArchStrike Team</div>
+    <div class="footer-right">Copyright © {{ date('Y') }} The ArchStrike Team</div>
 </footer>
