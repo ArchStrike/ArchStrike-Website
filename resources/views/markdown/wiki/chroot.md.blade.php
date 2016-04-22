@@ -8,4 +8,4 @@ Please refer to the Arch Wiki which has an amazing [entry](https://wiki.archlinu
 
 ## Configuring pacman and makepkg configs on your new chroot
 
-You will need to edit `makepkg.conf` and `pacman.conf` on your newly-built chroot. You can take the samples on our [github page] (https://github.com/ArchStrike/pacman-config/)
+You will need to edit `makepkg.conf` and `pacman.conf` on your newly-built chroot. You can take the samples on our [github page](https://github.com/ArchStrike/pacman-config/)
