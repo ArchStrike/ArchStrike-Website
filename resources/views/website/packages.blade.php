@@ -127,8 +127,8 @@
                         <tr>
                             <th>Sources:</th>
                             <td>
-                                <a href="https://github.com/ArchStrike/ArchStrike/blob/master/{{ $package->repo }}/{{ $package->package }}" target="_blank">Package Files</a> /
-                                <a href="https://github.com/ArchStrike/ArchStrike/blob/master/{{ $package->repo }}/{{ $package->package }}/PKGBUILD" target="_blank">PKGBUILD</a>
+                                <a href="https://github.com/ArchStrike/ArchStrike/blob/master/{{ $package->repo }}/{{ $package->package }}" target="_blank" rel="noopener noreferrer">Package Files</a> /
+                                <a href="https://github.com/ArchStrike/ArchStrike/blob/master/{{ $package->repo }}/{{ $package->package }}/PKGBUILD" target="_blank" rel="noopener noreferrer">PKGBUILD</a>
                             </td>
                         </tr>
                     </tbody>
