@@ -5,6 +5,7 @@
         <h1>ArchStrike Build Issues</h1>
         <p>Click on the build status to see the log, or view the complete list of logs <a class="logs" href="http://archstrike.org:81/in-log">here</a></p>
         <input id="package-filter" class="search" placeholder="Filter Packages" />
+
         <table>
             <thead>
                 <tr>
@@ -16,13 +17,14 @@
                     <th class="sort" data-sort="x86_64-sort">Status x86_64</th>
                 </tr>
             </thead>
+
             <tbody class="list">
                 @foreach($buildlist as $build)
                     <tr>
                         <td class="package"><a href="/packages/{{ $build['package'] }}" class="package-sort">{{ $build['package'] }}</a> <span class="version">{{ $build['pkgver'] }}-{{ $build['pkgrel'] }}</span></td>
                         <td class="repo package-status"><span class="label">Repository: </span><span class="repo-name repo-sort">{{ $build['repo'] }}</span></td>
 
-                        @foreach(['armv6', 'armv7', 'i686', 'x86_64'] as $index => $arch)
+                        @foreach([ 'armv6', 'armv7', 'i686', 'x86_64' ] as $index => $arch)
                             <td class="build-status package-status {{ strtolower($build[$arch]) }}">
                                 @if($build[$arch] != 'Skip' && !is_null($build[$arch . '_log']))
                                     <a href="https://logs.archstrike.org/{{ preg_replace('/\.gz$/', '', $build[$arch . '_log']) }}" target="_blank" rel="noopener noreferrer">
