@@ -8,8 +8,9 @@ Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentatio
 
 [Repositories](/wiki/repositories) - A rundown of each of the **ArchStrike** repositories.
 
-[Testing PKGBUILDs](/wiki/chroot) - A quick guide on putting together your chroot environment to test PKGBUILD files on.
 
 ## Guides
 
-[Metasploit](/wiki/msf) - A guide explaining the process of setting up the PostgreSQL database for Metasploit Framework on ArchStrike.
+[Configuring the database for MSF](/wiki/msf) - A guide explaining the process of setting up the PostgreSQL database for Metasploit Framework on Arch Linux.
+
+[Testing PKGBUILDs](/wiki/chroot) - A quick guide on putting together your chroot environment to test PKGBUILD files on.
