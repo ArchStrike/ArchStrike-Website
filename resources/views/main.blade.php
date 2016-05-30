@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         {!! Head::render() !!}
-        <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
-        <script src="{{ elixir('js/lib.js') }}"></script>
-        <script src="{{ elixir('js/app.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="/css/app.css">
+        <script src="/js/lib.js"></script>
+        <script src="/js/app.js"></script>
 
         @if (Config::get('app.debug'))
             <script type="text/javascript">
