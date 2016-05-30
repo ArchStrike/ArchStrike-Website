@@ -12,4 +12,4 @@ Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentatio
 
 ## Guides
 
-[Metasploit](/wiki/msf) - Information on getting metasploit setup
+[Metasploit](/wiki/msf) - A guide explaining the process of setting up the PostgreSQL database for Metasploit Framework on ArchStrike.
