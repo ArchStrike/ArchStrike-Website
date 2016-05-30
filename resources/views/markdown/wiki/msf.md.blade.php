@@ -66,7 +66,7 @@ Then source `msf.sh` or log out and back in to your system.
 source /etc/profile.d/msf.sh
 ```
 
-And finally start msfconsole. It will detect if `database.yml` exists and connect to the postgresql database.
+Finally start msfconsole. It will detect if `database.yml` exists and connect to the postgresql database.
 
 ```bash
 msfconsole
