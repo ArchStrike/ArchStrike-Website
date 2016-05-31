@@ -10,6 +10,9 @@
                     A security layer for <a href="https://www.archlinux.org" target="_blank" rel="noopener noreferrer">Arch Linux</a> done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a><br />
                     and optimized for i686, x86_64, ARMv6, and ARMv7
                 </div>
+		<div class="info">
+		    We follow the Arch Linux standarts very closely in order to keep our packages clean, proper and easy to maintain. Our team is working very hard to maintain the repository and give you the best ArchStrike experience. If you find any issues, please don't hesitate to contact us via github, IRC, twitter or email. Any feedback is appreciated.
+		</div>
             </div>
         </div>
 
