@@ -6,19 +6,13 @@
             <div class="intro-column">
                 <img src="/img/archstrike.svg" class="img-responsive home-logo" />
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-8 col-md-offset-2">
-                            <div class="intro">
-                                <p class="intro-description">
-                                    A security layer for <a href="https://www.archlinux.org" target="_blank" rel="noopener noreferrer">Arch Linux</a> done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a><br />
-                                    and optimized for i686, x86_64, ARMv6, and ARMv7
-                                </p>
+                <div class="intro">
+                    <p class="intro-description">
+                        A security layer for <a href="https://www.archlinux.org" target="_blank" rel="noopener noreferrer">Arch Linux</a> done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a><br />
+                        and optimized for i686, x86_64, ARMv6, and ARMv7
+                    </p>
 
-                                <p class="intro-information">We follow the Arch Linux standards closely in order to keep our packages clean, proper and easy to maintain. Our team works hard to maintain the repository and give the best ArchStrike experience. If you find any issues, please don't hesitate to contact us via GitHub, IRC, Twitter or email. Any feedback is appreciated.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="intro-information">We follow the Arch Linux standards closely in order to keep our packages clean, proper and easy to maintain. Our team works hard to maintain the repository and give the best ArchStrike experience. If you find any issues, please don't hesitate to contact us via GitHub, IRC, Twitter or email. Any feedback is appreciated.</p>
                 </div>
             </div>
         </div>
