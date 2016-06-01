@@ -53,6 +53,9 @@ trap 'error "script killed"' SIGINT SIGQUIT
 msg "Running: ${c_m}php artisan down"
 php artisan down
 
+msg "Updating cache busting variable"
+sed -i 's|^CACHE_BUST=.*|CACHE_BUST='"$(</dev/urandom tr -dc A-Za-z0-9 | head -c"${1:-32}")"'|' .env
+
 msg "Running: ${c_m}composer installl --no-dev"
 composer install --no-interaction --no-dev || error "${c_m}composer install --no-interaction --no-dev$c_w exited with an error status"
 

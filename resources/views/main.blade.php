@@ -3,9 +3,9 @@
     <head>
         {!! Head::render() !!}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="/css/app.css">
-        <script src="/js/lib.js"></script>
-        <script src="/js/app.js"></script>
+        <link rel="stylesheet" href="/css/app.css?version={{ env('CACHE_BUST') }}">
+        <script src="/js/lib.js?version={{ env('CACHE_BUST') }}"></script>
+        <script src="/js/app.js?version={{ env('CACHE_BUST') }}"></script>
 
         @if (Config::get('app.debug'))
             <script type="text/javascript">
