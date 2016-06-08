@@ -59,6 +59,11 @@ body.home {
                 .tweet-box-heading, .tweet {
                     padding: 10px;
                     font-size: 12px;
+
+                    @media (max-width: @screen-xs-max) {
+                        font-size: 14px;
+                        line-height: 24px;
+                    }
                 }
 
                 .tweet-box-heading {
@@ -84,6 +89,7 @@ body.home {
 
                     div {
                         padding-bottom: 5px;
+                        @media (max-width: @screen-xs-max) { padding-bottom: 10px; }
 
                         a {
                             text-decoration: none;
