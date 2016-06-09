@@ -8,6 +8,8 @@ Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentatio
 
 [Repositories](/wiki/repositories) - A rundown of each of the **ArchStrike** repositories.
 
+[Getting Involved](/wiki/contribution) - Information about getting involved in the project.
+
 
 ## Guides
 
