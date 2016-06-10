@@ -89,7 +89,7 @@ The list of ArchStrike groups available can be viewed by running:
 $ pacman -Sg | grep archstrike
 ```
 
-The list of a packages in a specific group can be viewed by running:
+The list of packages in a specific group can be viewed by running:
 
 ```bash
 $ pacman -Sgg | grep archstrike-<groupname>
