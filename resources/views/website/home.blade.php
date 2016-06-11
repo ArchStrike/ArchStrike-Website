@@ -8,7 +8,7 @@
 
                 <div class="intro">
                     <p class="intro-description">
-                        A security layer for <a href="https://www.archlinux.org" target="_blank" rel="noopener noreferrer">Arch Linux</a> done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a><br />
+                        An <a href="https://www.archlinux.org" target="_blank" rel="noopener noreferrer">Arch Linux</a> repository for security professionals and enthusiasts done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a><br />
                         and optimized for i686, x86_64, ARMv6, and ARMv7
                     </p>
 
