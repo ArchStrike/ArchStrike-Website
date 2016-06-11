@@ -1,6 +1,6 @@
 # Guide for getting involved in ArchStrike
 
-ArchStrike is a non-profit organization aiming to create a simple and clean penetration testing distribution for security researchers and enthusiasts. The project is being ran by volunteers. We are a small team, so we appreciate any kind of help being contributed. There are many ways you can contribute to ArchStrike. Here are just a few of them. 
+ArchStrike is a non-profit organization aiming to create a simple and clean penetration testing distribution for security researchers and enthusiasts. The project is being run by volunteers. We are a small team, so we appreciate any kind of help being contributed. There are many ways you can contribute to ArchStrike. Here are just a few of them. 
 
 
 ## Testing packages
