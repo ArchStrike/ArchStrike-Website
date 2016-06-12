@@ -79,5 +79,8 @@ h3 { font-size: 18px; }
 h4 { font-size: 16px; }
 h5 { font-size: 14px; }
 p { font-size: 14px; }
-
 .container { padding-bottom: 15px; }
+
+.no-mobile {
+    @media (max-width: @screen-sm-max) { display: none; }
+}
