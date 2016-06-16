@@ -20,7 +20,6 @@ Route::get('/', function () {
 
 Route::get('/builder', function () {
     Head::setTitle('Builder');
-
     return view('website.builder', ['buildlist' => Abs::getBuildList()]);
 });
 
@@ -40,7 +39,8 @@ Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $ar
         return view('website.packages', [
             'package' => true,
             'packages' => Abs::searchPackages($arg),
-            'pages' => 1
+            'pages' => 1,
+            'search_term' => $arg
         ]);
     } else if (Abs::exists($pkgrequest)) {
         $package = Abs::getPackage($pkgrequest);
@@ -57,7 +57,6 @@ Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $ar
 
 Route::get('/team', function () {
     Head::setTitle('Team');
-
     return view('website.team');
 });
 

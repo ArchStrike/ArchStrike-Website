@@ -20,18 +20,18 @@
                     <button type="button">Search</button>
                 </form>
 
-                <table class="packages-table">
-                    <thead>
-                        <tr>
-                            <th class="pcks-col">Package</th>
-                            <th class="vers-col">Version</th>
-                            <th class="desc-col">Description</th>
-                            <th class="repo-col">Repository</th>
-                        </tr>
-                    </thead>
+                @if(!empty($packages))
+                    <table class="packages-table">
+                        <thead>
+                            <tr>
+                                <th class="pcks-col">Package</th>
+                                <th class="vers-col">Version</th>
+                                <th class="desc-col">Description</th>
+                                <th class="repo-col">Repository</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        @if(!empty($packages))
+                        <tbody>
                             @foreach($packages as $package)
                                 @if(!empty($package['pkgdesc']))
                                     <tr>
@@ -42,9 +42,19 @@
                                     </tr>
                                 @endif
                             @endforeach
-                        @endif
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                @else
+                    <div class="empty-search-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p class="text-center">No packages found, try <a href="https://www.archlinux.org/packages/?sort=&q={{ $search_term }}" target="_blank">Archlinux Packages</a> or the <a href="https://aur.archlinux.org/packages/?O=0&K={{ $search_term }}" target="_blank">Archlinux AUR</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
 
                 @if($pages > 1)
                     <p class="page-list">
