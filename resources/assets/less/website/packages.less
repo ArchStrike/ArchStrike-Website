@@ -15,16 +15,21 @@ body.packages {
         }
 
         @media (max-width: (@screen-sm - 1)) {
-            input { width: calc(100% ~"-" 70px); }
+            input { width: calc(100% ~"-" 80px); }
         }
     }
 
     .empty-search-wrapper {
-        position: absolute;
-        top: calc(50% ~"+" (66px - @footer_height));
-        left: 0px;
-        transform: translateY(-50%);
-        width: 100%;
+        @media (max-height: 299px) { margin-top: 40px; }
+
+        @media (min-height: 300px) {
+            position: absolute;
+            top: calc(50% ~"+" (112px - @footer_height));
+            left: 0px;
+            transform: translateY(-50%);
+            width: 100%;
+        }
+
         p { font-size: 16px; }
     }
 
