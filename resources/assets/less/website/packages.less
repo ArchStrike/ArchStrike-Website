@@ -20,9 +20,19 @@ body.packages {
     }
 
     .empty-search-wrapper {
-        @media (max-height: 299px) { margin-top: 40px; }
+        @relative-height: 305px;
+        @relative-height-max: (@relative-height - 1px);
 
-        @media (min-height: 300px) {
+        @media (max-height: @relative-height-max) {
+            margin-top: 40px;
+
+            .container {
+                position: relative;
+                right: 15px;
+            }
+        }
+
+        @media (min-height: @relative-height) {
             position: absolute;
             top: calc(50% ~"+" (112px - @footer_height));
             left: 0px;
