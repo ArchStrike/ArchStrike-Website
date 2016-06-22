@@ -47,6 +47,38 @@ body.home {
         .feed-column {
             @media (min-width: @screen-sm) { float: right; }
 
+            .package-search {
+                margin-bottom: 13px;
+                width: @feed-width;
+                border-radius: 3px;
+                background-color: @c_dark_bg;
+
+                .package-search-wrapper {
+                    height: 46px;
+                    padding: 10px;
+
+                    div, input {
+                        height: 100%;
+                        line-height: 26px;
+                    }
+
+                    div {
+                        margin-left: 5px;
+                        display: inline-block;
+                        color: @c_light_text;
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+
+                    input {
+                        float: right;
+                        width: (@feed-width - 145px);
+                        padding: .10em;
+                        border: 1px solid darken(@c_dark_bg, 10%);
+                    }
+                }
+            }
+
             .tweet-box {
                 background-color: darken(@c_light_bg, 10%);
                 border: 1px solid darken(@c_light_bg, 15%);

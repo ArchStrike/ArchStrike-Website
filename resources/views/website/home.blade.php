@@ -18,6 +18,12 @@
         </div>
 
         <div class="feed-column">
+            <form id="package-search" class="package-search">
+                <div class="package-search-wrapper">
+                    <div>Package Search:</div><input placeholder="" />
+                </div>
+            </form>
+
             <div class="tweet-box">
                 <div class="tweet-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
 
