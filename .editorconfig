@@ -1,0 +1,17 @@
+root = true
+
+# All
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript, LESS, PHP and Shell
+[*.{js,less,php,sh}]
+indent_size = 4
+
+# JSON
+[*.json]
+indent_size = 2
