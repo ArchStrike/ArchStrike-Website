@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "be1e7b4ffa29cab41367353ff8a9ac31",
-    "content-hash": "76ece3a01334ce0f73b937bd95220b18",
+    "hash": "1aa7da1c6d5e86211ee68a4208620841",
+    "content-hash": "c04347cb0341864fe03751761d81999c",
     "packages": [
         {
             "name": "anahkiasen/flatten",

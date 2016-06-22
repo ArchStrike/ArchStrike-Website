@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "radic/blade-extensions": "~6.0",
+        "radic/blade-extensions": "^6.2",
         "erusev/parsedown": "~1.5",
         "thujohn/twitter": "~2.0",
         "anahkiasen/flatten": "^1.1",
