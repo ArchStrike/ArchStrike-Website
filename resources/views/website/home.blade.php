@@ -54,9 +54,9 @@
                 </div>
 
                 <div class="contact-social">
-                    <a href="https://github.com/ArchStrike" title="ArchStrike Github" target="_blank" rel="noopener noreferrer"><img src="/img/gh-logo.png" /></a>
-                    <a href="https://twitter.com/ArchStrike" title="ArchStrike Twitter" target="_blank" rel="noopener noreferrer"><img src="/img/tw-logo.png" /></a>
-                    <a href="mailto:team@archstrike.org" title="ArchStrike Email"><img src="/img/em-logo.png" /></a>
+                    <a href="https://github.com/ArchStrike" title="ArchStrike Github" target="_blank" rel="noopener noreferrer"><img src="/img/social/github.svg" /></a>
+                    <a href="https://twitter.com/ArchStrike" title="ArchStrike Twitter" target="_blank" rel="noopener noreferrer"><img src="/img/social/twitter.svg" /></a>
+                    <a href="mailto:team@archstrike.org" title="ArchStrike Email"><img src="/img/social/email.svg" /></a>
                 </div>
 
                 <h3 class="contact-irc">#archstrike @ irc.freenode.net</h3>
