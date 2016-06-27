@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="https://archstrike.org/favicon.ico" />
         <link rel="stylesheet" href="/css/app.css">
     </head>
+
     <body>
         <div id="page-content">
             <div class="container page-container">

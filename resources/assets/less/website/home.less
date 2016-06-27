@@ -149,18 +149,22 @@ body.home {
                 width: @feed-width;
                 border-radius: 3px;
                 background-color: @c_dark_bg;
+                text-align: left;
 
                 @media (max-width: @screen-xs-max) {
                     position: static;
                     width: auto;
                     margin-top: 25px;
-                    text-align: left;
                 }
 
                 .package-search-wrapper {
                     height: 46px;
                     padding: 10px;
-                    @media (max-width: @screen-xs-max) { height: auto; }
+
+                    @media (max-width: @screen-xs-max) {
+                        height: auto;
+                        padding-top: 5px;
+                    }
 
                     div, input {
                         height: 100%;
@@ -168,12 +172,12 @@ body.home {
                     }
 
                     div {
-                        margin-left: 5px;
                         display: inline-block;
                         color: @c_light_text;
                         font-size: 12px;
                         font-weight: bold;
                         @media (max-width: @screen-xs-max) { width: 100%; }
+                        @media (min-width: @screen-sm-min) { margin-left: 5px; }
                     }
 
                     input {
