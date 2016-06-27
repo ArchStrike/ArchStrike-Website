@@ -15,10 +15,10 @@
     </head>
     <body class="{{ Request::path() == '/' ? 'home' : preg_replace('/\/.*/', '', Request::path()) }}">
         <div id="page-content">
-            @include('elements.nav')
+            @include('sections.nav')
             @yield('page')
         </div>
 
-        @include('elements.footer')
+        @include('sections.footer')
     </body>
 </html>
