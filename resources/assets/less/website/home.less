@@ -39,6 +39,7 @@ body.home {
 
                     .info-logo {
                         width: 100%;
+                        img { margin-bottom: 10px; }
 
                         @media (min-width: @logo-break) {
                             position: absolute;
@@ -83,7 +84,26 @@ body.home {
                     padding-top: 8px;
                     border-top: 1px solid @c_dark_bg;
                     font-size: 12px;
-                    p:last-child { margin-bottom: 3px; }
+
+                    .social-links {
+                        @icon-size: 28px;
+                        margin-bottom: 0px;
+                        height: @icon-size;
+
+                        .social-icon {
+                            margin-right: 10px;
+                            display: inline-block;
+                            width: @icon-size;
+                            height: @icon-size;
+                            background-size: contain;
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                            &.github { background-image: url("/img/social/github-black.svg"); }
+                            &.twitter { background-image: url("/img/social/twitter-black.svg"); }
+                            &.email { background-image: url("/img/social/email-black.svg"); }
+                            &.irc { background-image: url("/img/social/irc-black.svg"); }
+                        }
+                    }
                 }
             }
 
