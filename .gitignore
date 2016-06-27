@@ -1,6 +1,7 @@
 /vendor
 /node_modules
 /bower_components
+/resources/views/news
 /public/css
 /public/js
 /public/fonts
