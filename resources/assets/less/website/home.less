@@ -39,6 +39,9 @@ body.home {
 
                     .info-logo {
                         width: 100%;
+                        border: 0;
+                        margin: 0px;
+                        padding: 0px;
                         img { margin-bottom: 10px; }
 
                         @media (min-width: @logo-break) {
@@ -135,13 +138,17 @@ body.home {
                 }
 
                 .news-item {
+                    &:not(:last-child) { margin-bottom: 20px; }
+                    h2 { margin-top: 0px; }
+
                     .news-heading {
                         position: relative;
                         border-bottom: 1px dotted lighten(@c_dark_text, 50%);
 
                         .news-title {
+                            margin-bottom: 5px;
                             padding-right: 75px;
-                            color: lighten(@c_dark_text, 40%);
+                            color: @c_red;
                             font-size: 13px;
                             font-weight: bold;
                         }
@@ -156,7 +163,17 @@ body.home {
 
                     .news-body {
                         margin-top: 5px;
-                        font-size: 13px;
+                        h1 { font-size: 17px; }
+                        h2 { font-size: 15px; }
+                        &, h3 { font-size: 13px; }
+
+                        h1, h2, h3 {
+                            margin: 5px 0px;
+                            padding-bottom: 5px;
+                            border-bottom: 1px dotted lighten(@c_dark_text, 75%);
+                        }
+
+                        ul, ol { padding-left: 20px; }
                     }
                 }
             }

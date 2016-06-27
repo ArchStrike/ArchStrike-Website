@@ -6,7 +6,7 @@
             <div class="info-column">
                 <div class="info">
                     <div class="info-heading-wrapper">
-                        <div class="info-logo"><img src="/img/archstrike.svg" class="img-responsive" /></div>
+                        <h1 class="info-logo"><img src="/img/archstrike.svg" alt="ArchStrike" class="img-responsive" /></h1>
                         <div class="info-heading">An <a href="https://www.archlinux.org" target="_blank" rel="noopener noreferrer">Arch Linux</a> repository for security professionals and enthusiasts</div>
                     </div>
 
@@ -19,17 +19,9 @@
 
                 <div class="news">
                     <div class="news-logo">Latest News</div>
-
-                    <div class="news-item">
-                        <div class="news-heading">
-                            <div class="news-title">This is a sample news heading describing a story</div>
-                            <div class="news-date">2016-06-26</div>
-                        </div>
-
-                        <div class="news-body">
-                            This is a news post
-                        </div>
-                    </div>
+                    @foreach($news_items as $news_item)
+                        @include('news.' . $news_item, [ 'include' => 'elements.news-item' ])
+                    @endforeach
                 </div>
             </div>
 
@@ -43,8 +35,8 @@
                 <div class="sidebar-box">
                     <div class="sidebar-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
 
-                    @cache('twitter', 4)
-                        @foreach(Twitter::getUserTimeline([ 'screen_name' => 'ArchStrike', 'count' => 5, 'format' => 'object' ]) as $tweet)
+                    @cache('twitter', 5)
+                        @foreach(Twitter::getUserTimeline([ 'screen_name' => 'ArchStrike', 'count' => 4, 'format' => 'object' ]) as $tweet)
                             <div class="tweet">
                                 <div><a href="{!! Twitter::linkTweet($tweet) !!}" target="_blank" rel="noopener noreferrer">ArchStrike</a> <span>{{ Twitter::ago($tweet->created_at) }}</span></div>
                                 {!! Twitter::linkify($tweet->text) !!}

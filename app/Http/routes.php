@@ -15,12 +15,23 @@ use App\Abs;
 use App\Files;
 
 Route::get('/', function () {
-    return view('website.home');
+    $news_item_blades = glob(base_path() . '/resources/views/news/*.blade.php');
+    $news_items = [];
+
+    foreach (array_reverse($news_item_blades) as $index => $news_item) {
+        if ($index <= 4) {
+            array_push($news_items, preg_replace([ '/^.*\//', '/\.blade\.php$/' ], [ '', '' ], $news_item));
+        } else {
+            break;
+        }
+    }
+
+    return view('website.home', [ 'news_items' => $news_items ]);
 });
 
 Route::get('/builder', function () {
     Head::setTitle('Builder');
-    return view('website.builder', ['buildlist' => Abs::getBuildList()]);
+    return view('website.builder', [ 'buildlist' => Abs::getBuildList() ]);
 });
 
 Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $arg = 1) {
@@ -51,7 +62,7 @@ Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $ar
             'pkgdesc' => Files::getDescription($pkgrequest)
         ]);
     } else {
-        return view('website.packages', ['package' => false]);
+        return view('website.packages', [ 'package' => false ]);
     }
 });
 
@@ -69,7 +80,7 @@ Route::get('/wiki/{page?}', function ($page = 'index') {
 
     // return the requested wiki page or a 404 if it doesn't exist
     if (file_exists(base_path() . '/resources/views/markdown/wiki/' . $page . '.md.blade.php')) {
-        return view('website.wiki', ['page' => $page]);
+        return view('website.wiki', [ 'page' => $page ]);
     } else {
         abort(404);
     }
