@@ -1,5 +1,6 @@
 body.home {
     @feed-width: 300px;
+    #page-content .page-container .page-wrapper { padding-bottom: 0px; }
 
     .page-container {
         position: relative;
@@ -67,7 +68,7 @@ body.home {
                         margin: 2px 0px;
                         font-size: 18px;
                         font-weight: bold;
-                        line-height: 18px;
+                        line-height: 20px;
                         a { text-decoration: none; }
 
                         span {
@@ -141,11 +142,10 @@ body.home {
             }
         }
 
-        .feed-column {
+        .sidebar {
             @media (min-width: @screen-sm-min) { float: right; }
 
             .package-search {
-                margin-bottom: 13px;
                 width: @feed-width;
                 border-radius: 3px;
                 background-color: @c_dark_bg;
@@ -194,7 +194,8 @@ body.home {
                 }
             }
 
-            .tweet-box {
+            .sidebar-box {
+                margin-top: 13px;
                 background-color: darken(@c_light_bg, 10%);
                 border: 1px solid darken(@c_light_bg, 15%);
                 border-radius: 3px;
@@ -205,7 +206,7 @@ body.home {
                     width: auto;
                 }
 
-                .tweet-box-heading, .tweet {
+                .sidebar-box-heading, .tweet {
                     padding: 10px;
                     font-size: 12px;
 
@@ -215,7 +216,7 @@ body.home {
                     }
                 }
 
-                .tweet-box-heading {
+                .sidebar-box-heading {
                     position: relative;
                     right: 1px;
                     width: calc(100% ~"+" 2px);
@@ -224,7 +225,7 @@ body.home {
                     border-top-left-radius: 3px;
                     border-top-right-radius: 3px;
 
-                    a {
+                    &, a {
                         color: @c_light_text;
                         text-decoration: none;
                         &:hover { text-decoration: underline; }
@@ -255,26 +256,9 @@ body.home {
                 }
             }
 
-            .contact-social {
-                margin: 25px auto;
-                width: fit-content;
-                height: 32px;
-
-                a {
-                    position: relative;
-                    display: inline-block;
-                    padding-left: 25px;
-                    padding-right: 25px;
-                    &:first-child { left: 15px; }
-                    &:last-child { right: 15px; }
-                    img { width: 32px; height: 32px; }
-                }
-            }
-
-            .contact-irc {
-                margin-bottom: 0px;
-                text-align: center;
-                font-size: 14px;
+            .sponsors img {
+                margin: 8px auto;
+                max-height: 45px;
             }
         }
     }

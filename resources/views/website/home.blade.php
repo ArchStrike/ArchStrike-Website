@@ -13,7 +13,7 @@
                     <div class="info-body">
                         <p>Done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a> and optimized for i686, x86_64, ARMv6, and ARMv7</p>
                         <p>We follow the Arch Linux standards closely in order to keep our packages clean, proper and easy to maintain. Our team works hard to maintain the repository and give the best ArchStrike experience. If you find any issues, please don't hesitate to contact us via GitHub, IRC, Twitter or email. Any feedback is appreciated.</p>
-                        <p>Sponsored by: <a href="https://www.linode.com/?utm_source=referral&utm_medium=website&utm_content=Archstrike&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Linode</a></p>
+                        <p>Find us on IRC @ <a href="irc://chat.freenode.net/archstrike">#archstrike on freenode</a></p>
                     </div>
                 </div>
 
@@ -33,17 +33,17 @@
                 </div>
             </div>
 
-            <div class="feed-column">
+            <div class="sidebar">
                 <form id="package-search" class="package-search">
                     <div class="package-search-wrapper">
                         <div>Package Search:</div><input placeholder="" />
                     </div>
                 </form>
 
-                <div class="tweet-box">
-                    <div class="tweet-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
+                <div class="sidebar-box">
+                    <div class="sidebar-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
 
-                    @cache('twitter', 5)
+                    @cache('twitter', 4)
                         @foreach(Twitter::getUserTimeline([ 'screen_name' => 'ArchStrike', 'count' => 5, 'format' => 'object' ]) as $tweet)
                             <div class="tweet">
                                 <div><a href="{!! Twitter::linkTweet($tweet) !!}" target="_blank" rel="noopener noreferrer">ArchStrike</a> <span>{{ Twitter::ago($tweet->created_at) }}</span></div>
@@ -53,13 +53,10 @@
                     @endcache
                 </div>
 
-                <div class="contact-social">
-                    <a href="https://github.com/ArchStrike" title="ArchStrike Github" target="_blank" rel="noopener noreferrer"><img src="/img/social/github.svg" /></a>
-                    <a href="https://twitter.com/ArchStrike" title="ArchStrike Twitter" target="_blank" rel="noopener noreferrer"><img src="/img/social/twitter.svg" /></a>
-                    <a href="mailto:team@archstrike.org" title="ArchStrike Email"><img src="/img/social/email.svg" /></a>
+                <div class="sidebar-box sponsors">
+                    <div class="sidebar-box-heading">Our Sponsors</div>
+                    <div class="item"><a href="https://www.linode.com/?utm_source=referral&utm_medium=website&utm_content=Archstrike&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/linode.svg" class="img-responsive" /></a></div>
                 </div>
-
-                <h3 class="contact-irc">#archstrike @ irc.freenode.net</h3>
             </div>
         </div>
     </div>

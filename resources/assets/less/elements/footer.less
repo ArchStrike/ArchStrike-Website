@@ -2,27 +2,33 @@ footer {
     .font-blogger;
     width: 100%;
     height: @footer_height;
-    padding: 1px 15px 0px 15px;
+    padding: 2px 15px 0px 15px;
     font-size: 12px;
     background-color: @c_dark_bg;
     color: @c_light_text;
+
+    a {
+        position: relative;
+        top: 4px;
+        margin-left: 8px;
+        display: inline-block;
+        width: (@footer_height - 10px);
+        height: (@footer_height - 10px);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        &.github { background-image: url("/img/social/github.svg"); }
+        &.twitter { background-image: url("/img/social/twitter.svg"); }
+        &.email { background-image: url("/img/social/email.svg"); }
+    }
 
     &.sticky-footer {
         position: absolute;
         bottom: 0px;
     }
 
-    .footer-left {
-        float: left;
-
-        @media (min-width: 385px) {
-            &:after {
-                content: "\00a0Security Layer";
-                display: inline-block;
-            }
-        }
-    }
-
+    .footer-left { float: left; }
     .footer-right { float: right; }
-    .footer-left, .footer-right { line-height: (@footer_height - 1px); }
+    .footer-left { line-height: (@footer_height - 2px); }
 }
