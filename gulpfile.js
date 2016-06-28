@@ -8,7 +8,6 @@ const gulp = require("gulp"),
     gPostCSS = require("gulp-postcss"),
     autoprefixer = require("autoprefixer"),
     lessGlob = require("less-plugin-glob"),
-    lessAutoPrefix = require("less-plugin-autoprefix"),
     lessCleanCSS = require("less-plugin-clean-css");
 
 // determine if gulp has been run with --production
