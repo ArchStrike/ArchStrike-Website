@@ -1,15 +1,15 @@
 body.team {
     .team-list {
-        padding-left: 35px;
-        padding-right: 35px;
+        margin-top: 35px;
 
         .member-row {
+            margin: auto;
+            width: 100%;
+            max-width: 473px;
             padding-top: 20px;
 
             .profile-picture {
-                position: absolute;
-                top: 5px;
-                left: 35px;
+                margin: 5px auto;
                 width: 128px;
                 height: 128px;
                 background-size: cover;
@@ -18,8 +18,9 @@ body.team {
             }
 
             .profile-info {
+                display: inline-block;
                 min-height: 160px;
-                padding: 10px 20px 20px 165px;
+                padding: 10px 0px;
                 p { margin-left: 18px; }
                 code { color: @c_brand; }
 
@@ -30,26 +31,14 @@ body.team {
                 }
             }
 
-            &:not(:last-child) .profile-info { border-bottom: 1px solid #bbb; }
         }
+    }
 
-        @media (max-width: (@screen-sm - 1)) {
-            padding-left: 10px;
-            padding-right: 10px;
+    .column {
+        &:not(:last-child) .profile-info { border-bottom: 1px solid #bbb; }
 
-            .column {
-                padding: 0px;
-
-                .profile-picture {
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-
-                .profile-info {
-                    padding: 6px 0px;
-                    margin-top: 150px;
-                }
-            }
+        @media (min-width: @screen-md-min) {
+            &:nth-last-child(2) .profile-info { border: 0; }
         }
     }
 }
