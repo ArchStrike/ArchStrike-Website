@@ -64,7 +64,7 @@ The command didn't change much.
 ## Example hash types
 
 ```
-0 = MD5
+ 0 = MD5
  10 = md5($pass.$salt)
  20 = md5($salt.$pass)
  30 = md5(unicode($pass).$salt)
