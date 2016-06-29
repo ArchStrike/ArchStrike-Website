@@ -24,6 +24,8 @@ For cudahashcat to work, you need the cuda driver and runtime libraries.
 
 will install cudahashcat from the ArchStrike repositories. After that, you can check out [their wiki](https://hashcat.net/wiki/) for more info about usage.
 
+Some examples will be explained below.
+
 ## Example usage
 
 For example, if I wanted to run a dictionary attack on an NTLM hash using cudahashcat, I would do this:
@@ -43,6 +45,8 @@ cudahashcat: That's the name of the package
 /path/to/dictionary: Is the location of our dictionary file. Can be obtained on various sources around the internet. An archstrike-wordlists package might be in the works soon. 
 ```
 
+Here you can get [bkhive](https://archstrike.org/packages/bkhive) and [samdump2](https://archstrike.org/packages/samdump2).
+
 Another example, if I wanted to run a mask attack on an NTLM hash, I would do this:
 
 ```bash
@@ -54,7 +58,7 @@ The command didn't change much.
 ```
 -a 3: Tells hashcat we want to do a mask attack
 
-/path/to/mask: Is the location of our mask file. ([more info on hashcat wiki](https://hashcat.net))
+/path/to/mask: Is the location of our mask file. (more info on hashcat.net about attack types)
 ```
 
 ## Example hash types
