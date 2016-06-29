@@ -4,4 +4,4 @@
 
 **github**: [https://github.com/xorond](https://github.com/xorond)
 
-**pgp fingerprint**: `F298 2C7A 1270 D374 73EF  0444 CA43 8D35 D819 47C0`
+**pgp**: `F298 2C7A 1270 D374 73EF  0444 CA43 8D35 D819 47C0`
