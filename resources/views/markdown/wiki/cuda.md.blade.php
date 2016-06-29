@@ -33,6 +33,7 @@ For example, if I wanted to run a dictionary attack on an NTLM hash using cudaha
 ```
 
 To break it down:
+```
 cudahashcat: That's the name of the package
 
 -m 1000: Tells cudahashcat what kind of hash we are cracking. So for example I used 1000 on this attack because it was NTLM. Example hash types will be given in the end of this entry.
@@ -40,6 +41,7 @@ cudahashcat: That's the name of the package
 /path/to/hash: Giving the location of our hash on disk. This can be a hash obtained from a SAM dump (with bkhive or samdump2 maybe, both in our repositories) or a standalone hash in a file.
 
 /path/to/dictionary: Is the location of our dictionary file. Can be obtained on various sources around the internet. An archstrike-wordlists package might be in the works soon. 
+```
 
 Another example, if I wanted to run a mask attack on an NTLM hash, I would do this:
 
@@ -49,9 +51,11 @@ Another example, if I wanted to run a mask attack on an NTLM hash, I would do th
 
 The command didn't change much.
 
+```
 -a 3: Tells hashcat we want to do a mask attack
 
 /path/to/mask: Is the location of our mask file. ([more info on hashcat wiki](https://hashcat.net))
+```
 
 ## Example hash types
 
