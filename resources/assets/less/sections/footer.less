@@ -28,7 +28,13 @@ footer {
         bottom: 0px;
     }
 
-    .footer-left { float: left; }
-    .footer-right { float: right; }
-    .footer-left { line-height: (@footer_height - 2px); }
+    .footer-left {
+        float: left;
+        line-height: (@footer_height - 2px);
+    }
+
+    .footer-right {
+        float: right;
+        user-select: none;
+    }
 }
