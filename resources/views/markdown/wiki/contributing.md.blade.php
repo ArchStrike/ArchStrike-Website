@@ -11,9 +11,10 @@
   * Update the checksums if external files have been added or modified.
   * Is the package only for specific architectures?  Set the `buildarch` variable (see below for buildarch examples)
 
-**Pull requests that fail to meet these requirements may be summarily closed without response.**
+**Note**: Pull requests that fail to meet these requirements may be summarily closed without response.
 
 ## Submitting new packages
+
 * If the pull request is for a new package, review the [README](https://github.com/ArchStrike/ArchStrike/README.md) to ensure the package is going into the correct repository and meets all the stated requirements.
 
 To make sure the `buildarch` variable is correct on your submitted package, please see below.
@@ -33,6 +34,7 @@ To make sure the `buildarch` variable is correct on your submitted package, plea
 Please note however, that using 1 and 220 is not interchangable. A `buildarch` of 1 means the package has no differences when installing between arches so the same package will be used for all arches, however a `buildarch` of 220 means the package will be built differently for every arch thus having a different package file for each one of them.
 
 ## Updating existing packages
+
 * If you changed the PKGBUILD or related files, detail your changes in the comment header at the top. Review the packages in this repository for examples of what this looks like.
 
 * If you are updating an existing package, you need to change the `pkgver` and `pkgrel` variables accordingly.
@@ -42,4 +44,3 @@ Please note however, that using 1 and 220 is not interchangable. A `buildarch` o
 * If it is not a new version but a different update such as changing something in the PKGBUILD that will effect the build process of the package, bump the `pkgrel` number by 1 and keep `pkgver` the same.
 
 * Ensure that `buildarch` is set correctly (see above).
-

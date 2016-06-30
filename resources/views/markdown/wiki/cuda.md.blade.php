@@ -8,9 +8,9 @@ To install CUDA you first need the proprietary NVIDIA driver for your GPU.
 
 For more info about installing that, [check out this link to Arch Wiki](https://wiki.archlinux.org/index.php/NVIDIA#Installation)
 
-It is a step-by-step guide for installing the driver with necessary instructions. 
+It is a step-by-step guide for installing the driver with necessary instructions.
 
-## Installing CUDA 
+## Installing CUDA
 
 For cudahashcat to work, you need the cuda driver and runtime libraries.
 
@@ -35,6 +35,7 @@ For example, if I wanted to run a dictionary attack on an NTLM hash using cudaha
 ```
 
 To break it down:
+
 ```
 cudahashcat: That's the name of the package
 
@@ -42,7 +43,7 @@ cudahashcat: That's the name of the package
 
 /path/to/hash: Giving the location of our hash on disk. This can be a hash obtained from a SAM dump (with bkhive or samdump2 maybe, both in our repositories) or a standalone hash in a file.
 
-/path/to/dictionary: Is the location of our dictionary file. Can be obtained on various sources around the internet. An archstrike-wordlists package might be in the works soon. 
+/path/to/dictionary: Is the location of our dictionary file. Can be obtained on various sources around the internet. An archstrike-wordlists package might be in the works soon.
 ```
 
 Here you can get [bkhive](https://archstrike.org/packages/bkhive) and [samdump2](https://archstrike.org/packages/samdump2).
