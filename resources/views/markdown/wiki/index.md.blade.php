@@ -10,7 +10,7 @@ Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentatio
 
 [Getting Involved](/wiki/getinvolved) - Information about getting involved in the project.
 
-[Contribution Details](/wiki/contribution) - Details explaining Pull Requests on GitHub.
+[Contribution Details](/wiki/contributing) - Details explaining Pull Requests on GitHub.
 
 
 ## Guides
