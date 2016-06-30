@@ -117,7 +117,6 @@ body.home {
 
                 .news-logo, .complete-news-link {
                     position: relative;
-                    margin-bottom: 15px;
                     display: inline-block;
                     padding: 3px 8px;
                     background-color: @c_dark_bg;
@@ -131,6 +130,7 @@ body.home {
 
                 .news-logo {
                     margin-top: 15px;
+                    margin-bottom: 15px;
 
                     &:after {
                         @size: 6px;
@@ -279,8 +279,9 @@ body.home {
                     &, a {
                         color: @c_light_text;
                         text-decoration: none;
-                        &:hover { text-decoration: underline; }
                     }
+
+                    a:hover { text-decoration: underline; }
                 }
 
                 .tweet {
