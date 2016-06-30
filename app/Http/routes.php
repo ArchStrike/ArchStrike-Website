@@ -29,6 +29,28 @@ Route::get('/', function () {
     return view('website.home', [ 'news_items' => $news_items ]);
 });
 
+Route::get('/news/{news_item?}', function($news_item = 'index') {
+    if ($news_item == 'index') {
+        $news_item_blades = glob(base_path() . '/resources/views/news/*.blade.php');
+        $news_items = [];
+
+        Head::setTitle('News');
+
+        foreach (array_reverse($news_item_blades) as $index => $news_item) {
+            array_push($news_items, preg_replace([ '/^.*\//', '/\.blade\.php$/' ], [ '', '' ], $news_item));
+        }
+
+        return view('website.news', [
+            'news_item' => 'index',
+            'news_items' => $news_items
+        ]);
+    } else if (file_exists(base_path() . '/resources/views/news/' . $news_item . '.blade.php')) {
+        return view('website.news', [ 'news_item' => $news_item ]);
+    } else {
+        abort(404);
+    }
+});
+
 Route::get('/builder', function () {
     Head::setTitle('Builder');
     return view('website.builder', [ 'buildlist' => Abs::getBuildList() ]);

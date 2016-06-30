@@ -1,0 +1,89 @@
+body.news {
+    .page-container {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        padding: 0px 15px 15px 15px;
+    }
+
+    .news-page-container {
+        padding: 5px 10px;
+        border: 1px solid darken(@c_light_bg, 15%);
+        border-radius: 3px;
+        background-color: darken(@c_light_bg, 10%);
+        h1 { margin-top: 5px; }
+    }
+
+    .news {
+        margin-top: 10px;
+        padding-right: 5px;
+
+        .news-logo {
+            position: relative;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: @c_dark_bg;
+            color: @c_light_text;
+            font-weight: bold;
+
+            &:after {
+                @size: 6px;
+                content: "";
+                position: absolute;
+                bottom: (0px - @size);
+                left: calc(50% ~"-" @size);
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: @size @size 0 @size;
+                border-color: @c_dark_bg transparent transparent transparent;
+            }
+        }
+
+        .news-item {
+            &:not(:last-child) { margin-bottom: 20px; }
+            h2 { margin-top: 0px; }
+
+            .news-heading {
+                position: relative;
+                border-bottom: 1px dotted lighten(@c_dark_text, 50%);
+
+                .news-title {
+                    margin-bottom: 5px;
+                    padding-right: 75px;
+                    color: @c_red;
+                    font-size: 13px;
+                    font-weight: bold;
+
+                    a {
+                        text-decoration: none;
+                        &:hover { text-decoration: underline; }
+                    }
+                }
+
+                .news-date {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    font-size: 12px;
+                }
+            }
+
+            .news-body {
+                margin-top: 5px;
+                h1 { font-size: 17px; }
+                h2 { font-size: 15px; }
+                &, h3 { font-size: 13px; }
+
+                h1, h2, h3 {
+                    margin: 5px 0px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px dotted lighten(@c_dark_text, 75%);
+                }
+
+                ul, ol { padding-left: 20px; }
+            }
+        }
+    }
+}

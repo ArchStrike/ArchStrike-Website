@@ -115,14 +115,22 @@ body.home {
                 margin-top: 10px;
                 padding-right: 5px;
 
-                .news-logo {
+                .news-logo, .complete-news-link {
                     position: relative;
-                    margin: 15px 0px;
+                    margin-bottom: 15px;
                     display: inline-block;
                     padding: 3px 8px;
                     background-color: @c_dark_bg;
-                    color: @c_light_text;
-                    font-weight: bold;
+
+                    &, a {
+                        color: @c_light_text;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+
+                .news-logo {
+                    margin-top: 15px;
 
                     &:after {
                         @size: 6px;
@@ -152,6 +160,11 @@ body.home {
                             color: @c_red;
                             font-size: 13px;
                             font-weight: bold;
+
+                            a {
+                                text-decoration: none;
+                                &:hover { text-decoration: underline; }
+                            }
                         }
 
                         .news-date {

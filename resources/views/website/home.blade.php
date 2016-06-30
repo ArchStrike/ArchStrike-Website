@@ -19,9 +19,12 @@
 
                 <div class="news">
                     <div class="news-logo">Latest News</div>
+
                     @foreach($news_items as $news_item)
                         @include('news.' . $news_item, [ 'include' => 'elements.news-item' ])
                     @endforeach
+
+                    <div class="complete-news-link"><a href="/news">Complete News History</a></div>
                 </div>
             </div>
 
