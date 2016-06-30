@@ -12,6 +12,11 @@ body.news {
         border-radius: 3px;
         background-color: darken(@c_light_bg, 10%);
         h1 { margin-top: 5px; }
+
+        .news-date {
+            margin-bottom: 12px;
+            font-size: 11px;
+        }
     }
 
     .news {
@@ -71,19 +76,23 @@ body.news {
             }
 
             .news-body {
-                margin-top: 5px;
-                h1 { font-size: 17px; }
-                h2 { font-size: 15px; }
-                &, h3 { font-size: 13px; }
-
-                h1, h2, h3 {
-                    margin: 5px 0px;
-                    padding-bottom: 5px;
-                    border-bottom: 1px dotted lighten(@c_dark_text, 75%);
-                }
-
-                ul, ol { padding-left: 20px; }
+                h1, h2, h3 { border-bottom: 1px dotted lighten(@c_dark_text, 75%); }
             }
         }
+    }
+
+    .news-body {
+        margin-top: 5px;
+        h1 { font-size: 17px; }
+        h2 { font-size: 15px; }
+        &, h3 { font-size: 13px; }
+
+        h1, h2, h3 {
+            margin: 5px 0px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted lighten(@c_dark_text, 50%);
+        }
+
+        ul, ol { padding-left: 20px; }
     }
 }

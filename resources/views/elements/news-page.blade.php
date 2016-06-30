@@ -1,4 +1,4 @@
 {{ Head::setTitle('News: ' . $title) }}
-<h1>{{ $title }}</h1>
-<div class="date">{{ $date }}</div>
-<p>{!! Parsedown::instance()->setMarkupEscaped(true)->parse($body) !!}</p>
+<h1 class="news-title">{{ $title }}</h1>
+<div class="news-date">{{ $date }}</div>
+<div class="news-body">{!! Parsedown::instance()->setMarkupEscaped(true)->parse($body) !!}</div>
