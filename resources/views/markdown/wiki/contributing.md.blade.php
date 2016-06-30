@@ -9,7 +9,7 @@
 * Ensure your PR addresses three of the most common problems:
   * Correctly update the pkgver or pkgrel of the package (see below).
   * Update the checksums if external files have been added or modified.
-  * Is the package only for specific architectures?  Set the `buildarch` variable (see [the README](https://github.com/archlinuxarm/PKGBUILDs/blob/master/README.md))
+  * Is the package only for specific architectures?  Set the `buildarch` variable (see below for buildarch examples)
 
 **Pull requests that fail to meet these requirements may be summarily closed without response.**
 
