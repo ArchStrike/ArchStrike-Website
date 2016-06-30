@@ -19,5 +19,5 @@ You can notify us via our github [issue tracker](https://github.com/ArchStrike/A
 
 Submitting PKGBUILDs is a good way of helping out. The packages that fail to build can be seen on our [build issues page](https://archstrike.org/builder) and are prioritised for fixing. You can also create new PKGBUILDs for new tools that you want to see added in our repositories. If you are a developer, we are usually more then happy to add in new packages so you can submit them this way.
 
-You can find a more detailed guide about this on our [wiki entry](https://archstrike.org/wiki/chroot).
+You can find a more detailed guide about this on our [wiki entry](https://archstrike.org/wiki/chroot) and also more details on the [contribution details page](https://archstrike.org/wiki/contribution).
 
