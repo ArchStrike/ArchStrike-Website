@@ -14,7 +14,7 @@
 use App\Abs;
 use App\Files;
 
-Route::get('/', function () {
+Route::get('/', function() {
     $news_item_blades = glob(base_path() . '/resources/views/news/*.blade.php');
     $news_items = [];
 
@@ -36,7 +36,7 @@ Route::get('/news/{news_item?}', function($news_item = 'index') {
 
         Head::setTitle('News');
 
-        foreach (array_reverse($news_item_blades) as $index => $news_item) {
+        foreach (array_reverse($news_item_blades) as $news_item) {
             array_push($news_items, preg_replace([ '/^.*\//', '/\.blade\.php$/' ], [ '', '' ], $news_item));
         }
 
@@ -51,12 +51,30 @@ Route::get('/news/{news_item?}', function($news_item = 'index') {
     }
 });
 
-Route::get('/builder', function () {
+Route::get('/rss/news', function() {
+    $news_item_blades = glob(base_path() . '/resources/views/news/*.blade.php');
+    $news_items = [];
+
+    foreach (array_reverse($news_item_blades) as $index => $news_item) {
+        if ($index <= 25) {
+            array_push($news_items, preg_replace([ '/^.*\//', '/\.blade\.php$/' ], [ '', '' ], $news_item));
+        } else {
+            break;
+        }
+    }
+
+    return view('rss.news', [
+        'title' => 'ArchStrike News',
+        'news_items' => $news_items
+    ]);
+});
+
+Route::get('/builder', function() {
     Head::setTitle('Builder');
     return view('website.builder', [ 'buildlist' => Abs::getBuildList() ]);
 });
 
-Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $arg = 1) {
+Route::get('/packages/{pkgrequest?}/{arg?}', function($pkgrequest = 'page', $arg = 1) {
     $perpage = 50; // number of packages per page
 
     Head::setTitle('Packages');
@@ -88,12 +106,12 @@ Route::get('/packages/{pkgrequest?}/{arg?}', function ($pkgrequest = 'page', $ar
     }
 });
 
-Route::get('/team', function () {
+Route::get('/team', function() {
     Head::setTitle('Team');
     return view('website.team');
 });
 
-Route::get('/wiki/{page?}', function ($page = 'index') {
+Route::get('/wiki/{page?}', function($page = 'index') {
     if ($page == 'index') {
         Head::setTitle('Wiki');
     } else {

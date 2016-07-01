@@ -113,8 +113,10 @@ body.home {
             }
 
             .news {
+                position: relative;
                 margin-top: 10px;
                 padding-right: 5px;
+                .rss-link { top: 15px; }
 
                 .news-logo, .complete-news-link {
                     position: relative;
@@ -127,6 +129,11 @@ body.home {
                         font-weight: bold;
                         text-decoration: none;
                     }
+                }
+
+                .complete-news-link a {
+                    position: relative;
+                    bottom: 1px;
                 }
 
                 .news-logo {

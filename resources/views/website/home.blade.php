@@ -19,6 +19,7 @@
 
                 <div class="news">
                     <div class="news-logo">Latest News</div>
+                    <a class="rss-link" href="/rss/news" title="Archstrike News RSS Feed"><img src="/img/rss.png" alt="RSS" /></a>
 
                     @foreach($news_items as $news_item)
                         @include('news.' . $news_item, [ 'include' => 'elements.news-item' ])
