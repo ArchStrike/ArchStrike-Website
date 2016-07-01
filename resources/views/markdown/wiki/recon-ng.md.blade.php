@@ -2,7 +2,7 @@
 
 This tutorial will go through some ways of obtaining info on a target with Recon-NG tool available in ArchStrike.
 
-First, let's download Recon-NG (obviously you don't need to do this if you have it already installer)
+First, let's download Recon-NG (obviously you don't need to do this if you have it already installed)
 
 ```
 # pacman -S recon-ng-git
