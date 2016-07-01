@@ -129,9 +129,21 @@ Let's see the other module.
 Let's set our source again and run the module.
 
 ```
-[recon-ng][default][hackertarget] > set source google.com
-SOURCE => google.com
+[recon-ng][default][hackertarget] > set source archstrike.org
+SOURCE => archstrike.org
 [recon-ng][default][hackertarget] > run
+
+--------------
+ARCHSTRIKE.ORG
+--------------
+[*] [host] archstrike.org (45.79.6.151)
+[*] [host] mirror.archstrike.org (50.116.42.150)
+
+-------
+SUMMARY
+-------
+[*] 2 total (2 new) hosts found.
+
 ```
 
 Feel free to explore all the modules Recon-NG has to offer, but be responsible in your actions. 
