@@ -4,6 +4,10 @@
 
 archstrike-installer is a script to make it easier to install ArchStrike on an existing Arch Linux install. [View the source here](https://github.com/xorond/archstrike-installer)
 
+**WARNING**
+
+This script **WILL NOT INSTALL ARCH LINUX** for you. This is made for making the install process easier **for the ArchStrike repository**.
+
 You can get the script by
 
 **1) Downloading the AUR version**
