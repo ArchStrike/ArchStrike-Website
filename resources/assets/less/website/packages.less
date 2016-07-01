@@ -63,7 +63,9 @@ body.packages {
         }
 
         &.packages-table {
-            .pcks-col { white-space: nowrap; }
+            .pcks-col {
+                @media (min-width: @screen-md-min) { white-space: nowrap; }
+            }
 
             .repo-col {
                 width: 135px;
