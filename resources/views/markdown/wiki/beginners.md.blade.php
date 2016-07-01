@@ -1,6 +1,40 @@
-## Beginner's Guide to Installing Arch Linux
-
-
+[[Category:Getting and installing Arch]]
+[[ar:Beginners' guide]]
+[[bg:Beginners' guide]]
+[[cs:Beginners' guide]]
+[[da:Beginners' guide]]
+[[de:Anleitung für Einsteiger]]
+[[el:Beginners' guide]]
+[[es:Beginners' guide]]
+[[fa:راهنمای_تازه‌کاران]]
+[[fr:Installation]]
+[[he:Beginners' guide]]
+[[hr:Beginners' guide]]
+[[hu:Beginners' guide]]
+[[id:Beginners' guide]]
+[[it:Beginners' guide]]
+[[ja:ビギナーズガイド]]
+[[ko:Beginners' guide]]
+[[lt:Beginners' guide]]
+[[nl:Beginners' guide]]
+[[pl:Beginners' guide]]
+[[pt:Beginners' guide]]
+[[ro:Ghidul începătorilor]]
+[[ru:Beginners' guide]]
+[[sk:Beginners' guide]]
+[[sr:Beginners' guide]]
+[[sv:Nybörjarguiden]]
+[[tr:Yeni başlayanlar rehberi]]
+[[uk:Beginners' guide]]
+[[zh-cn:Beginners' guide]]
+[[zh-tw:Beginners' guide]]
+{{Related articles start}}
+{{Related|:Category:Accessibility}}
+{{Related|Help:Reading}}
+{{Related|Installation guide}}
+{{Related|General recommendations}}
+{{Related|General troubleshooting}}
+{{Related articles end}}
 This document will guide you through the process of installing [[Arch Linux]] using the [https://projects.archlinux.org/arch-install-scripts.git/ Arch Install Scripts]. Before installing, you are advised to skim over the [[FAQ]].
 
 The community-maintained [[Main page|ArchWiki]] is the primary resource that should be consulted if issues arise. The [[IRC channel]] (irc://irc.freenode.net/#archlinux) and the [https://bbs.archlinux.org/ forums] are also excellent resources if an answer cannot be found elsewhere. In accordance with [[the Arch Way]], you are encouraged to type {{ic|man ''command''}} to read the [[man page]] of any command you are unfamiliar with.
@@ -453,3 +487,6 @@ Remove the installation media, or you may boot back into it. You can log into yo
 == Post-installation ==
 
 Your new Arch Linux base system is now a functional GNU/Linux environment ready to be built into whatever you wish or require for your purposes. You are now ''strongly'' advised to read the [[General recommendations]] article, especially the first two sections. Its other sections provide links to post-installation tutorials like setting up a graphical user interface, sound or a touchpad.
+
+For a list of applications that may be of interest, see [[List of applications]].
+
