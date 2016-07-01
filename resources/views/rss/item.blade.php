@@ -1,6 +1,7 @@
 <item>
     <title>{{ $title }}</title>
     <link>{{ $link }}</link>
+    <guid>{{ $link }}</guid>
     <pubDate>{{ date('r', strtotime($date)) }}</pubDate>
 
     <description>
