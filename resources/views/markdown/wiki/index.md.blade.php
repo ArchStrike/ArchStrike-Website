@@ -21,4 +21,5 @@ Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentatio
 [Testing PKGBUILDs](/wiki/chroot) - A quick guide on putting together your chroot environment to test PKGBUILD files on.
 
 ## [Tutorials](/wiki/tutorials-index)
-[Recon-NG](/wiki/recon-ng)
+
+[Obtaining Info About Targets with Recon-NG](/wiki/recon-ng)
