@@ -1,6 +1,6 @@
 # Setup ArchStrike
 
-## OPTIONAL: Use `archstrike-installer`
+## OPTIONAL: Use `archstrike-installer` (Sets up the repository for you)
 
 archstrike-installer is a script to make it easier to install ArchStrike on an existing Arch Linux install. [View the source here](https://github.com/xorond/archstrike-installer)
 
@@ -21,6 +21,8 @@ You can get the script by
 **2) Downloading from source**
 
   [Check out the github repo for instructions](https://github.com/xorond/archstrike-installer)
+
+** If you are using archstrike-installer, other steps are already done for you in the script. **
 
 ## I. Install the Repository
 
