@@ -4,8 +4,6 @@ Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentatio
 
 ## ArchStrike
 
-[Beginner's Guide for Installing Arch Linux](/wiki/beginners) - Step by step guide for installing Arch Linux.
-
 [Setup ArchStrike](/wiki/setup) - How to add the **ArchStrike** repository to Arch Linux.
 
 [Repositories](/wiki/repositories) - A rundown of each of the **ArchStrike** repositories.
