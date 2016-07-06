@@ -121,19 +121,19 @@ body.home {
                 .news-logo, .complete-news-link {
                     position: relative;
                     display: inline-block;
-                    padding: 3px 8px;
+                    height: 27px;
+                    padding: 0px 8px;
                     background-color: @c_dark_bg;
 
-                    &, a {
+                    a, span {
+                        position: relative;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: block;
                         color: @c_light_text;
                         font-weight: bold;
                         text-decoration: none;
                     }
-                }
-
-                .complete-news-link a {
-                    position: relative;
-                    bottom: 1px;
                 }
 
                 .news-logo {

@@ -4,7 +4,7 @@
     <div class="container-fluid page-container">
         @if($news_item == 'index')
             <div class="news">
-                <div class="news-logo">News</div>
+                <div class="news-logo"><span>News</span></div>
                 <a class="rss-link" href="/rss/news" title="Archstrike News RSS Feed"><img src="/img/rss.png" alt="RSS" /></a>
 
                 @foreach($news_items as $news_item)

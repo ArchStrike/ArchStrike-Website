@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="news">
-                    <div class="news-logo">Latest News</div>
+                    <div class="news-logo"><span>Latest News</span></div>
                     <a class="rss-link" href="/rss/news" title="Archstrike News RSS Feed"><img src="/img/rss.png" alt="RSS" /></a>
 
                     @foreach($news_items as $news_item)
