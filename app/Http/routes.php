@@ -127,3 +127,8 @@ Route::get('/wiki/{page?}', function($page = 'index') {
         abort(404);
     }
 });
+
+Route::get('/downloads', function() {
+    Head::setTitle('Downloads');
+    return view('website.downloads');
+});
