@@ -6,13 +6,17 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 * [Installation Guide](https://archstrike.org/wiki/setup)
 
 ## HTTP Direct Download
-[Direct Link](direct link here)
-[Direct Link 2](other mirrors etc.)
+
+[Direct Link](https://archstrike.org)
+
+[Direct Link 2](https://archstrike.org)
 
 **Checksums**
 * MD5: `hash here`
 * SHA512: `hash here`
 
 ## BitTorrent Download (Recommended)
-[Magnet Link](magnet link here)
-[Torrent File](torrent link here)
+
+[Magnet Link](https://archstrike.org)
+
+[Torrent File](https://archstrike.org)
