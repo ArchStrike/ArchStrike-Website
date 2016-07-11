@@ -1,4 +1,5 @@
 ## Release Info
+
 The image can be burned to a CD, mounted as an ISO file, or be directly written to a USB stick using a utility like `dd`.
 
 * **Current Release:** Version goes here
@@ -11,7 +12,8 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 [Direct Link 2](https://archstrike.org)
 
-**Checksums**
+### Checksums
+
 * MD5: `hash here`
 * SHA512: `hash here`
 
