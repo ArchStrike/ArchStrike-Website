@@ -129,6 +129,10 @@ Route::get('/wiki/{page?}', function($page = 'index') {
 });
 
 Route::get('/downloads', function() {
-    Head::setTitle('Downloads');
-    return view('website.downloads');
+    if (env('DOWNLOADS_ENABLED')) {
+        Head::setTitle('Downloads');
+        return view('website.downloads');
+    } else {
+        abort(404);
+    }
 });
