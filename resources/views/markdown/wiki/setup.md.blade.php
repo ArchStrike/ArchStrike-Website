@@ -1,8 +1,8 @@
 # Setup ArchStrike
 
-## OPTIONAL: Use `archstrike-installer` (Sets up the repository for you)
+## OPTIONAL: Use `archstrike-setuptool` (Sets up the repository for you)
 
-archstrike-installer is a script to make it easier to install ArchStrike on an existing Arch Linux install. [View the source here](https://github.com/xorond/archstrike-installer)
+archstrike-setuptool is a script to make it easier to install ArchStrike on an existing Arch Linux install. [View the source here](https://github.com/xorond/archstrike-setuptool)
 
 **WARNING**
 
@@ -15,14 +15,14 @@ You can get the script by
   Run the install command of your AUR helper. E.g.
 
   ```
-  packer -S archstrike-installer-git
-  yaourt -S archstrike-installer-git
+  packer -S archstrike-setuptool-git
+  yaourt -S archstrike-setuptool-git
   ```
 **2) Downloading from source**
 
-  [Check out the github repo for instructions](https://github.com/xorond/archstrike-installer)
+  [Check out the github repo for instructions](https://github.com/xorond/archstrike-setuptool)
 
-** If you are using archstrike-installer, other steps are already done for you in the script. **
+** If you are using archstrike-setuptool, other steps are already done for you in the script. **
 
 ## I. Install the Repository
 
