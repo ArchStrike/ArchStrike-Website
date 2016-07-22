@@ -6,19 +6,19 @@ In order to configure the database for Metasploit Framework, you'll need to crea
 
 If it is the first time you are running postgres, make sure to initialize the database cluster first.
 
+Run this to become the postgres user:
+
 ```bash
 sudo -i -u postgres
 ```
 
-to become the postgres user, and then run:
+then run this as the postgres user:
 
 ```bash
 initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
 ```
 
-as the postgres user to achieve it.
-
-Then switch to the root user and start and enable the postgresql service with:
+Switch to the root user and start and enable the postgresql service with:
 
 ```bash
 systemctl start postgresql
