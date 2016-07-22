@@ -44,14 +44,14 @@ exit
 
 ```conf
 production:
-adapter: "postgresql"
-database: "msfdb"
-username: "msfdbuser"
-password: "CHANGEME"
-port: 5432
-host: "localhost"
-pool: 256
-timeout: 5
+ adapter: "postgresql"
+ database: "msfdb"
+ username: "msfdbuser"
+ password: "CHANGEME"
+ port: 5432
+ host: "localhost"
+ pool: 256
+ timeout: 5
 ```
 
 Save this file to `/usr/share/metasploit/database.yml` and make sure you change the CHANGEME password to the one you specified while creating the database.
