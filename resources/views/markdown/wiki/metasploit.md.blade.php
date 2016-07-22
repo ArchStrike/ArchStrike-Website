@@ -34,6 +34,7 @@ Now that postgresql is running, it is time to create our database for MSF.
 Run the following commands as the postgres user to create your database
 
 ```bash
+sudo -i -u postgres
 createuser msfdbuser -P -S -R -D
 createdb -O msfdbuser msfdb
 exit
