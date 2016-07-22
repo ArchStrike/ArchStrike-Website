@@ -7,6 +7,12 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 * **ISO Size (i686):** 3.8G
 * [Installation Guide](https://archstrike.org/wiki/setup)
 
+##  Torrent Download (Recommended)
+
+[x86_64](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
+
+[i686](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
+
 ## Direct Download Links
 
 ### x86_64 (64 bit)
@@ -68,9 +74,3 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 * SHA256: `6fe730044de3cdbe0d9ac520efbb000bcd1f786325d436d48f1953fc747477ff`
 * SHA512: `fbd568f3572c256431f020963fd095e95d7bbdbc30dc28c6f5f4645c22d7e607aaaec5be5f103a6005b3779415ce1a0e51806cd81ecdb5747ebeb78f14030a3a`
-
-##  Torrent Download (Recommended)
-
-[x86_64](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
-
-[i686](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
