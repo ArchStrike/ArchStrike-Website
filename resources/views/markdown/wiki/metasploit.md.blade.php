@@ -21,6 +21,8 @@ initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
 Switch to the root user and start and enable the postgresql service with:
 
 ```bash
+exit
+sudo su
 systemctl start postgresql
 systemctl enable postgresql
 ```
