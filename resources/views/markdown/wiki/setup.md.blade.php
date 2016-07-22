@@ -1,28 +1,21 @@
-# Setup ArchStrike
 
-## OPTIONAL: Use `archstrike-setuptool` (Sets up the repository for you)
+# Instructions for Full Install on Hard Drive
 
-archstrike-setuptool is a script to make it easier to install ArchStrike on an existing Arch Linux install. [View the source here](https://github.com/xorond/archstrike-setuptool)
+An `archstrike-installer` package is available in the repository. It comes preinstalled in the [Live ArchStrike ISO files](/downloads) for installing ArchStrike on your computer.
 
-**WARNING**
+** Note: This package is a full installer for ArchStrike. If you're looking for a tool just to set up the repository, search AUR for `archstrike-setuptool` **
 
-This script **WILL NOT INSTALL ARCH LINUX** for you. This is made for making the install process easier **for the ArchStrike repository**.
+** To start the install process on the Live ISO: **
 
-You can get the script by
+* Run `archstrike-installer` on a terminal
 
-**1) Downloading the AUR version**
+or
 
-  Run the install command of your AUR helper. E.g.
+* Right-click on the desktop and select `Install ArchStrike` option from the menu.
 
-  ```
-  packer -S archstrike-setuptool-git
-  yaourt -S archstrike-setuptool-git
-  ```
-**2) Downloading from source**
+The installer is very user-friendly and it will help you step by step to get a working ArchStrike install.
 
-  [Check out the github repo for instructions](https://github.com/xorond/archstrike-setuptool)
-
-** If you are using archstrike-setuptool, other steps are already done for you in the script. **
+# Instructions for Arch Linux users
 
 ## I. Install the Repository
 
