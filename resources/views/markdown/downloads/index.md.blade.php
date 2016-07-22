@@ -9,9 +9,9 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 ##  Torrent Download (Recommended)
 
-[x86_64](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
+* [x86_64](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
 
-[i686](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso.torrent)
+* [i686](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso.torrent)
 
 ## Direct Download Links
 
@@ -19,49 +19,49 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 **Official Mirrors**
 
-[United States](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [United States](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
-[United Kingdom](https://uk.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [United Kingdom](https://uk.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
-[Japan](https://jp.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [Japan](https://jp.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
 **Community Mirrors**
 
-[KeyStealth](http://mirror.keystealth.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [KeyStealth](http://mirror.keystealth.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
-[OuterWorld](http://archstrike.outerworld.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [OuterWorld](http://archstrike.outerworld.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
-[i3d](http://mirror.i3d.net/pub/archstrike/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [i3d](http://mirror.i3d.net/pub/archstrike/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
-[Wh1t3Fox](https://mirror.wh1t3fox.net/archstrike/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [Wh1t3Fox](https://mirror.wh1t3fox.net/archstrike/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
-[JMU](http://mirror.jmu.edu/pub/archstrike/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [JMU](http://mirror.jmu.edu/pub/archstrike/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
-[MirrorService](https://www.mirrorservice.org/sites/mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [MirrorService](https://www.mirrorservice.org/sites/mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
 ### i686 (32 bit)
 
 **Official ArchStrike Mirrors**
 
-[United States](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [United States](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
-[United Kingdom](https://uk.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [United Kingdom](https://uk.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
-[Japan](https://jp.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [Japan](https://jp.mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
 **Community Mirrors**
 
-[KeyStealth](http://mirror.keystealth.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [KeyStealth](http://mirror.keystealth.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
-[OuterWorld](http://archstrike.outerworld.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [OuterWorld](http://archstrike.outerworld.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
-[i3d](http://mirror.i3d.net/pub/archstrike/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [i3d](http://mirror.i3d.net/pub/archstrike/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
-[Wh1t3Fox](https://mirror.wh1t3fox.net/archstrike/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [Wh1t3Fox](https://mirror.wh1t3fox.net/archstrike/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
-[JMU](http://mirror.jmu.edu/pub/archstrike/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [JMU](http://mirror.jmu.edu/pub/archstrike/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
-[MirrorService](https://www.mirrorservice.org/sites/mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [MirrorService](https://www.mirrorservice.org/sites/mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
 ## Checksums
 
