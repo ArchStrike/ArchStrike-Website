@@ -11,7 +11,7 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 [x86_64](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
 
-[i686](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
+[i686](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-i686.iso.torrent)
 
 ## Direct Download Links
 
