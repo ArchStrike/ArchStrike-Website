@@ -12,6 +12,8 @@ Welcome to the [ArchStrike Wiki](/wiki): your source for ArchStrike documentatio
 
 [Contribution Details](/wiki/contributing) - Details explaining Pull Requests on GitHub.
 
+[Setting up ArchStrike Desktop Themes](/wiki/desktop) - How to set up the i3, openbox and xfce configuration files
+
 ## Guides
 
 [Configuring the database for MSF](/wiki/metasploit) - A guide explaining the process of setting up the PostgreSQL database for Metasploit Framework on Arch Linux.
