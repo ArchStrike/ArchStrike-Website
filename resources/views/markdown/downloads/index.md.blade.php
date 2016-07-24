@@ -5,8 +5,11 @@
 The image can be burned to a CD, mounted as an ISO file, or be directly written to a USB stick using a utility like `dd`.
 
 **Current Release:** 2016.07.21
+
 **ISO Size (x86_64):** 4.0G
+
 **ISO Size (i686):** 3.8G
+
 [Installation Guide](https://archstrike.org/wiki/setup)
 
 * To log in as root, use `root` for the **username and the password**
