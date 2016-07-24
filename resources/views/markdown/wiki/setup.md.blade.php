@@ -5,9 +5,9 @@
 
 1) [Download the ISO file](/downloads)
 
-2) Write the ISO to a USB Stick (or a cd-rom).
+2) Write the ISO to a USB Stick (bigger than 8G) or a CD-ROM.
 
-* Linux: `dd if=ArchStrike-openbox-2016.07.21-x86_64.iso of=/dev/sdX bs=40M status=progress`
+* Linux: `dd if=ArchStrike-openbox-2016.07.21-x86_64.iso of=/dev/sdX bs=4M status=progress`
 
 * Windows: Download [Rufus](https://rufus.akeo.ie/), select your USB device and the download ISO file. **Important: Choose `dd mode` on Rufus after you press the start button or the ISO won't work.**
 
@@ -33,7 +33,7 @@ or
 
 The installer is very user-friendly and it will help you step by step to get a working ArchStrike install.
 
-# Instructions for Arch Linux users
+# Instructions to set up the repository (for Arch Linux users)
 
 ## I. Install the Repository
 
