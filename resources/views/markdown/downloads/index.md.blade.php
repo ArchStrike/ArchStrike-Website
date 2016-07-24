@@ -9,6 +9,9 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 * **ISO Size (i686):** 3.8G
 * [Installation Guide](https://archstrike.org/wiki/setup)
 
+* To log in as root, `root` for the **username and the password**
+* To log in as standard user, `archstrike` for the **username and the password**
+
 ##  Torrent Download (Recommended)
 
 * [x86_64](https://mirror.archstrike.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso.torrent)
