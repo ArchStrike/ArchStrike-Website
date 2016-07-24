@@ -88,9 +88,9 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 ## VirtualBox
 
-[Download Link](https://uk.mirror.archstrike.org/ArchStrike.ova)
+[Download Link](https://sourceforge.net/projects/archstrike/files/ArchStrike.ova/download)
 
-**Size:** 7.3G
+**Size:** 7.7G
 
 **SHA1:** `3dd0169bc5c77953267572683de1c195b0871fc7`
 
@@ -98,9 +98,9 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 ## VMWare
 
-[Download Link](https://uk.mirror.archstrike.org/ArchStrike-vmware.ova)
+[Download Link](https://sourceforge.net/projects/archstrike/files/ArchStrike-vmware.ova/download)
 
-**Size:** 8.6G
+**Size:** 9.2G
 
 **SHA1:** `e5fdd760765315b24b9061288b4a37e02e9dfc46`
 
