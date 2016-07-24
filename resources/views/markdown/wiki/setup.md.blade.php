@@ -1,6 +1,24 @@
 
 # Instructions for Full Install on Hard Drive
 
+## Booting the ISO
+
+1) [Download the ISO file](/downloads)
+
+2) Write the ISO to a USB Stick (or a cd-rom).
+
+* Linux: `dd if=ArchStrike-openbox-2016.07.21-x86_64.iso of=/dev/sdX bs=40M status=progress`
+
+* Windows: Download [Rufus](https://rufus.akeo.ie/), select your USB device and the download ISO file. **Important: Choose `dd mode` on Rufus after you press the start button or the ISO won't work.**
+
+3) Boot your computer with your USB device (more info [here](http://lifehacker.com/5991848/how-to-boot-from-a-cd-or-usb-drive-on-any-pc))
+
+4) Choose the ArchStrike option on the boot menu, and it will start.
+
+** If you want to install ArchStrike permanently, you can find the instructions down below.**
+
+## Installing ArchStrike on your Hard Drive
+
 An `archstrike-installer` package is available in the repository. It comes preinstalled in the [Live ArchStrike ISO files](/downloads) for installing ArchStrike on your computer.
 
 ** Note: This package is a full installer for ArchStrike. If you're looking for a tool just to set up the repository, search AUR for `archstrike-setuptool` **
