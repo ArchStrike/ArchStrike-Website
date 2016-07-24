@@ -1,3 +1,5 @@
+# ArchStrike Live ISO
+
 ## Release Info
 
 The image can be burned to a CD, mounted as an ISO file, or be directly written to a USB stick using a utility like `dd`.
@@ -74,3 +76,34 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 * SHA256: `6fe730044de3cdbe0d9ac520efbb000bcd1f786325d436d48f1953fc747477ff`
 * SHA512: `fbd568f3572c256431f020963fd095e95d7bbdbc30dc28c6f5f4645c22d7e607aaaec5be5f103a6005b3779415ce1a0e51806cd81ecdb5747ebeb78f14030a3a`
+
+
+# ArchStrike VirtualBox & VMWare OVA
+
+## VirtualBox
+
+[Download Link](https://uk.mirror.archstrike.org/ArchStrike.ova)
+
+**Size:** 7.3G
+
+**SHA1:** `3dd0169bc5c77953267572683de1c195b0871fc7`
+
+**MD5:** `e1c8d5cc484bd7213a798615d86329f4`
+
+## VMWare
+
+[Download Link](https://uk.mirror.archstrike.org/ArchStrike-vmware.ova)
+
+**Size:** 8.6G
+
+**SHA1:** `e5fdd760765315b24b9061288b4a37e02e9dfc46`
+
+**MD5:** `e8c0b81ed37ef21974fa7396e09b2b72`
+
+## General Information
+
+The virtual disk is 50G with 15G used.
+
+To log in as root, use `root` for the username and `root` for the password.
+
+To log in as a standard user, use `archstrike` for the username and `archstrike` for the password.
