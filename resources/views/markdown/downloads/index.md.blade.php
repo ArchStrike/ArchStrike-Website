@@ -35,7 +35,7 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 **Community Mirrors**
 
-* [KeyStealth](http://mirror.keystealth.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
+* [KeyStealth](http://mirror.keystealth.org/archstrike/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
 * [OuterWorld](http://archstrike.outerworld.org/os/ArchStrike-openbox-2016.07.21-x86_64.iso)
 
@@ -59,7 +59,7 @@ The image can be burned to a CD, mounted as an ISO file, or be directly written 
 
 **Community Mirrors**
 
-* [KeyStealth](http://mirror.keystealth.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
+* [KeyStealth](http://mirror.keystealth.org/archstrike/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
 * [OuterWorld](http://archstrike.outerworld.org/os/ArchStrike-openbox-2016.07.21-i686.iso)
 
