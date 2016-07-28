@@ -266,7 +266,7 @@ body.home {
                     width: auto;
                 }
 
-                .sidebar-box-heading, .tweet {
+                .sidebar-box-heading, .sidebar-box-item {
                     padding: 10px;
                     font-size: 12px;
 
@@ -293,7 +293,7 @@ body.home {
                     a:hover { text-decoration: underline; }
                 }
 
-                .tweet {
+                .sidebar-box-item {
                     position: relative;
                     text-align: left;
                     &:not(:last-child) { border-bottom: 1px solid darken(@c_light_bg, 15%); }
@@ -314,6 +314,15 @@ body.home {
                             float: right;
                         }
                     }
+                }
+            }
+
+            .pkgupdates {
+                .new { font-weight: bold; }
+
+                .date {
+                    float: right;
+                    @media (max-width: 450px) { display: none; }
                 }
             }
 

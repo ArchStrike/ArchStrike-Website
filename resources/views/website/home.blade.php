@@ -36,12 +36,19 @@
                     </div>
                 </form>
 
+                @if(env('PKGUPDATES_ENABLED'))
+                    <div class="sidebar-box pkgupdates">
+                        <div class="sidebar-box-heading">Latest Package Updates</div>
+                        @include('elements.pkgupdates')
+                    </div>
+                @endif
+
                 <div class="sidebar-box">
                     <div class="sidebar-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
 
                     @cache('twitter', 5)
                         @foreach(Twitter::getUserTimeline([ 'screen_name' => 'ArchStrike', 'count' => 4, 'format' => 'object' ]) as $tweet)
-                            <div class="tweet">
+                            <div class="sidebar-box-item">
                                 <div><a href="{!! Twitter::linkTweet($tweet) !!}" target="_blank" rel="noopener noreferrer">ArchStrike</a> <span>{{ Twitter::ago($tweet->created_at) }}</span></div>
                                 {!! Twitter::linkify($tweet->text) !!}
                             </div>
