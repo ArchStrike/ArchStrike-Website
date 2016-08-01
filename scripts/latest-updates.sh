@@ -45,4 +45,5 @@ function gen_updates {
     popd >/dev/null
 }
 
-gen_updates > "$output"
+pkgupdates="$(gen_updates)"
+printf '%s\n' "$pkgupdates" > "$output"
