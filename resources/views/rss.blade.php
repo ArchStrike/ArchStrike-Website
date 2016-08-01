@@ -4,13 +4,13 @@
     <channel>
         <title><![CDATA[{{ $title }}]]></title>
         <description>{{ $description }}</description>
-        <link>https://archstrike.org</link>
-        <atom:link href="{{ $feed_url }}" rel="self" type="application/rss+xml" />
+        <link>{{ URL::to('/') }}</link>
+        <atom:link href="{{ URL::to('/') . $feed_url }}" rel="self" type="application/rss+xml" />
 
         <image>
             <title><![CDATA[{{ $title }}]]></title>
-            <url>https://archstrike.org/img/archstrike-small.png</url>
-            <link>https://archstrike.org</link>
+            <url>{{ URL::to('/') }}/img/archstrike-small.png</url>
+            <link>{{ URL::to('/') }}</link>
         </image>
 
         @yield('items')

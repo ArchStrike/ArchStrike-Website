@@ -66,7 +66,7 @@ Route::get('/rss/news', function() {
     return Response::view('rss.news', [
         'title' => 'ArchStrike News',
         'description' => 'News about the ArchStrike security layer for Arch Linux',
-        'feed_url' => 'https://archstrike.org/rss/news',
+        'feed_url' => '/rss/news',
         'news_items' => $news_items
     ])->header('Content-Type', 'application/rss+xml');
 });
@@ -76,7 +76,7 @@ Route::get('/rss/latest-updates', function() {
         return Response::view('generated.pkgupdates', [
             'title' => 'Latest ArchStrike Package Updates',
             'description' => 'List of the most recently added and updated ArchStrike packages',
-            'feed_url' => 'https://archstrike.org/rss/latest-updates',
+            'feed_url' => '/rss/latest-updates',
             'blade' => 'rss.pkgupdates'
         ])->header('Content-Type', 'application/rss+xml');
     } else {

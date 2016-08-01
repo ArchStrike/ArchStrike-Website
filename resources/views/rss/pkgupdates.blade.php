@@ -6,7 +6,7 @@
 
         @include('rss.item', [
             'title' => $update['pkgname'] . ' ' . $update['pkgver'] . '-' . $update['pkgrel'] . $new,
-            'link' => 'https://archstrike.org/packages/' . $update['pkgname'],
+            'link' => URL::to('/') . '/packages/' . $update['pkgname'],
             'date' => $update['date'],
             'body' => '',
             'body_markdown' => false
