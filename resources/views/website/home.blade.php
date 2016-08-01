@@ -39,7 +39,7 @@
                 @if(env('PKGUPDATES_ENABLED'))
                     <div class="sidebar-box pkgupdates">
                         <div class="sidebar-box-heading">Latest Package Updates</div>
-                        @include('elements.pkgupdates')
+                        @include('generated.pkgupdates', [ 'blade' => 'elements.pkgupdates' ])
                     </div>
                 @endif
 

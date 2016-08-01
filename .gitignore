@@ -2,7 +2,7 @@
 /node_modules
 /bower_components
 /resources/views/news
-/resources/views/elements/pkgupdates.blade.php
+/resources/views/generated
 /public/css
 /public/js
 /public/fonts
