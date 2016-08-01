@@ -71,6 +71,15 @@ Route::get('/rss/news', function() {
     ])->header('Content-Type', 'application/rss+xml');
 });
 
+Route::get('/rss/latest-updates', function() {
+    return Response::view('generated.pkgupdates', [
+        'title' => 'Latest ArchStrike Package Updates',
+        'description' => 'List of the most recently added and updated ArchStrike packages',
+        'feed_url' => 'https://archstrike.org/rss/latest-updates',
+        'blade' => 'rss.pkgupdates'
+    ])->header('Content-Type', 'application/rss+xml');
+});
+
 Route::get('/builder', function() {
     Head::setTitle('Builder');
     return view('website.builder', [ 'buildlist' => Abs::getBuildList() ]);
