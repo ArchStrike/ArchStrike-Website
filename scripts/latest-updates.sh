@@ -5,7 +5,7 @@
 git_repo="$1"
 script_location="$(readlink -f "$0")"
 output="${script_location%\/scripts\/*}"/resources/views/generated/pkgupdates.blade.php
-pkg_total=6
+pkg_total=20
 
 function gen_updates {
     count=0
