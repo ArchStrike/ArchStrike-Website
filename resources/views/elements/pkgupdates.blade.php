@@ -1,5 +1,9 @@
+@set('pkg_count', 1)
+
 @foreach($pkgupdates as $update)
-    @if($loop->index1 <= 6)
+    @if($pkg_count <= 6 && App\Abs::exists($update['pkgname']))
+        @set('pkg_count', $pkg_count + 1)
+
         <div class="sidebar-box-item">
             <a href="/packages/{{ $update['pkgname'] }}">{{ $update['pkgname'] }}</a>
             {{ $update['pkgver'] }}-{{ $update['pkgrel'] }}
