@@ -15,11 +15,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/">Home</a></li>
                 <li><a href="/news">News</a></li>
-
-                @if(env('DOWNLOADS_ENABLED'))
-                    <li><a href="/downloads">Downloads</a></li>
-                @endif
-
+                <li><a href="/downloads">Downloads</a></li>
                 <li><a href="/packages">Packages</a></li>
                 <li><a href="/team">Team</a></li>
                 <li><a href="/wiki">Wiki</a></li>

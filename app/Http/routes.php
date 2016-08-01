@@ -72,12 +72,16 @@ Route::get('/rss/news', function() {
 });
 
 Route::get('/rss/latest-updates', function() {
-    return Response::view('generated.pkgupdates', [
-        'title' => 'Latest ArchStrike Package Updates',
-        'description' => 'List of the most recently added and updated ArchStrike packages',
-        'feed_url' => 'https://archstrike.org/rss/latest-updates',
-        'blade' => 'rss.pkgupdates'
-    ])->header('Content-Type', 'application/rss+xml');
+    if (env('PKGUPDATES_ENABLED')) {
+        return Response::view('generated.pkgupdates', [
+            'title' => 'Latest ArchStrike Package Updates',
+            'description' => 'List of the most recently added and updated ArchStrike packages',
+            'feed_url' => 'https://archstrike.org/rss/latest-updates',
+            'blade' => 'rss.pkgupdates'
+        ])->header('Content-Type', 'application/rss+xml');
+    } else {
+        abort(404);
+    }
 });
 
 Route::get('/builder', function() {
@@ -138,10 +142,6 @@ Route::get('/wiki/{page?}', function($page = 'index') {
 });
 
 Route::get('/downloads', function() {
-    if (env('DOWNLOADS_ENABLED')) {
-        Head::setTitle('Downloads');
-        return view('website.downloads');
-    } else {
-        abort(404);
-    }
+    Head::setTitle('Downloads');
+    return view('website.downloads');
 });
