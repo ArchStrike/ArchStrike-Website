@@ -103,10 +103,22 @@ class ABS extends Model
     // returns the first row where the package name is $package
     public static function getPackage($package)
     {
-        return self::where('package', $package)
+        $package = self::where('package', $package)
             ->where('del', 0)
             ->where('abs', 0)
             ->first();
+
+        $skip_states = self::getSkipStates($package->skip);
+        $package->i686 = $skip_states['all'] || $skip_states['i686'] ? I686::getStatus($package->id) : self::$skip_term;
+        $package->i686_log = I686::getLog($package->id);
+        $package->x86_64 = $skip_states['all'] || $skip_states['x86_64'] ? X86_64::getStatus($package->id) : self::$skip_term;
+        $package->x86_64_log = X86_64::getLog($package->id);
+        $package->armv6 = $skip_states['all'] || $skip_states['armv6'] ? Armv6::getStatus($package->id) : self::$skip_term;
+        $package->armv6_log = Armv6::getLog($package->id);
+        $package->armv7 = $skip_states['all'] || $skip_states['armv7'] ? Armv7::getStatus($package->id) : self::$skip_term;
+        $package->armv7_log = Armv7::getLog($package->id);
+
+        return $package;
     }
 
     // takes a skip integer and returns an array of skip values for each arch

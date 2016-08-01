@@ -172,6 +172,38 @@
                             @endif
                         </tbody>
                     </table>
+
+                    <table class="build-status-table">
+                        @set('arch_list', [ 'armv6', 'armv7', 'i686', 'x86_64' ])
+
+                        <thead>
+                            <tr class="mobile-head">
+                                <th>Package Build Status</th>
+                            </tr>
+
+                            <tr class="desktop-head">
+                                @foreach($arch_list as $arch)
+                                    <th>{{ $arch }} Build Status:</th>
+                                @endforeach
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach($arch_list as $arch)
+                                <td class="build-status-{{ $arch }}">
+                                    @if($package[$arch] != 'Skip' && !is_null($package[$arch . '_log']))
+                                        <a title="View Build Log" href="https://logs.archstrike.org/{{ preg_replace('/\.gz$/', '', $package[$arch . '_log']) }}" target="_blank" rel="noopener noreferrer">
+                                            <span class="label">{{ $arch }}: </span><span class="status status-{{ strtolower($package[$arch]) }}">{{ $package[$arch] }}</span>
+                                        </a>
+                                    @else
+                                        <div>
+                                            <span class="label">{{ $arch }} Build: </span><span class="status status-{{ strtolower($package[$arch]) }}">{{ $package[$arch] }}</span>
+                                        </div>
+                                    @endif
+                                </td>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         @endif
