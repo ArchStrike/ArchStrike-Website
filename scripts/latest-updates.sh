@@ -14,22 +14,27 @@ function gen_updates {
     printf '%s\n' "@set('pkgupdates', ["
 
     while read -r commit; do
+        pkgbuild_list="$(git diff-tree --no-commit-id --name-only -r "$commit" | grep PKGBUILD)"
+
         while read -r pkg; do
             diff="$(git show "$commit" --date=iso -- "$pkg")"
 
             [[ -f "$pkg" ]] && egrep -q '^\+pkg(ver|rel)' <<< "$diff" && {
-                unset pkgname pkgver pkgrel date new
+                unset pkgname pkgver pkgrel date info
                 eval "$(egrep '^\s*(_pkgname|pkgname|pkgver|pkgrel)=' "$pkg")"
                 date="$(egrep '^Date' <<< "$diff" | sed 's|^Date:\s*||;s|\s.*||')"
+                package_count="$(egrep -c "^[^/]*/$pkgname/PKGBUILD$" <<< "$pkgbuild_list")"
 
-                if egrep -q '^-pkg(ver|rel)' <<< "$diff"; then
-                    new=0
+                if (( package_count > 1 )); then
+                    info=2
+                elif egrep -q '^-pkg(ver|rel)' <<< "$diff"; then
+                    info=0
                 else
-                    new=1
+                    info=1
                 fi
 
-                printf "    [ 'pkgname' => '%s', 'pkgver' => '%s', 'pkgrel' => '%s', 'date' => '%s', 'new' => '%s' ]" \
-                    "$pkgname" "$pkgver" "$pkgrel" "$date" "$new"
+                printf "    [ 'pkgname' => '%s', 'pkgver' => '%s', 'pkgrel' => '%s', 'date' => '%s', 'info' => '%s' ]" \
+                    "$pkgname" "$pkgver" "$pkgrel" "$date" "$info"
 
                 if (( count++ == pkg_total )); then
                     printf '\n%s\n' '])'
@@ -39,7 +44,7 @@ function gen_updates {
                     printf '%s\n' ','
                 fi
             }
-        done < <(git diff-tree --no-commit-id --name-only -r "$commit" | grep PKGBUILD)
+        done <<< "$pkgbuild_list"
     done < <(git log | egrep '^commit ' | sed 's|^commit ||')
 
     popd >/dev/null

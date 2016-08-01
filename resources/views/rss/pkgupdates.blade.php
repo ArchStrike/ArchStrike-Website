@@ -3,10 +3,14 @@
 @section('items')
     @foreach($pkgupdates as $update)
         @if(App\Abs::exists($update['pkgname']))
-            @set('new', $update['new'] == 1 ? ' (new)' : '')
+            @if($update['info'] == 1)
+                @set('info', ' (new)')
+            @elseif($update['info'] == 2)
+                @set('info', ' (moved)')
+            @endif
 
             @include('rss.item', [
-                'title' => $update['pkgname'] . ' ' . $update['pkgver'] . '-' . $update['pkgrel'] . $new,
+                'title' => $update['pkgname'] . ' ' . $update['pkgver'] . '-' . $update['pkgrel'] . $info,
                 'link' => URL::to('/') . '/packages/' . $update['pkgname'],
                 'date' => $update['date'],
                 'body' => '',
