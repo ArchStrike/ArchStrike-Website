@@ -63,12 +63,12 @@ Route::get('/rss/news', function() {
         }
     }
 
-    return view('rss.news', [
+    return Response::view('rss.news', [
         'title' => 'ArchStrike News',
         'description' => 'News about the ArchStrike security layer for Arch Linux',
         'feed_url' => 'https://archstrike.org/rss/news',
         'news_items' => $news_items
-    ]);
+    ])->header('Content-Type', 'application/rss+xml');
 });
 
 Route::get('/builder', function() {
