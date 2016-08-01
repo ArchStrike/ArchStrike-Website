@@ -7,6 +7,8 @@
                 @set('info', ' (new)')
             @elseif($update['info'] == 2)
                 @set('info', ' (moved)')
+            @else
+                @set('info', '')
             @endif
 
             @include('rss.item', [

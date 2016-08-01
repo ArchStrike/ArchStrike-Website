@@ -183,24 +183,28 @@
 
                             <tr class="desktop-head">
                                 @foreach($arch_list as $arch)
-                                    <th>{{ $arch }} Build Status:</th>
+                                    @if($package[$arch] != 'Skip')
+                                        <th>{{ $arch }} Build Status:</th>
+                                    @endif
                                 @endforeach
                             </tr>
                         </thead>
 
                         <tbody>
                             @foreach($arch_list as $arch)
-                                <td class="build-status-{{ $arch }}">
-                                    @if($package[$arch] != 'Skip' && !is_null($package[$arch . '_log']))
-                                        <a title="View Build Log" href="https://logs.archstrike.org/{{ preg_replace('/\.gz$/', '', $package[$arch . '_log']) }}" target="_blank" rel="noopener noreferrer">
-                                            <span class="label">{{ $arch }}: </span><span class="status status-{{ strtolower($package[$arch]) }}">{{ $package[$arch] }}</span>
-                                        </a>
-                                    @else
-                                        <div>
-                                            <span class="label">{{ $arch }} Build: </span><span class="status status-{{ strtolower($package[$arch]) }}">{{ $package[$arch] }}</span>
-                                        </div>
-                                    @endif
-                                </td>
+                                @if($package[$arch] != 'Skip')
+                                    <td class="build-status-{{ $arch }}">
+                                        @if(!is_null($package[$arch . '_log']))
+                                            <a title="View Build Log" href="https://logs.archstrike.org/{{ preg_replace('/\.gz$/', '', $package[$arch . '_log']) }}" target="_blank" rel="noopener noreferrer">
+                                                <span class="label">{{ $arch }}: </span><span class="status status-{{ strtolower($package[$arch]) }}">{{ $package[$arch] }}</span>
+                                            </a>
+                                        @else
+                                            <div>
+                                                <span class="label">{{ $arch }} Build: </span><span class="status status-{{ strtolower($package[$arch]) }}">{{ $package[$arch] }}</span>
+                                            </div>
+                                        @endif
+                                    </td>
+                                @endif
                             @endforeach
                         </tbody>
                     </table>
