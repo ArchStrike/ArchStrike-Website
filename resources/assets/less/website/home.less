@@ -205,6 +205,12 @@ body.home {
         .sidebar {
             @media (min-width: @screen-sm-min) { float: right; }
 
+            .rss-link {
+                top: 50%;
+                right: 12px;
+                transform: translateY(-50%);
+            }
+
             .package-search {
                 width: @feed-width;
                 border-radius: 3px;

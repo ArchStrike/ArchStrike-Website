@@ -38,7 +38,11 @@
 
                 @if(env('PKGUPDATES_ENABLED'))
                     <div class="sidebar-box pkgupdates">
-                        <div class="sidebar-box-heading">Latest Package Updates</div>
+                        <div class="sidebar-box-heading">
+                            Latest Package Updates
+                            <a class="rss-link" href="/rss/latest-updates" title="RSS Feed of the latest Package Updates"><img src="/img/rss.png" alt="RSS" /></a>
+                        </div>
+
                         @include('generated.pkgupdates', [ 'blade' => 'elements.pkgupdates' ])
                     </div>
                 @endif
