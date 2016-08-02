@@ -10,8 +10,6 @@
 
             @if($update['info'] == 1)
                 <span class="info">(new)</span>
-            @elseif($update['info'] == 2)
-                <span class="info">(moved)</span>
             @endif
 
             {{-- <span class="date">{{ $update['date'] }}</span> --}}

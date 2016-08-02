@@ -26,7 +26,7 @@ function gen_updates {
                 package_count="$(egrep -c "^[^/]*/$pkgname/PKGBUILD$" <<< "$pkgbuild_list")"
 
                 if (( package_count > 1 )); then
-                    info=2
+                    break
                 elif egrep -q '^-pkg(ver|rel)' <<< "$diff"; then
                     info=0
                 else
