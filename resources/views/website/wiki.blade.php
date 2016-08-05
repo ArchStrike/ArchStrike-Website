@@ -18,7 +18,7 @@
 
         <div class="row wiki-row">
             <div class="col-xs-12 column">
-                @include("markdown.wiki.$page")
+                @include("wiki.$page")
             </div>
         </div>
     </div>
