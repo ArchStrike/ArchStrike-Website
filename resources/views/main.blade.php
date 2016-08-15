@@ -7,10 +7,14 @@
         <script src="/js/lib.js?version={{ env('CACHE_BUST') }}"></script>
         <script src="/js/app.js?version={{ env('CACHE_BUST') }}"></script>
 
-        @if (Config::get('app.debug'))
+        @if(Config::get('app.debug'))
             <script type="text/javascript">
                 document.write('<script src="//{{ env('LR_HOST', 'localhost') }}:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
             </script>
+        @endif
+
+        @if(APP::environment('production'))
+            @include('tracking.piwik')
         @endif
     </head>
     <body class="{{ Request::path() == '/' ? 'home' : preg_replace('/\/.*/', '', Request::path()) }}">
