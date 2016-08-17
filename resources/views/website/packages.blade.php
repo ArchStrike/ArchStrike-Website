@@ -16,8 +16,14 @@
                 <h1>Packages <a href="/builder" title="View a list of failed and incomplete builds" class="heading-link">Build Issues</a></h1>
 
                 <form id="package-search">
-                    <input placeholder="" />
-                    <button type="button">Search</button>
+                    <select id="search-type">
+                        @foreach([ 'name' => 'Name', 'description' => 'Description', 'name-description' => 'Name and Description' ] as $type => $desc)
+                            <option value="{{ $type }}" {{ $search_type == $type ? 'selected' : '' }}>{{ $desc }}</option>
+                        @endforeach
+                    </select>
+
+                    <input id="search-string" placeholder="" value="{{ $search_term }}" />
+                    <button id="search-submit" type="button">Search</button>
                 </form>
 
                 @if(!empty($packages))

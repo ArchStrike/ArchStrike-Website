@@ -89,24 +89,33 @@ Route::get('/builder', function() {
     return view('website.builder', [ 'buildlist' => Abs::getBuildList() ]);
 });
 
-Route::get('/packages/{pkgrequest?}/{arg?}', function($pkgrequest = 'page', $arg = 1) {
+Route::get('/packages/{pkgrequest?}/{arg1?}/{arg2?}', function($pkgrequest = 'page', $arg1 = 1, $arg2 = 1) {
     $perpage = 50; // number of packages per page
 
     Head::setTitle('Packages');
 
-    if (($pkgrequest == 'page') || (($pkgrequest == 'search') && ($arg === 1))) {
+    if (($pkgrequest == 'page') || (($pkgrequest == 'search') && ($arg1 == 1))) {
         return view('website.packages', [
             'package' => true,
-            'packages' => Abs::getPackages(($arg - 1), $perpage),
+            'packages' => Abs::getPackages(($arg1 - 1), $perpage),
             'pages' => Abs::getNumPages($perpage) + 1,
-            'page' => $arg
+            'page' => $arg1,
+            'search_type' => 'name',
+            'search_term' => ''
         ]);
     } else if ($pkgrequest == 'search') {
+        $search_type = $arg2 == 1 ? 'name' : $arg2;
+
+        if (!preg_match('/^(name|description|name-description)$/', $search_type)) {
+            abort(404);
+        }
+
         return view('website.packages', [
             'package' => true,
-            'packages' => Abs::searchPackages($arg),
+            'packages' => Abs::searchPackages($arg1, $search_type),
             'pages' => 1,
-            'search_term' => $arg
+            'search_type' => $search_type,
+            'search_term' => $arg1
         ]);
     } else if (Abs::exists($pkgrequest)) {
         $package = Abs::getPackage($pkgrequest);

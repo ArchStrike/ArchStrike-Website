@@ -1,18 +1,16 @@
-<?php
-
-namespace App;
+<?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Arch extends Model
-{
-    // return the table name
+class Arch extends Model {
+
+    // Return the table name
     public static function getTableName()
     {
         return with(new static)->getTable();
     }
 
-    // returns the build status for the package with the id equal to $id
+    // Returns the build status for the package with the id equal to $id
     public static function getStatus($id)
     {
         $status = self::select('done', 'fail')->where('id', $id)->first();
@@ -26,9 +24,10 @@ class Arch extends Model
         }
     }
 
-    // returns the log filename for the package with the id equal to $id
+    // Returns the log filename for the package with the id equal to $id
     public static function getLog($id)
     {
         return self::select('log')->where('id', $id)->first()['log'];
     }
+
 }

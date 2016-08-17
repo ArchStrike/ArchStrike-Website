@@ -1,6 +1,4 @@
-<?php
-
-namespace App;
+<?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cache;
@@ -11,15 +9,15 @@ use App\X86_64;
 use App\Armv6;
 use App\Armv7;
 
-class ABS extends Model
-{
-    // the abs table
+class Abs extends Model {
+
+    // The abs table
     protected $table = 'abs';
 
-    // the term used for skipped packages
+    // The term used for skipped packages
     public static $skip_term = 'Skip';
 
-    // returns true if $package exists and isn't deleted, and false if it does not
+    // Returns true if $package exists and isn't deleted, and false if it does not
     public static function exists($package)
     {
         return self::where('package', $package)
@@ -28,7 +26,7 @@ class ABS extends Model
             ->exists();
     }
 
-    // returns the number of packages in the table that aren't deleted
+    // Returns the number of packages in the table that aren't deleted
     public static function getNumPackages()
     {
         return self::where('del', 0)
@@ -36,13 +34,13 @@ class ABS extends Model
             ->count();
     }
 
-    // returns the number of pages of packages if each page has $perpage packages
+    // Returns the number of pages of packages if each page has $perpage packages
     public static function getNumPages($perpage)
     {
         return floor(self::getNumPackages() / $perpage);
     }
 
-    // returns $perpage packages from the $pagenum page
+    // Returns $perpage packages from the $pagenum page
     public static function getPackages($pagenum, $perpage)
     {
         if (($pagenum > self::getNumPages($perpage)) || ($pagenum < 0)) {
@@ -78,17 +76,34 @@ class ABS extends Model
         return $packages;
     }
 
-    // returns a list of packages based on a search term
-    public static function searchPackages($term)
+    // Returns a list of packages based on a search term
+    public static function searchPackages($term, $search_type)
     {
         $packages = [];
-        $search = self::select('package', 'pkgver', 'repo')
-            ->where('del', 0)
-            ->where('abs', 0)
-            ->where('package', 'like', "%$term%")
-            ->get();
 
-        foreach($search as $package) {
+        switch ($search_type) {
+            case 'name':
+                $search = self::select('package', 'pkgver', 'repo')->where('package', 'like', "%$term%")->where('del', 0)->where('abs', 0)->get();
+                break;
+            case 'description':
+                $search = self::select('package', 'pkgver', 'repo')->where(function($q) use ($term) {
+                    foreach (Files::searchDescriptions($term) as $pkgname) {
+                        $q->orWhere('package', $pkgname);
+                    }
+                })->where('del', 0)->where('abs', 0)->get();
+
+                break;
+            case 'name-description':
+                $search = self::select('package', 'pkgver', 'repo')->where(function($q) use ($term) {
+                    foreach (Files::searchDescriptions($term) as $pkgname) {
+                        $q->orWhere('package', $pkgname);
+                    }
+                })->orWhere('package', 'like', "%$term%")->where('del', 0)->where('abs', 0)->get();
+
+                break;
+        }
+
+        foreach ($search as $package) {
             array_push($packages, [
                 'package' => $package->package,
                 'pkgver' => $package->pkgver,
@@ -100,7 +115,7 @@ class ABS extends Model
         return $packages;
     }
 
-    // returns the first row where the package name is $package
+    // Returns the first row where the package name is $package
     public static function getPackage($package)
     {
         $package = self::where('package', $package)
@@ -121,7 +136,7 @@ class ABS extends Model
         return $package;
     }
 
-    // takes a skip integer and returns an array of skip values for each arch
+    // Takes a skip integer and returns an array of skip values for each arch
     public static function getSkipStates($skip)
     {
         // get the skip values for each architecture
@@ -145,14 +160,14 @@ class ABS extends Model
         ];
     }
 
-    // returns a cached array of packages and their build status for each architecture
+    // Returns a cached array of packages and their build status for each architecture
     public static function getBuildList()
     {
 
         $buildlist = Cache::remember('buildlist', 5, function() {
             $packages = [];
 
-            foreach(self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->where('abs', 0)->orderBy('package', 'asc')->get() as $package) {
+            foreach (self::select('id', 'package', 'repo', 'pkgver', 'pkgrel', 'skip')->where('del', 0)->where('abs', 0)->orderBy('package', 'asc')->get() as $package) {
                 $skip_states = self::getSkipStates($package->skip);
 
                 $pkg = [
@@ -181,4 +196,5 @@ class ABS extends Model
 
         return $buildlist;
     }
+
 }
