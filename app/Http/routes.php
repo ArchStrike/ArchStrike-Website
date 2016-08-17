@@ -100,7 +100,7 @@ Route::get('/packages/{pkgrequest?}/{arg1?}/{arg2?}', function($pkgrequest = 'pa
             'packages' => Abs::getPackages(($arg1 - 1), $perpage),
             'pages' => Abs::getNumPages($perpage) + 1,
             'page' => $arg1,
-            'search_type' => 'name',
+            'search_type' => 'name-description',
             'search_term' => ''
         ]);
     } else if ($pkgrequest == 'search') {

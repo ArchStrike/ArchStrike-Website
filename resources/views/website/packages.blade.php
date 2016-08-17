@@ -17,7 +17,7 @@
 
                 <form id="package-search">
                     <select id="search-type">
-                        @foreach([ 'name' => 'Name', 'description' => 'Description', 'name-description' => 'Name and Description' ] as $type => $desc)
+                        @foreach([ 'name-description' => 'Name and Description', 'name' => 'Name', 'description' => 'Description' ] as $type => $desc)
                             <option value="{{ $type }}" {{ $search_type == $type ? 'selected' : '' }}>{{ $desc }}</option>
                         @endforeach
                     </select>
