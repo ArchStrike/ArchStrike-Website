@@ -14,7 +14,7 @@ body.packages {
             padding-right: 5px;
         }
 
-        @media (max-width: (@screen-sm - 1)) {
+        @media (max-width: @screen-xs-max) {
             input { width: calc(100% ~"-" 80px); }
         }
     }
@@ -149,7 +149,7 @@ body.packages {
         padding: 5px 10px;
         text-align: center;
         font-size: 16px;
-        @media (max-width: (@screen-md - 1)) { font-size: 14px; }
+        @media (max-width: @screen-sm-max) { font-size: 14px; }
 
         a {
             &.page-link { color: @c_brand; }
@@ -157,7 +157,7 @@ body.packages {
             &.page-next { padding-left: 10px; }
         }
 
-        @media (max-width: (@screen-sm - 1)) {
+        @media (max-width: @screen-xs-max) {
             @mobile-link-padding: 5px;
 
             .current-page, .page-link {
