@@ -32,7 +32,8 @@
             <div class="sidebar">
                 <form id="package-search" class="package-search">
                     <div class="package-search-wrapper">
-                        <div>Package Search:</div><input placeholder="" />
+                        <div>Package Search:</div><input id="search-string" type="text" placeholder="" />
+                        <input id="search-type" type="hidden" value="name-description" />
                     </div>
                 </form>
 

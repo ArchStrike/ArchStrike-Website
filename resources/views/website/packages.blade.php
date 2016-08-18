@@ -22,7 +22,7 @@
                         @endforeach
                     </select>
 
-                    <input id="search-string" placeholder="" value="{{ $search_term }}" />
+                    <input id="search-string" type="text" placeholder="" value="{{ $search_term }}" />
                     <button id="search-submit" type="button">Search</button>
                 </form>
 
