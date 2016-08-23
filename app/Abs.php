@@ -8,6 +8,7 @@ use App\I686;
 use App\X86_64;
 use App\Armv6;
 use App\Armv7;
+use App\Armv8;
 
 class Abs extends Model {
 
@@ -132,6 +133,8 @@ class Abs extends Model {
         $package->armv6_log = Armv6::getLog($package->id);
         $package->armv7 = $skip_states['all'] || $skip_states['armv7'] ? Armv7::getStatus($package->id) : self::$skip_term;
         $package->armv7_log = Armv7::getLog($package->id);
+        $package->armv8 = $skip_states['all'] || $skip_states['armv8'] ? Armv8::getStatus($package->id) : self::$skip_term;
+        $package->armv8_log = Armv8::getLog($package->id);
 
         return $package;
     }
@@ -143,6 +146,7 @@ class Abs extends Model {
         $skip_values = Cache::rememberForever('skip_values', function() {
             return [
                 'all' => 1,
+                'armv8' => Architectures::getSkipValue('armv8'),
                 'armv7' => Architectures::getSkipValue('armv7'),
                 'armv6' => Architectures::getSkipValue('armv6'),
                 'i686' => Architectures::getSkipValue('i686'),
@@ -153,6 +157,7 @@ class Abs extends Model {
         // return an array of supported and skipped architectures for the supplied skip value
         return [
             'all' => ($skip & $skip_values['all']) == $skip_values['all'],
+            'armv8' => ($skip & $skip_values['armv8']) == $skip_values['armv8'],
             'armv7' => ($skip & $skip_values['armv7']) == $skip_values['armv7'],
             'armv6' => ($skip & $skip_values['armv6']) == $skip_values['armv6'],
             'i686' => ($skip & $skip_values['i686']) == $skip_values['i686'],
@@ -182,11 +187,13 @@ class Abs extends Model {
                     'armv6' => $skip_states['all'] || $skip_states['armv6'] ? Armv6::getStatus($package->id) : self::$skip_term,
                     'armv6_log' => Armv6::getLog($package->id),
                     'armv7' => $skip_states['all'] || $skip_states['armv7'] ? Armv7::getStatus($package->id) : self::$skip_term,
-                    'armv7_log' => Armv7::getLog($package->id)
+                    'armv7_log' => Armv7::getLog($package->id),
+                    'armv8' => $skip_states['all'] || $skip_states['armv8'] ? Armv8::getStatus($package->id) : self::$skip_term,
+                    'armv8_log' => Armv8::getLog($package->id)
                 ];
 
                 // only add the package if one of the architectures doesn't have a status of Done or Skip
-                if ((($pkg['i686'] != 'Done') && ($pkg['i686'] != 'Skip')) || (($pkg['x86_64'] != 'Done') && ($pkg['x86_64'] != 'Skip')) || (($pkg['armv6'] != 'Done') && ($pkg['armv6'] != 'Skip')) || (($pkg['armv7'] != 'Done') && ($pkg['armv7'] != 'Skip'))) {
+                if ((($pkg['i686'] != 'Done') && ($pkg['i686'] != 'Skip')) || (($pkg['x86_64'] != 'Done') && ($pkg['x86_64'] != 'Skip')) || (($pkg['armv6'] != 'Done') && ($pkg['armv6'] != 'Skip')) || (($pkg['armv7'] != 'Done') && ($pkg['armv7'] != 'Skip')) || (($pkg['armv8'] != 'Done') && ($pkg['armv8'] != 'Skip'))) {
                     array_push($packages, $pkg);
                 }
             }

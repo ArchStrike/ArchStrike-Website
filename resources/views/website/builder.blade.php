@@ -13,6 +13,7 @@
                     <th class="sort" data-sort="repo-sort">Repository</th>
                     <th class="sort" data-sort="armv6-sort">Status ARMv6h</th>
                     <th class="sort" data-sort="armv7-sort">Status ARMv7h</th>
+                    <th class="sort" data-sort="armv8-sort">Status AArch64</th>
                     <th class="sort" data-sort="i686-sort">Status i686</th>
                     <th class="sort" data-sort="x86_64-sort">Status x86_64</th>
                 </tr>
@@ -24,7 +25,7 @@
                         <td class="package"><a href="/packages/{{ $build['package'] }}" class="package-sort">{{ $build['package'] }}</a> <span class="version">{{ $build['pkgver'] }}-{{ $build['pkgrel'] }}</span></td>
                         <td class="repo package-status"><span class="label">Repository: </span><span class="repo-name repo-sort">{{ $build['repo'] }}</span></td>
 
-                        @foreach([ 'armv6', 'armv7', 'i686', 'x86_64' ] as $index => $arch)
+                        @foreach([ 'armv6', 'armv7', 'armv8', 'i686', 'x86_64' ] as $index => $arch)
                             <td class="build-status package-status {{ strtolower($build[$arch]) }}">
                                 @if($build[$arch] != 'Skip' && !is_null($build[$arch . '_log']))
                                     <a href="https://logs.archstrike.org/{{ preg_replace('/\.gz$/', '', $build[$arch . '_log']) }}" target="_blank" rel="noopener noreferrer">

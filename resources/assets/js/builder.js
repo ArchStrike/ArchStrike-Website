@@ -27,6 +27,7 @@ function initBuildTable() {
                 "repo-sort",
                 "armv6-sort",
                 "armv7-sort",
+                "armv8-sort",
                 "i686-sort",
                 "x86_64-sort"
             ],

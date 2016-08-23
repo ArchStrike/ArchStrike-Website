@@ -100,6 +100,7 @@ body.builder {
                     th { display: none; }
 
                     td {
+                        position: relative;
                         display: block;
                         width: 100%;
                         border-bottom: 1px solid lighten(@c_shading, 30%);
@@ -113,8 +114,18 @@ body.builder {
 
                         &.package-status {
                             display: none;
-                            .repo-name, .status { float: right; }
-                            .status { padding-left: 10px; }
+
+                            .status {
+                                float: right;
+                                padding-left: 10px;
+                            }
+
+                            .repo-name {
+                                position: absolute;
+                                right: 5px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
 
                             .label {
                                 display: inline-block;
