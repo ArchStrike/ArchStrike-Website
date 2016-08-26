@@ -49,7 +49,7 @@ return array(
     |
     */
 
-    'description' => 'A security layer for Arch Linux done the Arch Way and optimized for i686, x86_64, ARMv6, and ARMv7',
+    'description' => 'A security layer for Arch Linux done the Arch Way and optimized for i686, x86_64, ARMv6, ARMv7 and ARMv8',
 
     /*
     |--------------------------------------------------------------------------
