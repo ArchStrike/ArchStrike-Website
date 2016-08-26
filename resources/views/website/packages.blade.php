@@ -111,7 +111,7 @@
                                     @if($skip_arch['all'])
                                         all
                                     @else
-                                        @foreach([ 'armv6', 'armv7', 'i686', 'x86_64' ] as $arch)
+                                        @foreach([ 'i686', 'x86_64', 'armv6', 'armv7', 'armv8' ] as $arch)
                                             @if($skip_arch[$arch])
                                                 <span>{{ $arch }}</span>
                                             @endif
@@ -180,7 +180,7 @@
                     </table>
 
                     <table class="build-status-table">
-                        @set('arch_list', [ 'armv6', 'armv7', 'i686', 'x86_64' ])
+                        @set('arch_list', [ 'i686', 'x86_64', 'armv6', 'armv7', 'armv8' ])
 
                         <thead>
                             <tr class="mobile-head">

@@ -11,7 +11,7 @@
                     </div>
 
                     <div class="info-body">
-                        <p>Done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a> and optimized for i686, x86_64, ARMv6, and ARMv7</p>
+                        <p>Done the <a href="https://wiki.archlinux.org/index.php/Arch_Linux#Principles" target="_blank" rel="noopener noreferrer">Arch Way</a> and optimized for i686, x86_64, ARMv6, ARMv7, and ARMv8</p>
                         <p>We follow the Arch Linux standards closely in order to keep our packages clean, proper and easy to maintain. Our team works hard to maintain the repository and give the best ArchStrike experience. If you find any issues, please don't hesitate to contact us via GitHub, IRC, Twitter or email. Any feedback is appreciated.</p>
                         <p class="social-links">@include('elements.social')</p>
                     </div>
