@@ -7,7 +7,7 @@
   "description": "The ArchStrike website found at archstrike.org",
   "license": "GPL3",
   "dependencies": {
-    "bootstrap": "~3.3.6",
+    "bootstrap": "~3.3.7",
     "list.js": "~1.2.0",
     "jQuery.stickyFooter": "https://github.com/miWebb/jQuery.stickyFooter.git#~1.2.3"
   }
