@@ -3,7 +3,7 @@
 @section('page')
     <div id="build-logs">
         <h1>ArchStrike Build Issues</h1>
-        <p>Click on the build status to see the log, or view the complete list of logs <a class="logs" href="http://archstrike.org:81/in-log">here</a></p>
+        <p>Click on the build status to see the log, or view the complete list of logs <a class="logs" href="https://logs.archstrike.org">here</a></p>
         <input id="package-filter" class="search" placeholder="Filter Packages" />
 
         <table>
