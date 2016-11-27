@@ -145,7 +145,7 @@ Route::get('/wiki/{page?}', function($page = 'index') {
     // return the requested wiki page or a 404 if it doesn't exist
     if (file_exists(base_path() . '/resources/views/wiki/' . $page . '.md.blade.php')) {
         return view('website.wiki', [ 'page' => $page ]);
-    if (file_exists(base_path() . '/resources/views/wiki/tutorials' . $page . 'md.blade.php')) {
+    else if (file_exists(base_path() . '/resources/views/wiki/tutorials' . $page . 'md.blade.php')) {
         return view('website.wiki', [ 'page' => $page ]);
     } else {
         abort(404);
