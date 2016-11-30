@@ -135,22 +135,23 @@ Route::get('/team', function() {
     return view('website.team');
 });
 
-Route::get('/wiki/{page?}', function($page = 'index') {
-    if ($page == 'index') {
+Route::get('/wiki/{path?}', function($path = 'index') {
+    if ($path == 'index') {
         Head::setTitle('Wiki');
     } else {
-        Head::setTitle('Wiki: ' . ucfirst($page));
+        $path = preg_replace('/\/$/', '', $path);
+        Head::setTitle('Wiki: ' . ucfirst(preg_replace('/^.*\//', '', $path)));
     }
 
     // return the requested wiki page or a 404 if it doesn't exist
-    if (file_exists(base_path() . '/resources/views/wiki/' . $page . '.md.blade.php')) {
-        return view('website.wiki', [ 'page' => $page ]);
-    } else if (file_exists(base_path() . '/resources/views/wiki/tutorials' . $page . 'md.blade.php')) {
-        return view('website.wiki', [ 'page' => $page ]);
+    if (file_exists(base_path() . '/resources/views/wiki/' . $path . '.md.blade.php')) {
+        return view('website.wiki', [ 'path' => $path ]);
+    } else if (file_exists(base_path() . '/resources/views/wiki/' . $path . '/index.md.blade.php')) {
+        return view('website.wiki', [ 'path' => $path . '/index' ]);
     } else {
         abort(404);
     }
-});
+})->where('path', '.*');
 
 Route::get('/downloads', function() {
     Head::setTitle('Downloads');
