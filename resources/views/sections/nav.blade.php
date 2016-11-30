@@ -14,13 +14,13 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/">Home</a></li>
+                <li><a href="/wiki">Wiki</a></li>
                 <li><a href="/news">News</a></li>
+                <li><a href="https://reddit.com/r/archstrike">Forums</a></li>
                 <li><a href="/downloads">Downloads</a></li>
                 <li><a href="/packages">Packages</a></li>
-                <li><a href="https://reddit.com/r/archstrike">Forums</a></li>
-                <li><a href="https://github.com/ArchStrike/ArchStrike/issues">Bugs</a></li>
                 <li><a href="/team">Team</a></li>
-                <li><a href="/wiki">Wiki</a></li>
+                <li><a href="https://github.com/ArchStrike/ArchStrike/issues">Bugs</a></li>
             </ul>
         </div>
     </div>
