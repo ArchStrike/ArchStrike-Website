@@ -13,7 +13,7 @@
             </script>
         @endif
 
-        @if(APP::environment('production'))
+        @if(App::environment('production'))
             @include('tracking.piwik')
         @endif
     </head>
