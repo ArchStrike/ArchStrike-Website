@@ -13,6 +13,7 @@
 
 use App\Abs;
 use App\Files;
+use App\Mirrorlist;
 
 Route::get('/', function() {
     $news_item_blades = glob(base_path() . '/resources/views/news/*.blade.php');
@@ -46,6 +47,24 @@ Route::get('/news/{news_item?}', function($news_item = 'index') {
         ]);
     } else if (file_exists(base_path() . '/resources/views/news/' . $news_item . '.blade.php')) {
         return view('website.news', [ 'news_item' => $news_item ]);
+    } else {
+        abort(404);
+    }
+});
+
+Route::get('/mirrorlist/{option?}', function($option = null) {
+    if ($option == null) {
+        return view('website.mirrorlist', [
+            'protocols' => Mirrorlist::getProtocols(),
+            'types' => Mirrorlist::getTypes(),
+            'countries' => Mirrorlist::getCountries()
+        ]);
+    } else if ($option == 'generate') {
+        $protocol = isset($_GET['p']) ? explode(',', $_GET['p']) : 'any';
+        $type = isset($_GET['t']) ? explode(',', $_GET['t']) : 'any';
+        $country = isset($_GET['c']) ? explode(',', $_GET['c']) : 'any';
+        $mirrorlist = Mirrorlist::filterMirrorlist($protocol, $type, $country);
+        return response($mirrorlist)->header('Content-Type', 'text/plain');
     } else {
         abort(404);
     }

@@ -25,6 +25,7 @@ const jsPublic = [
     "resources/assets/js/site-vars.js",
     "resources/assets/js/builder.js",
     "resources/assets/js/packages.js",
+    "resources/assets/js/mirrorlist.js",
     "resources/assets/js/app.js"
 ];
 
@@ -32,6 +33,9 @@ const jsPublic = [
 const jsPublicLibs = [
     "bower_components/jquery/dist/jquery.min.js",
     "bower_components/bootstrap/dist/js/bootstrap.min.js",
+    "bower_components/formstone/dist/js/core.js",
+    "bower_components/formstone/dist/js/touch.js",
+    "bower_components/formstone/dist/js/checkbox.js",
     "bower_components/jQuery.stickyFooter/assets/js/jquery.stickyfooter.min.js",
     "bower_components/list.js/dist/list.min.js"
 ];

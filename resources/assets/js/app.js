@@ -32,5 +32,9 @@ $(document).ready(function() {
 
         case "wiki":
             break;
+
+        case "mirrorlist":
+            initCustomMirrorlist();
+            break;
     }
 });

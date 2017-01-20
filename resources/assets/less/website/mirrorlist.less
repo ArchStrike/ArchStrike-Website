@@ -1,0 +1,41 @@
+body.mirrorlist {
+    .info {
+        margin-top: 5px;
+    }
+
+    form {
+        @legend-width: 85px;
+
+        fieldset {
+            position: relative;
+            margin: 15px 0px;
+            padding-left: @legend-width;
+
+            legend {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .field {
+                white-space: nowrap;
+
+                label {
+                    margin-left: 8px;
+                }
+
+                .fs-checkbox-marker {
+                    background-color: darken(@c_light_bg, 5%);
+                }
+            }
+        }
+
+        .generate-mirrorlist {
+            margin-bottom: (@grid-gutter-width / 2);
+            margin-left: @legend-width;
+            height: 28px;
+        }
+    }
+}

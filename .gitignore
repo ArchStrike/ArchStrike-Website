@@ -7,4 +7,5 @@
 /public/css
 /public/js
 /public/fonts
+/app/GeneratedMirrorlist.php
 .env
