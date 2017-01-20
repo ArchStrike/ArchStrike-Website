@@ -16,7 +16,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/wiki">Wiki</a></li>
                 <li><a href="/news">News</a></li>
-                <li><a href="https://reddit.com/r/archstrike">Forums</a></li>
+                <li><a href="https://reddit.com/r/archstrike" target="_blank">Forums</a></li>
                 <li><a href="/downloads">Downloads</a></li>
                 <li><a href="/packages">Packages</a></li>
                 <li><a href="/team">Team</a></li>
