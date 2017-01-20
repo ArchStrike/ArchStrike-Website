@@ -9,7 +9,7 @@ $(document).ready(function() {
     });
 
     // trigger a resize after everything has loaded to ensure the sticky footer runs
-    $(window).load(function() {
+    $(window).on("load", function() {
         $(this).trigger("resize");
     });
 
