@@ -13,19 +13,19 @@ body.builder {
             width: 100%;
             margin-top: 15px;
             margin-bottom: 15px;
-            border: 1px solid @c_dark_bg;
+            border: 1px solid @c-dark-bg;
             border-spacing: 0;
             border-radius: 2px;
-            background-color: darken(@c_light_bg, 2%);
+            background-color: darken(@c-light-bg, 2%);
             th, td { font-size: 12px; }
-            td:hover { background-color: darken(@c_light_bg, 7%); }
+            td:hover { background-color: darken(@c-light-bg, 7%); }
 
             th {
                 position: relative;
                 padding: 5px;
                 user-select: none;
-                background-color: @c_dark_bg;
-                color: @c_light_text;
+                background-color: @c-dark-bg;
+                color: @c-light-text;
                 text-align: left;
 
                 &.sort {
@@ -44,8 +44,8 @@ body.builder {
                         border-right: 5px solid transparent;
                     }
 
-                    &.asc:after { border-top: 5px solid @c_light_text; }
-                    &.desc:after { border-bottom: 5px solid @c_light_text; }
+                    &.asc:after { border-top: 5px solid @c-light-text; }
+                    &.desc:after { border-bottom: 5px solid @c-light-text; }
                 }
             }
 
@@ -57,7 +57,7 @@ body.builder {
                     &:hover { text-decoration: underline; }
                 }
 
-                @media (min-width: @build_table_break) {
+                @media (min-width: @build-table-break) {
                     &.build-status { width: 17%; }
                 }
             }
@@ -75,24 +75,24 @@ body.builder {
                 span.version {
                     float: right;
                     font-style: italic;
-                    color: @c_dark_text;
+                    color: @c-dark-text;
                 }
             }
 
-            .fail, .fail a { color: @c_red; }
-            .done, .done a { color: @c_green; }
-            .incomplete, .incomplete a { color: @c_dark_bg; }
+            .fail, .fail a { color: @c-red; }
+            .done, .done a { color: @c-green; }
+            .incomplete, .incomplete a { color: @c-dark-bg; }
 
-            @media (min-width: @build_table_break) {
+            @media (min-width: @build-table-break) {
                 .repo { width: 105px; }
-                tr:nth-child(odd) { background-color: darken(@c_light_bg, 5%); }
-                th:not(:first-child), td:not(:first-child) { border-left: 1px solid lighten(@c_shading, 30%); }
-                th, tr:not(:last-child) td { border-bottom: 1px solid lighten(@c_shading, 30%); }
+                tr:nth-child(odd) { background-color: darken(@c-light-bg, 5%); }
+                th:not(:first-child), td:not(:first-child) { border-left: 1px solid lighten(@c-shading, 30%); }
+                th, tr:not(:last-child) td { border-bottom: 1px solid lighten(@c-shading, 30%); }
                 .label { display: none; }
             }
 
-            @media (max-width: (@build_table_break - 1)) {
-                border-color: lighten(@c_shading, 30%);
+            @media (max-width: (@build-table-break - 1)) {
+                border-color: lighten(@c-shading, 30%);
                 border-top: none;
                 border-bottom: none;
 
@@ -103,13 +103,13 @@ body.builder {
                         position: relative;
                         display: block;
                         width: 100%;
-                        border-bottom: 1px solid lighten(@c_shading, 30%);
+                        border-bottom: 1px solid lighten(@c-shading, 30%);
 
                         &.package {
                             cursor: pointer;
-                            background-color: darken(@c_light_bg, 5%);
+                            background-color: darken(@c-light-bg, 5%);
                             user-select: none;
-                            &:hover { background-color: darken(@c_light_bg, 15%); }
+                            &:hover { background-color: darken(@c-light-bg, 15%); }
                         }
 
                         &.package-status {
@@ -131,15 +131,15 @@ body.builder {
                                 display: inline-block;
                                 width: 65px;
                                 text-align: left;
-                                color: @c_dark_text;
+                                color: @c-dark-text;
                             }
                         }
                     }
 
-                    &:first-child td:first-child { border-top: 1px solid lighten(@c_shading, 30%); }
+                    &:first-child td:first-child { border-top: 1px solid lighten(@c-shading, 30%); }
 
                     &.visible {
-                        .package, .package:hover { background-color: darken(@c_light_bg, 15%); }
+                        .package, .package:hover { background-color: darken(@c-light-bg, 15%); }
                         .package-status { display: block; }
                     }
                 }

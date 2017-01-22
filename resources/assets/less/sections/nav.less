@@ -1,16 +1,21 @@
 nav.navbar {
-    background-color: @c_dark_bg;
+    z-index: 1;
+    position: relative;
     padding: 5px 0px;
-    border-color: transparent transparent @c_brand transparent;
+    border-color: transparent transparent @c-brand transparent;
     border-bottom-width: 5px;
     border-radius: 0px;
-    z-index: 1;
+    background-color: @c-dark-bg;
+
+    .navbar-header {
+        height: 50px;
+    }
 
     .navbar-brand {
-        display: inline-block;
         position: relative;
+        top: (@navbar-height / 2);
         left: 15px;
-        margin: 5px;
+        transform: translateY(-50%);
         width: 120px;
         height: 40px;
         background-image: url('/img/archstrike-light.svg');
@@ -23,23 +28,21 @@ nav.navbar {
         box-shadow: none;
         border: none;
 
-        ul.nav {
-            li {
-                a {
-                    color: lighten(@c_dark_text, 60%);
-                    font-size: 14px;
-                    font-weight: 700;
-                    text-decoration: none;
-                }
-
-                &:hover a {
-                    color: @c_light_text;
-                    text-decoration: underline;
-                }
-
-                &.active a { color: @c_light_text; }
-                &.active a, &.active:hover a, &:hover a, &:focus a { background-color: transparent; }
+        ul.nav li {
+            a {
+                color: lighten(@c-dark-text, 60%);
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
             }
+
+            &:hover a {
+                color: @c-light-text;
+                text-decoration: underline;
+            }
+
+            &.active a { color: @c-light-text; }
+            &.active a, &.active:hover a, &:hover a, &:focus a { background-color: transparent; }
         }
     }
 

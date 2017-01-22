@@ -8,9 +8,9 @@ body.news {
 
     .news-page-container {
         padding: 5px 10px;
-        border: 1px solid darken(@c_light_bg, 15%);
+        border: 1px solid darken(@c-light-bg, 15%);
         border-radius: 3px;
-        background-color: darken(@c_light_bg, 10%);
+        background-color: darken(@c-light-bg, 10%);
         h1 { margin-top: 5px; }
 
         .news-date {
@@ -29,8 +29,8 @@ body.news {
             margin-bottom: 15px;
             display: inline-block;
             padding: 3px 8px;
-            background-color: @c_dark_bg;
-            color: @c_light_text;
+            background-color: @c-dark-bg;
+            color: @c-light-text;
             font-weight: bold;
 
             &:after {
@@ -43,7 +43,7 @@ body.news {
                 height: 0px;
                 border-style: solid;
                 border-width: @size @size 0 @size;
-                border-color: @c_dark_bg transparent transparent transparent;
+                border-color: @c-dark-bg transparent transparent transparent;
             }
         }
 
@@ -53,12 +53,12 @@ body.news {
 
             .news-heading {
                 position: relative;
-                border-bottom: 1px dotted lighten(@c_dark_text, 50%);
+                border-bottom: 1px dotted lighten(@c-dark-text, 50%);
 
                 .news-title {
                     margin-bottom: 5px;
                     padding-right: 75px;
-                    color: @c_red;
+                    color: @c-red;
                     font-size: 13px;
                     font-weight: bold;
 
@@ -77,7 +77,7 @@ body.news {
             }
 
             .news-body {
-                h1, h2, h3 { border-bottom: 1px dotted lighten(@c_dark_text, 75%); }
+                h1, h2, h3 { border-bottom: 1px dotted lighten(@c-dark-text, 75%); }
             }
         }
     }
@@ -92,7 +92,7 @@ body.news {
             margin: 6px 0px;
             padding-top: 3px;
             padding-bottom: 5px;
-            border-bottom: 1px dotted lighten(@c_dark_text, 50%);
+            border-bottom: 1px dotted lighten(@c-dark-text, 50%);
         }
 
         ul, ol { padding-left: 20px; }

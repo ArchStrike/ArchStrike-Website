@@ -48,7 +48,7 @@ body.packages {
 
         @media (min-height: @relative-height) {
             position: absolute;
-            top: calc(50% ~"+" (112px - @footer_height));
+            top: calc(50% ~"+" (112px - @footer-height));
             left: 0px;
             transform: translateY(-50%);
             width: 100%;
@@ -62,13 +62,13 @@ body.packages {
         margin: 15px 0px 10px 0px;
 
         thead tr {
-            background-color: @c_dark_bg;
-            color: @c_light_text;
+            background-color: @c-dark-bg;
+            color: @c-light-text;
         }
 
         tbody tr {
-            background-color: darken(@c_light_bg, 3%);
-            &:nth-child(odd) { background-color: darken(@c_light_bg, 6%); }
+            background-color: darken(@c-light-bg, 3%);
+            &:nth-child(odd) { background-color: darken(@c-light-bg, 6%); }
         }
 
         th, td {
@@ -112,18 +112,18 @@ body.packages {
                     width: 100%;
                     height: 100%;
                     padding: 2px 8px;
-                    background-color: darken(@c_light_bg, 5%);
+                    background-color: darken(@c-light-bg, 5%);
                     transition: background-color 250ms;
 
                     &:hover {
                         text-decoration: none;
-                        background-color: darken(@c_light_bg, 10%);
+                        background-color: darken(@c-light-bg, 10%);
                     }
 
                     .label {
                         display: inline-block;
                         padding: 0px 8px 0px 0px;
-                        color: @c_dark_text;
+                        color: @c-dark-text;
                         font-size: 14px;
                         @media (min-width: @screen-sm-min) { display: none; }
                     }
@@ -132,9 +132,9 @@ body.packages {
                         @media (max-width: @screen-xs-max) { float: right; }
                     }
 
-                    .status-done { color: @c_green; }
-                    .status-fail { color: @c_red; }
-                    .status-incomplete { color: @c_dark_text; }
+                    .status-done { color: @c-green; }
+                    .status-fail { color: @c-red; }
+                    .status-incomplete { color: @c-dark-text; }
                 }
             }
 
@@ -152,8 +152,8 @@ body.packages {
                 td {
                     display: block;
                     width: 100%;
-                    a { background-color: darken(@c_light_bg, 3%); }
-                    &:nth-child(odd) a { background-color: darken(@c_light_bg, 6%); }
+                    a { background-color: darken(@c-light-bg, 3%); }
+                    &:nth-child(odd) a { background-color: darken(@c-light-bg, 6%); }
                 }
             }
         }
@@ -166,7 +166,7 @@ body.packages {
         @media (max-width: @screen-sm-max) { font-size: 14px; }
 
         a {
-            &.page-link { color: @c_brand; }
+            &.page-link { color: @c-brand; }
             &.page-prev { padding-right: 10px; }
             &.page-next { padding-left: 10px; }
         }
@@ -190,8 +190,8 @@ body.packages {
                     text-transform: uppercase;
                     padding: 5px 0px;
                     margin: 5px 0px;
-                    background-color: darken(@c_light_bg, 4%);
-                    &:hover { background-color: darken(@c_light_bg, 8%); }
+                    background-color: darken(@c-light-bg, 4%);
+                    &:hover { background-color: darken(@c-light-bg, 8%); }
                 }
             }
         }

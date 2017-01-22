@@ -80,7 +80,7 @@ body.home {
                 .info-body {
                     margin-top: 8px;
                     padding-top: 8px;
-                    border-top: 1px solid @c_dark_bg;
+                    border-top: 1px solid @c-dark-bg;
 
                     .social-links {
                         @icon-size: 28px;
@@ -116,14 +116,14 @@ body.home {
                     display: inline-block;
                     height: 27px;
                     padding: 0px 8px;
-                    background-color: @c_dark_bg;
+                    background-color: @c-dark-bg;
 
                     a, span {
                         position: relative;
                         top: 50%;
                         transform: translateY(-50%);
                         display: block;
-                        color: @c_light_text;
+                        color: @c-light-text;
                         font-weight: bold;
                         text-decoration: none;
                     }
@@ -143,7 +143,7 @@ body.home {
                         height: 0px;
                         border-style: solid;
                         border-width: @size @size 0 @size;
-                        border-color: @c_dark_bg transparent transparent transparent;
+                        border-color: @c-dark-bg transparent transparent transparent;
                     }
                 }
 
@@ -153,12 +153,12 @@ body.home {
 
                     .news-heading {
                         position: relative;
-                        border-bottom: 1px dotted lighten(@c_dark_text, 50%);
+                        border-bottom: 1px dotted lighten(@c-dark-text, 50%);
 
                         .news-title {
                             margin-bottom: 5px;
                             padding-right: 75px;
-                            color: @c_red;
+                            color: @c-red;
                             font-size: 13px;
                             font-weight: bold;
 
@@ -186,7 +186,7 @@ body.home {
                             margin: 6px 0px;
                             padding-top: 3px;
                             padding-bottom: 5px;
-                            border-bottom: 1px dotted lighten(@c_dark_text, 75%);
+                            border-bottom: 1px dotted lighten(@c-dark-text, 75%);
                         }
 
                         ul, ol { padding-left: 20px; }
@@ -207,7 +207,7 @@ body.home {
             .package-search {
                 width: @feed-width;
                 border-radius: 3px;
-                background-color: @c_dark_bg;
+                background-color: @c-dark-bg;
                 text-align: left;
 
                 @media (max-width: @screen-xs-max) {
@@ -232,7 +232,7 @@ body.home {
 
                     div {
                         display: inline-block;
-                        color: @c_light_text;
+                        color: @c-light-text;
                         font-size: 12px;
                         font-weight: bold;
                         @media (max-width: @screen-xs-max) { width: 100%; }
@@ -243,7 +243,7 @@ body.home {
                         float: right;
                         width: (@feed-width - 145px);
                         padding: .10em;
-                        border: 1px solid darken(@c_dark_bg, 10%);
+                        border: 1px solid darken(@c-dark-bg, 10%);
 
                         @media (max-width: @screen-xs-max) {
                             float: none;
@@ -255,8 +255,8 @@ body.home {
 
             .sidebar-box {
                 margin-top: 13px;
-                background-color: darken(@c_light_bg, 10%);
-                border: 1px solid darken(@c_light_bg, 15%);
+                background-color: darken(@c-light-bg, 10%);
+                border: 1px solid darken(@c-light-bg, 15%);
                 border-radius: 3px;
                 width: @feed-width;
 
@@ -280,12 +280,12 @@ body.home {
                     right: 1px;
                     width: calc(100% ~"+" 2px);
                     font-weight: bold;
-                    background-color: @c_dark_bg;
+                    background-color: @c-dark-bg;
                     border-top-left-radius: 3px;
                     border-top-right-radius: 3px;
 
                     &, a {
-                        color: @c_light_text;
+                        color: @c-light-text;
                         text-decoration: none;
                     }
 
@@ -295,7 +295,7 @@ body.home {
                 .sidebar-box-item {
                     position: relative;
                     text-align: left;
-                    &:not(:last-child) { border-bottom: 1px solid darken(@c_light_bg, 15%); }
+                    &:not(:last-child) { border-bottom: 1px solid darken(@c-light-bg, 15%); }
 
                     div {
                         padding-bottom: 5px;
@@ -304,7 +304,7 @@ body.home {
                         a {
                             text-decoration: none;
                             font-weight: bold;
-                            color: @c_dark_text;
+                            color: @c-dark-text;
                             &:hover { text-decoration: underline; }
                         }
 

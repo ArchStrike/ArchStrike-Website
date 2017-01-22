@@ -29,8 +29,8 @@ body {
     padding: 0px;
     line-height: 1.5;
     font-weight: 100;
-    color: @c_dark_text;
-    background-color: @c_light_bg;
+    color: @c-dark-text;
+    background-color: @c-light-bg;
     text-rendering: optimizeLegibility;
 }
 
@@ -46,25 +46,25 @@ pre {
 }
 
 pre, code {
-    background-color: @c_dark_bg;
-    color: @c_light_bg;
+    background-color: @c-dark-bg;
+    color: @c-light-bg;
 }
 
 a {
-    color: @c_red;
+    color: @c-red;
     text-decoration: underline;
-    &:hover, &:focus { color: lighten(@c_red, 15%); }
+    &:hover, &:focus { color: lighten(@c-red, 15%); }
 }
 
 h1, h2, h3, h4, h5 {
-    color: @c_shading;
+    color: @c-shading;
     font-weight: 700;
 }
 
 h1 {
     margin-bottom: 5px;
     padding-bottom: 5px;
-    border-bottom: 1px solid @c_dark_bg;
+    border-bottom: 1px solid @c-dark-bg;
     font-size: 24px;
 
     .heading-link {
