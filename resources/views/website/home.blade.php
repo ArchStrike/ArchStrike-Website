@@ -37,12 +37,6 @@
                     </div>
                 </form>
 
-                <div class="sidebar-box">
-                    <div class="sidebar-box-heading">ArchStrike Tools</div>
-                    <div class="sidebar-box-item"><a href="/wiki/beginners">Beginner's Guide</a></div>
-                    <div class="sidebar-box-item"><a href="/mirrorlist">Mirrorlist Generator</a></div>
-                </div>
-
                 @if(env('PKGUPDATES_ENABLED'))
                     <div class="sidebar-box pkgupdates">
                         <div class="sidebar-box-heading">
@@ -65,6 +59,11 @@
                             </div>
                         @endforeach
                     @endcache
+                </div>
+
+                <div class="sidebar-box">
+                    <div class="sidebar-box-heading">ArchStrike Tools</div>
+                    <a class="sidebar-box-link" href="/mirrorlist">Mirrorlist Generator</a>
                 </div>
 
                 <div class="sidebar-box sponsors">

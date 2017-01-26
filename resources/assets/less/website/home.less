@@ -292,10 +292,14 @@ body.home {
                     a:hover { text-decoration: underline; }
                 }
 
-                .sidebar-box-item {
+                .sidebar-box-item, .sidebar-box-link {
                     position: relative;
-                    text-align: left;
+                    display: block;
                     &:not(:last-child) { border-bottom: 1px solid darken(@c-light-bg, 15%); }
+                }
+
+                .sidebar-box-item {
+                    text-align: left;
 
                     div {
                         padding-bottom: 5px;
@@ -313,6 +317,12 @@ body.home {
                             float: right;
                         }
                     }
+                }
+
+                .sidebar-box-link {
+                    padding: 5px 0px;
+                    text-align: center;
+                    text-decoration: none;
                 }
             }
 
