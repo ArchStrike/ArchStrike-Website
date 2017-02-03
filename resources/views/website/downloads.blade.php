@@ -91,12 +91,12 @@
                 <h2>ArchStrike VirtualBox &amp; VMWare OVA</h2>
                 <h3>VirtualBox</h3>
                 <p><a href="{{ $vm_mirror }}/ArchStrike.ova">Download Link</a></p>
-                <p><strong>Size:</strong> 7.7G</p>
+                <p><strong>Size:</strong> {{ env('VBOX_SIZE') }}</p>
                 <p><strong>SHA1:</strong> <code>{{ env('VBOX_SHA') }}</code></a></p>
                 <p><strong>MD5:</strong> <code>{{ env('VBOX_MD5') }}</code></a></p>
                 <h3>VMWare</h3>
                 <p><a href="{{ $vm_mirror }}/ArchStrike-vmware.ova">Download Link</a></p>
-                <p><strong>Size:</strong> 9.2G</p>
+                <p><strong>Size:</strong> {{ env('VMWARE_SIZE') }}</p>
                 <p><strong>SHA1:</strong> <code>{{ env('VMWARE_SHA') }}</code></a></p>
                 <p><strong>MD5:</strong> <code>{{ env('VMWARE_MD5') }}</code></a></p>
                 <h3>General Information</h3>
