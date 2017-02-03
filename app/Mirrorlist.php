@@ -90,4 +90,21 @@ class Mirrorlist {
         return $countries;
     }
 
+    public static function getDownloadMirrors($type)
+    {
+        $mirrors = self::getMirrorlist();
+        $download_mirrors = [];
+
+        foreach ($mirrors as $mirror) {
+            if ($type == $mirror[3]) {
+                array_push($download_mirrors, [
+                    'name' => $type == 'official' ? $mirror[5] : ucfirst(preg_replace([ '/\.[^\.]*$/', '/^.*\./' ], [ '', '' ], $mirror[1])) . ' - ' . $mirror[5] . ($mirror[0] == 'https' ? ' (https)' : ''),
+                    'url' => $mirror[0] . '://' . $mirror[1] . preg_replace('/\$arch\/\$repo/', '', $mirror[2])
+                ]);
+            }
+        }
+
+        return $download_mirrors;
+    }
+
 }

@@ -93,7 +93,7 @@
             @endif
         @else
             <div class="row">
-                <div class="col-xs-12 col-md-10 col-md-offset-1 column">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
                     <h1>{{ $package->package }} <a href="/packages" title="ArchStrike Packages" class="heading-link">Back to Packages</a></h1>
 
                     <table class="package-table">

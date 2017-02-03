@@ -174,5 +174,9 @@ Route::get('/wiki/{path?}', function($path = 'index') {
 
 Route::get('/downloads', function() {
     Head::setTitle('Downloads');
-    return view('website.downloads');
+
+    return view('website.downloads', [
+        'official_mirrors' => Mirrorlist::getDownloadMirrors('official'),
+        'community_mirrors' => Mirrorlist::getDownloadMirrors('community')
+    ]);
 });

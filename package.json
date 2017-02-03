@@ -4,7 +4,7 @@
     "gulp-livereload": "^3.8.1"
   },
   "dependencies": {
-    "autoprefixer": "^6.7.0",
+    "autoprefixer": "^6.7.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-less": "^3.3.0",

@@ -3,7 +3,7 @@
 @section('page')
     <div class="container-fluid page-container">
         <div class="row">
-            <div class="col-xs-12 column">
+            <div class="col-xs-12">
                 <h1>ArchStrike Wiki</h1>
 
                 <div class="breadcrumb">
@@ -29,7 +29,7 @@
         </div>
 
         <div class="row wiki-row">
-            <div class="col-xs-12 column">
+            <div class="col-xs-12">
                 @include('wiki.' . preg_replace('/\//', '.', $path))
             </div>
         </div>
