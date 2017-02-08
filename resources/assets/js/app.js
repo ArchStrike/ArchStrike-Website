@@ -23,18 +23,16 @@ $(document).ready(function() {
             initBuildTable();
             break;
 
-        case "packages":
-            initPackageSearch();
-            break;
-
-        case "team":
-            break;
-
-        case "wiki":
+        case "downloads":
+            initDownloads();
             break;
 
         case "mirrorlist":
             initCustomMirrorlist();
+            break;
+
+        case "packages":
+            initPackageSearch();
             break;
     }
 });

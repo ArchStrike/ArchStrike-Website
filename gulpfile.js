@@ -24,8 +24,9 @@ const lessPlugins = prod ? [ lessGlob, cleancss ] : [ lessGlob ],
 const jsPublic = [
     "resources/assets/js/site-vars.js",
     "resources/assets/js/builder.js",
-    "resources/assets/js/packages.js",
+    "resources/assets/js/downloads.js",
     "resources/assets/js/mirrorlist.js",
+    "resources/assets/js/packages.js",
     "resources/assets/js/app.js"
 ];
 
