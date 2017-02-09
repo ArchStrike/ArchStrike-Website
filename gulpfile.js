@@ -37,6 +37,7 @@ const jsPublicLibs = [
     "bower_components/formstone/dist/js/core.js",
     "bower_components/formstone/dist/js/touch.js",
     "bower_components/formstone/dist/js/checkbox.js",
+    "bower_components/formstone/dist/js/dropdown.js",
     "bower_components/jQuery.stickyFooter/assets/js/jquery.stickyfooter.min.js",
     "bower_components/list.js/dist/list.min.js"
 ];

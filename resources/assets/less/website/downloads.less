@@ -4,6 +4,90 @@ body.downloads {
         border-bottom: 1px solid @c-dark-bg;
     }
 
+    #downloads-form-container {
+        display: none;
+
+        form {
+            @media (min-width: @screen-sm-min) {
+                display: flex;
+                max-width: 1075px;
+                justify-content: space-between;
+            }
+        }
+
+        .fs-dropdown-options {
+            transform: translateY(-1px);
+        }
+
+        .fs-dropdown, .fs-dropdown-selected, .fs-dropdown-item, .download-iso-submit {
+            height: 32px;
+        }
+
+        .fs-dropdown, .download-iso-submit {
+            margin: 0px 5px;
+
+            @media (max-width: @screen-xs-max) {
+                width: 100%;
+            }
+        }
+
+        .fs-dropdown-selected {
+            border: 1px solid @c-shading;
+            transition: border-color 150ms;
+        }
+
+        .fs-dropdown {
+            position: relative;
+            display: block;
+
+            @media (max-width: @screen-xs-max) {
+                margin-bottom: 10px;
+            }
+
+            @media (min-width: @screen-sm-min) {
+                width: 100%;
+                flex-grow: 1;
+            }
+
+            &:before, &:after {
+                content: "";
+                z-index: 5;
+                position: absolute;
+                top: 12px;
+                width: 1px;
+                height: 10px;
+                background-color: @c-dark-bg;
+            }
+
+            &:before {
+                right: 15px;
+                transform: rotate(33deg);
+            }
+
+            &:after {
+                right: 20px;
+                transform: rotate(-33deg);
+            }
+
+            &.error .fs-dropdown-selected {
+                border-color: @c-red;
+            }
+        }
+
+        .fs-dropdown-selected, .fs-dropdown-item {
+            padding: 0px 8px;
+        }
+
+        .fs-dropdown-item {
+            border-bottom: 1px solid @c-shading;
+            transition: background-color 100ms;
+
+            &:hover {
+                background-color: @c-light-bg;
+            }
+        }
+    }
+
     .checksum {
         @checksum-label-width: 68px;
 

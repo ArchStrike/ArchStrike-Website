@@ -38,40 +38,68 @@
                     <li><a href="{{ $torrent_mirror }}/os/{{ $iso32 }}.torrent">i686</a></li>
                 </ul>
 
-                <h3>Direct Download Links</h3>
-                <h4>x86_64 (64 bit)</h4>
-                <h5>Official Mirrors for x86_64</h5>
+                <div id="downloads-form-container">
+                    <h3>Direct Download</h3>
 
-                <ul>
-                    @foreach($official_mirrors as $mirror)
-                        <li><a href="{{ $mirror['url'] }}os/{{ $iso64 }}">{{ $mirror['name'] }}</a></li>
-                    @endforeach
-                </ul>
+                    <form>
+                        <select id="downloads-form-iso">
+                            <option value="">Select an ISO</option>
+                            <option value="{{ $iso64 }}">x86_64 (64 bit)</option>
+                            <option value="{{ $iso32 }}">i686 (32 bit)</option>
+                        </select>
 
-                <h5>Community Mirrors for x86_64</h5>
+                        <select id="downloads-form-mirror">
+                            <option value="">Select a Mirror</option>
 
-                <ul>
-                    @foreach($community_mirrors as $mirror)
-                        <li><a href="{{ $mirror['url'] }}os/{{ $iso64 }}">{{ $mirror['name'] }}</a></li>
-                    @endforeach
-                </ul>
+                            @foreach($official_mirrors as $mirror)
+                                <option value="{{ $mirror['url'] }}">Official - {{ $mirror['name'] }}</option>
+                            @endforeach
 
-                <h4>i686 (32 bit)</h4>
-                <h5>Official Mirrors for i686</h5>
+                            @foreach($community_mirrors as $mirror)
+                                <option value="{{ $mirror['url'] }}">{{ $mirror['name'] }}</option>
+                            @endforeach
+                        </select>
 
-                <ul>
-                    @foreach($official_mirrors as $mirror)
-                        <li><a href="{{ $mirror['url'] }}os/{{ $iso32 }}">{{ $mirror['name'] }}</a></li>
-                    @endforeach
-                </ul>
+                        <input class="download-iso-submit" type="submit" value="Download ISO" />
+                    </form>
+                </div>
 
-                <h5>Community Mirrors for i686</h5>
+                <noscript>
+                    <h3>Direct Download Links</h3>
+                    <h4>x86_64 (64 bit)</h4>
+                    <h5>Official Mirrors for x86_64</h5>
 
-                <ul>
-                    @foreach($community_mirrors as $mirror)
-                        <li><a href="{{ $mirror['url'] }}os/{{ $iso32 }}">{{ $mirror['name'] }}</a></li>
-                    @endforeach
-                </ul>
+                    <ul>
+                        @foreach($official_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso64 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+
+                    <h5>Community Mirrors for x86_64</h5>
+
+                    <ul>
+                        @foreach($community_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso64 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+
+                    <h4>i686 (32 bit)</h4>
+                    <h5>Official Mirrors for i686</h5>
+
+                    <ul>
+                        @foreach($official_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso32 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+
+                    <h5>Community Mirrors for i686</h5>
+
+                    <ul>
+                        @foreach($community_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso32 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+                </noscript>
 
                 <h3>Checksums</h3>
                 <h4>{{ $iso64 }}</h4>
