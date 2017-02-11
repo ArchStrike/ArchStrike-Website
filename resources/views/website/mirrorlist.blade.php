@@ -14,6 +14,7 @@
                     <div class="info-container">
                         <p>This page generates custom mirrorlists using the set of mirrors in the latest archstrike-mirrorlist package.</p>
                         <p>You can either choose to download the complete set of mirrors, or create a customized list using your own filters. Selecting nothing in a given category will generate a mirrorlist with all of the options from that category.</p>
+                        <p>Once you've generated your mirrorlist, save it to <code>/etc/pacman.d/archstrike-mirrorlist</code> and ensure your ArchStrike repositories in <code>/etc/pacman.conf</code> are configured with <code>Include = /etc/pacman.d/archstrike-mirrorlist</code>.</p>
                         <p><strong>NOTE:</strong> Some combinations will generate mirrorlists with no mirrors.</p>
                     </div>
                 </div>
