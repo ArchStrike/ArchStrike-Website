@@ -189,14 +189,18 @@ body.home {
                             border-bottom: 1px dotted lighten(@c-dark-text, 75%);
                         }
 
-                        ul, ol { padding-left: 20px; }
+                        ul, ol {
+                            padding-left: 20px;
+                        }
                     }
                 }
             }
         }
 
         .sidebar {
-            @media (min-width: @screen-sm-min) { float: right; }
+            @media (min-width: @screen-sm-min) {
+                float: right;
+            }
 
             .rss-link {
                 top: 50%;
@@ -205,38 +209,22 @@ body.home {
             }
 
             .package-search {
-                width: @sidebar-width;
+                width: 100%;
                 border-radius: 3px;
                 background-color: @c-dark-bg;
                 text-align: left;
 
-                @media (max-width: @screen-xs-max) {
-                    position: static;
-                    width: auto;
-                    margin-top: 25px;
-                }
-
-                .package-search-wrapper {
-                    height: 48px;
-                    padding: 10px;
+                input {
+                    width: 100%;
+                    height: 100%;
+                    padding: 2px 5px;
+                    border: 1px solid darken(@c-dark-bg, 10%);
+                    font-size: 14px;
+                    line-height: 26px;
 
                     @media (max-width: @screen-xs-max) {
-                        height: auto;
-                        padding-top: 5px;
-                    }
-
-                    input {
-                        float: right;
+                        float: none;
                         width: 100%;
-                        height: 100%;
-                        padding: 2px 5px;
-                        border: 1px solid darken(@c-dark-bg, 10%);
-                        line-height: 26px;
-
-                        @media (max-width: @screen-xs-max) {
-                            float: none;
-                            width: 100%;
-                        }
                     }
                 }
             }
@@ -277,7 +265,9 @@ body.home {
                         text-decoration: none;
                     }
 
-                    a:hover { text-decoration: underline; }
+                    a:hover {
+                        text-decoration: underline;
+                    }
                 }
 
                 .sidebar-box-item, .sidebar-box-link {
@@ -308,14 +298,16 @@ body.home {
                 }
 
                 .sidebar-box-link {
-                    padding: 5px 0px;
-                    text-align: center;
+                    padding: 5px 10px;
+                    text-align: left;
                     text-decoration: none;
                 }
             }
 
             .pkgupdates {
-                .update-info { font-weight: bold; }
+                .update-info {
+                    font-weight: bold;
+                }
 
                 .update-date {
                     float: right;

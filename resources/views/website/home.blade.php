@@ -30,15 +30,16 @@
             </div>
 
             <div class="sidebar">
-                <form id="package-search" class="package-search">
-                    <div class="package-search-wrapper">
-                        <input id="search-string" type="text" placeholder="Package Search" />
-                        <input id="search-type" type="hidden" value="name-description" />
-                    </div>
-                </form>
-
                 <div class="sidebar-box">
                     <div class="sidebar-box-heading">Tools</div>
+
+                    <div class="sidebar-box-item">
+                        <form id="package-search" class="package-search">
+                            <input id="search-string" type="text" placeholder="Package Search" />
+                            <input id="search-type" type="hidden" value="name-description" />
+                        </form>
+                    </div>
+
                     <a class="sidebar-box-link" href="/mirrorlist">ArchStrike Mirrorlist Generator</a>
                 </div>
 
@@ -52,6 +53,11 @@
                         @include('generated.pkgupdates', [ 'blade' => 'elements.pkgupdates' ])
                     </div>
                 @endif
+
+                <div class="sidebar-box sponsors">
+                    <div class="sidebar-box-heading">Support Us</div>
+                    <div class="item"><a href="https://www.patreon.com/archstrike" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/patreon.png" alt="patreon" class="img-responsive" /></a></div>
+                </div>
 
                 <div class="sidebar-box">
                     <div class="sidebar-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
@@ -67,12 +73,7 @@
                 </div>
 
                 <div class="sidebar-box sponsors">
-                    <div class="sidebar-box-heading">Support Us</div>
-                    <div class="item"><a href="https://www.patreon.com/archstrike" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/patreon.png" alt="patreon" class="img-responsive" /></a></div>
-                </div>
-
-                <div class="sidebar-box sponsors">
-                    <div class="sidebar-box-heading">Our Sponsors</div>
+                    <div class="sidebar-box-heading">Sponsors</div>
                     <div class="item"><a href="https://www.linode.com/?utm_source=referral&utm_medium=website&utm_content=Archstrike&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/linode.svg" alt="linode" class="img-responsive" /></a></div>
                 </div>
             </div>
