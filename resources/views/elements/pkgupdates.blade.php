@@ -10,10 +10,10 @@
                 {{ $update['pkgver'] }}-{{ $update['pkgrel'] }}
 
                 @if($update['info'] == 1)
-                    <span class="info">(new)</span>
+                    <span class="update-info">(new)</span>
                 @endif
 
-                {{-- <span class="date">{{ $update['date'] }}</span> --}}
+                {{-- <span class="update-date">{{ $update['date'] }}</span> --}}
             </div>
         @endif
     @else

@@ -37,6 +37,11 @@
                     </div>
                 </form>
 
+                <div class="sidebar-box">
+                    <div class="sidebar-box-heading">ArchStrike Tools</div>
+                    <a class="sidebar-box-link" href="/mirrorlist">Mirrorlist Generator</a>
+                </div>
+
                 @if(env('PKGUPDATES_ENABLED'))
                     <div class="sidebar-box pkgupdates">
                         <div class="sidebar-box-heading">
@@ -61,14 +66,14 @@
                     @endcache
                 </div>
 
-                <div class="sidebar-box">
-                    <div class="sidebar-box-heading">ArchStrike Tools</div>
-                    <a class="sidebar-box-link" href="/mirrorlist">Mirrorlist Generator</a>
+                <div class="sidebar-box sponsors">
+                    <div class="sidebar-box-heading">Support Us</div>
+                    <div class="item"><a href="https://www.patreon.com/archstrike" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/patreon.png" alt="patreon" class="img-responsive" /></a></div>
                 </div>
 
                 <div class="sidebar-box sponsors">
                     <div class="sidebar-box-heading">Our Sponsors</div>
-                    <div class="item"><a href="https://www.linode.com/?utm_source=referral&utm_medium=website&utm_content=Archstrike&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/linode.svg" class="img-responsive" /></a></div>
+                    <div class="item"><a href="https://www.linode.com/?utm_source=referral&utm_medium=website&utm_content=Archstrike&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/linode.svg" alt="linode" class="img-responsive" /></a></div>
                 </div>
             </div>
         </div>
