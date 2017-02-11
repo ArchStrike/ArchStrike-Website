@@ -15,7 +15,7 @@
                 <div class="row error-row">
                     <div class="col-xs-12 col-md-10 error-column">
                         <div class="page-wrapper">
-                            <a href="/" title="Home"><img src="/img/archstrike.svg" class="img-responsive small-logo" /></a>
+                            <a href="/" title="Home"><img src="/img/archstrike.svg" alt="ArchStrike" class="img-responsive small-logo" /></a>
                             <div class="error">Be Right Back</div>
                         </div>
                     </div>
