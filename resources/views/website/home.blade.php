@@ -32,14 +32,14 @@
             <div class="sidebar">
                 <form id="package-search" class="package-search">
                     <div class="package-search-wrapper">
-                        <div>Package Search:</div><input id="search-string" type="text" placeholder="" />
+                        <input id="search-string" type="text" placeholder="Package Search" />
                         <input id="search-type" type="hidden" value="name-description" />
                     </div>
                 </form>
 
                 <div class="sidebar-box">
-                    <div class="sidebar-box-heading">ArchStrike Tools</div>
-                    <a class="sidebar-box-link" href="/mirrorlist">Mirrorlist Generator</a>
+                    <div class="sidebar-box-heading">Tools</div>
+                    <a class="sidebar-box-link" href="/mirrorlist">ArchStrike Mirrorlist Generator</a>
                 </div>
 
                 @if(env('PKGUPDATES_ENABLED'))
