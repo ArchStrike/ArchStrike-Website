@@ -10,20 +10,37 @@
 
         <div class="row">
             <div class="col-xs-12">
+                @set('torrent_mirror', 'https://mirror.archstrike.org')
+                @set('vm_mirror', 'https://uk.mirror.archstrike.org')
+
+                @set('iso_minimal_name', env('ISO_MINIMAL_NAME'))
+                @set('iso_minimal_variant', ucfirst(preg_replace([ '/^[^\-]*-/', '/-.*/' ], [ '', '' ], $iso_minimal_name)))
+                @set('iso_minimal_release', preg_replace('/^.*-/', '', $iso_minimal_name))
+                @set('iso_minimal32', $iso_minimal_name . '-i686.iso')
+                @set('iso_minimal64', $iso_minimal_name . '-x86_64.iso')
+
                 @set('iso_name', env('ISO_NAME'))
+                @set('iso_variant', ucfirst(preg_replace([ '/^[^\-]*-/', '/-.*/' ], [ '', '' ], $iso_name)))
                 @set('iso_release', preg_replace('/^.*-/', '', $iso_name))
                 @set('iso32', $iso_name . '-i686.iso')
                 @set('iso64', $iso_name . '-x86_64.iso')
-                @set('torrent_mirror', 'https://mirror.archstrike.org')
-                @set('vm_mirror', 'https://uk.mirror.archstrike.org')
 
                 <h2>Archstrike Live ISO</h2>
                 <h3>Release Info</h3>
                 <p>The image can be burned to a CD, mounted as an ISO file, or be directly written to a USB stick using a utility like <code>dd</code>.</p>
 
-                <p><strong>Current Release:</strong> {{ $iso_release }}</p>
-                <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_64_SIZE') }}</p>
-                <p><strong>ISO Size (i686):</strong> {{ env('ISO_32_SIZE') }}</p>
+                <div class="space-above space-below">
+                    <p><strong>{{ $iso_minimal_variant }} Release:</strong> {{ $iso_minimal_release }}</p>
+                    <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_MINIMAL_64_SIZE') }}</p>
+                    <p><strong>ISO Size (i686):</strong> {{ env('ISO_MINIMAL_32_SIZE') }}</p>
+                </div>
+
+                <div class="space-below">
+                    <p><strong>{{ $iso_variant }} Release:</strong> {{ $iso_release }}</p>
+                    <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_64_SIZE') }}</p>
+                    <p><strong>ISO Size (i686):</strong> {{ env('ISO_32_SIZE') }}</p>
+                </div>
+
                 <p><a href="/wiki/setup">Installation Guide</a></p>
 
                 <ul>
@@ -33,10 +50,19 @@
 
                 <h3>Torrent Download (Recommended)</h3>
 
-                <ul>
-                    <li><a href="{{ $torrent_mirror }}/os/{{ $iso64 }}.torrent">x86_64</a></li>
-                    <li><a href="{{ $torrent_mirror }}/os/{{ $iso32 }}.torrent">i686</a></li>
-                </ul>
+                <div class="space-above">
+                    <ul>
+                        <li><a href="{{ $torrent_mirror }}/os/{{ $iso_minimal64 }}.torrent">{{ $iso_minimal_name }} (x86_64)</a></li>
+                        <li><a href="{{ $torrent_mirror }}/os/{{ $iso_minimal32 }}.torrent">{{ $iso_minimal_name }} (i686)</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-above">
+                    <ul>
+                        <li><a href="{{ $torrent_mirror }}/os/{{ $iso64 }}.torrent">{{ $iso_name }} (x86_64)</a></li>
+                        <li><a href="{{ $torrent_mirror }}/os/{{ $iso32 }}.torrent">{{ $iso_name }} (i686)</a></li>
+                    </ul>
+                </div>
 
                 <div id="downloads-form-container">
                     <h3>Direct Download</h3>
@@ -44,8 +70,10 @@
                     <form>
                         <select id="downloads-form-iso">
                             <option value="">Select an ISO</option>
-                            <option value="{{ $iso64 }}">x86_64 (64 bit)</option>
-                            <option value="{{ $iso32 }}">i686 (32 bit)</option>
+                            <option value="{{ $iso_minimal64 }}">{{ $iso_minimal_name }} (64 bit)</option>
+                            <option value="{{ $iso_minimal32 }}">{{ $iso_minimal_name }} (32 bit)</option>
+                            <option value="{{ $iso64 }}">{{ $iso_name }} (64 bit)</option>
+                            <option value="{{ $iso32 }}">{{ $iso_name }} (32 bit)</option>
                         </select>
 
                         <select id="downloads-form-mirror">
@@ -66,8 +94,43 @@
 
                 <noscript>
                     <h3>Direct Download Links</h3>
-                    <h4>x86_64 (64 bit)</h4>
-                    <h5>Official Mirrors for x86_64</h5>
+
+                    <h4>{{ $iso_minimal_name }} x86_64 (64 bit)</h4>
+                    <h5>Official Mirrors</h5>
+
+                    <ul>
+                        @foreach($official_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso_minimal64 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+
+                    <h5>Community Mirrors</h5>
+
+                    <ul>
+                        @foreach($community_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso_minimal64 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+
+                    <h4>{{ $iso_minimal_name }} i686 (32 bit)</h4>
+                    <h5>Official Mirrors</h5>
+
+                    <ul>
+                        @foreach($official_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso_minimal32 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+
+                    <h5>Community Mirrors</h5>
+
+                    <ul>
+                        @foreach($community_mirrors as $mirror)
+                            <li><a href="{{ $mirror['url'] }}os/{{ $iso_minimal32 }}">{{ $mirror['name'] }}</a></li>
+                        @endforeach
+                    </ul>
+
+                    <h4>{{ $iso_name }} x86_64 (64 bit)</h4>
+                    <h5>Official Mirrors</h5>
 
                     <ul>
                         @foreach($official_mirrors as $mirror)
@@ -75,7 +138,7 @@
                         @endforeach
                     </ul>
 
-                    <h5>Community Mirrors for x86_64</h5>
+                    <h5>Community Mirrors</h5>
 
                     <ul>
                         @foreach($community_mirrors as $mirror)
@@ -83,8 +146,8 @@
                         @endforeach
                     </ul>
 
-                    <h4>i686 (32 bit)</h4>
-                    <h5>Official Mirrors for i686</h5>
+                    <h4>{{ $iso_name }} i686 (32 bit)</h4>
+                    <h5>Official Mirrors</h5>
 
                     <ul>
                         @foreach($official_mirrors as $mirror)
@@ -92,7 +155,7 @@
                         @endforeach
                     </ul>
 
-                    <h5>Community Mirrors for i686</h5>
+                    <h5>Community Mirrors</h5>
 
                     <ul>
                         @foreach($community_mirrors as $mirror)
@@ -102,12 +165,30 @@
                 </noscript>
 
                 <h3>Checksums</h3>
-                <h4>{{ $iso64 }}</h4>
-                <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_64_256') }}" readonly /></p>
-                <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_64_512') }}" readonly /></p>
-                <h4>{{ $iso32 }}</h4>
-                <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_32_256') }}" readonly /></p>
-                <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_32_512') }}" readonly /></p>
+
+                <div class="space-above space-below">
+                    <h4>{{ $iso_minimal64 }}</h4>
+                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_MINIMAL_64_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_MINIMAL_64_512') }}" readonly /></p>
+                </div>
+
+                <div class="space-below">
+                    <h4>{{ $iso_minimal32 }}</h4>
+                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_MINIMAL_32_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_MINIMAL_32_512') }}" readonly /></p>
+                </div>
+
+                <div class="space-below">
+                    <h4>{{ $iso64 }}</h4>
+                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_64_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_64_512') }}" readonly /></p>
+                </div>
+
+                <div class="space-below">
+                    <h4>{{ $iso32 }}</h4>
+                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_32_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_32_512') }}" readonly /></p>
+                </div>
 
                 <h2>ArchStrike VirtualBox &amp; VMWare OVA</h2>
                 <h3>VirtualBox</h3>
