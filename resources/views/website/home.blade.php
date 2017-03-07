@@ -54,11 +54,6 @@
                     </div>
                 @endif
 
-                <div class="sidebar-box sponsors">
-                    <div class="sidebar-box-heading">Support Us</div>
-                    <div class="item"><a href="https://www.patreon.com/archstrike" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/patreon.png" alt="patreon" class="img-responsive" /></a></div>
-                </div>
-
                 <div class="sidebar-box">
                     <div class="sidebar-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
 
