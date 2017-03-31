@@ -190,6 +190,7 @@
                     <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_32_512') }}" readonly /></p>
                 </div>
 
+                {{--
                 <h2>ArchStrike VirtualBox &amp; VMWare OVA</h2>
                 <h3>VirtualBox</h3>
                 <p><a href="{{ $vm_mirror }}/ArchStrike.ova">Download Link</a></p>
@@ -205,6 +206,7 @@
                 <p>The virtual disk is 50G with 15G used.</p>
                 <p>To log in as root, use <code>root</code> for the username and <code>root</code> for the password.</p>
                 <p>To log in as a standard user, use <code>archstrike</code> for the username and <code>archstrike</code> for the password.</p>
+                --}}
             </div>
         </div>
     </div>
