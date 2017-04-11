@@ -1,4 +1,10 @@
 body.team {
+    h2 {
+        margin-top: 100px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #bbb;
+    }
+
     .team-list {
         margin-top: 35px;
 
@@ -25,8 +31,15 @@ body.team {
 
                 code {
                     color: @c-brand;
-                    font-size: 12px;
-                    @media (min-width: 425px) { white-space: nowrap; }
+                    font-size: 11px;
+
+                    @media (min-width: 425px) {
+                        white-space: nowrap;
+                    }
+
+                    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+                        font-size: 9px;
+                    }
                 }
 
                 h2 {
@@ -34,9 +47,10 @@ body.team {
                     margin-top: 0px;
                 }
             }
-
         }
     }
 
-    .column:not(:last-child) .profile-info { border-bottom: 1px solid #bbb; }
+    .column:not(:last-child) .profile-info {
+        border-bottom: 1px solid #bbb;
+    }
 }
