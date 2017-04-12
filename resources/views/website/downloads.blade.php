@@ -168,26 +168,26 @@
 
                 <div class="space-above space-below">
                     <h4>{{ $iso_minimal64 }}</h4>
-                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_MINIMAL_64_256') }}" readonly /></p>
-                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_MINIMAL_64_512') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_64_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_64_512') }}" readonly /></p>
                 </div>
 
                 <div class="space-below">
                     <h4>{{ $iso_minimal32 }}</h4>
-                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_MINIMAL_32_256') }}" readonly /></p>
-                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_MINIMAL_32_512') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_32_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_32_512') }}" readonly /></p>
                 </div>
 
                 <div class="space-below">
                     <h4>{{ $iso64 }}</h4>
-                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_64_256') }}" readonly /></p>
-                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_64_512') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_64_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_64_512') }}" readonly /></p>
                 </div>
 
                 <div class="space-below">
                     <h4>{{ $iso32 }}</h4>
-                    <p class="checksum"><strong>SHA256:</strong> <input type="text" value="{{ env('ISO_32_256') }}" readonly /></p>
-                    <p class="checksum"><strong>SHA512:</strong> <input type="text" value="{{ env('ISO_32_512') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_32_256') }}" readonly /></p>
+                    <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_32_512') }}" readonly /></p>
                 </div>
 
                 {{--
@@ -195,13 +195,13 @@
                 <h3>VirtualBox</h3>
                 <p><a href="{{ $vm_mirror }}/ArchStrike.ova">Download Link</a></p>
                 <p><strong>Size:</strong> {{ env('VBOX_SIZE') }}</p>
-                <p class="checksum"><strong>SHA1:</strong> <input type="text" value="{{ env('VBOX_SHA') }}" readonly /></p>
-                <p class="checksum"><strong>MD5:</strong> <input type="text" value="{{ env('VBOX_MD5') }}" readonly /></p>
+                <p class="checksum"><strong>SHA1:</strong> <input class="click-select" type="text" value="{{ env('VBOX_SHA') }}" readonly /></p>
+                <p class="checksum"><strong>MD5:</strong> <input class="click-select" type="text" value="{{ env('VBOX_MD5') }}" readonly /></p>
                 <h3>VMWare</h3>
                 <p><a href="{{ $vm_mirror }}/ArchStrike-vmware.ova">Download Link</a></p>
                 <p><strong>Size:</strong> {{ env('VMWARE_SIZE') }}</p>
-                <p class="checksum"><strong>SHA1:</strong> <input type="text" value="{{ env('VMWARE_SHA') }}" readonly /></p>
-                <p class="checksum"><strong>MD5:</strong> <input type="text" value="{{ env('VMWARE_MD5') }}" readonly /></p>
+                <p class="checksum"><strong>SHA1:</strong> <input class="click-select" type="text" value="{{ env('VMWARE_SHA') }}" readonly /></p>
+                <p class="checksum"><strong>MD5:</strong> <input class="click-select" type="text" value="{{ env('VMWARE_MD5') }}" readonly /></p>
                 <h3>General Information</h3>
                 <p>The virtual disk is 50G with 15G used.</p>
                 <p>To log in as root, use <code>root</code> for the username and <code>root</code> for the password.</p>

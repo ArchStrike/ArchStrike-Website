@@ -13,6 +13,11 @@ $(document).ready(function() {
         $(this).trigger("resize");
     });
 
+    // select text when input elements with the click-select class are clicked
+    $("input.click-select").on("click", function() {
+        this.select();
+    });
+
     // page-specific js
     switch (SiteVars.page) {
         case "": // home page

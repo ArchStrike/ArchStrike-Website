@@ -29,16 +29,26 @@ body.team {
                 min-height: 160px;
                 padding: 10px 0px;
 
-                code {
-                    color: @c-brand;
+                p {
+                    position: relative;
+                }
+
+                input {
+                    position: absolute;
+                    top: 4px;
+                    left: 35px;
+                    display: block;
+                    width: calc(100% ~"-" @grid-gutter-width);
+                    max-width: 300px;
+                    padding: 0px 5px;
+                    border: 0;
+                    border-radius: 4px;
+                    background-color: @c-dark-bg;
+                    color: @c-light-bg;
                     font-size: 11px;
 
-                    @media (min-width: 425px) {
-                        white-space: nowrap;
-                    }
-
-                    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-                        font-size: 9px;
+                    &::selection {
+                        background-color: @c-brand;
                     }
                 }
 

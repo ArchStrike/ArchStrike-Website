@@ -33,9 +33,4 @@ function initDownloads() {
             }
         }
     });
-
-    // select checksum text when the input is clicked
-    $(".checksum input").on("click", function() {
-        this.select();
-    });
 }
