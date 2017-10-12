@@ -42,7 +42,7 @@ class Team {
         [
             'nick'   => 'comrumino',
             'name'   => 'James Stronz',
-            'email'  => '@archstrike.org',
+            'email'  => 'comrumino@archstrike.org',
             'github' => 'https://github.com/c',
             'pgp'    => '9DAC 07EC 8F2C 4B67 489F CEC1 A712 FE63 286C A73E',
             'status' => true
