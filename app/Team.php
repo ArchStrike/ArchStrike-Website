@@ -4,6 +4,15 @@ class Team {
 
     public static $team = [
         [
+            'nick'   => 'BartoCH',
+            'name'   => 'Vincent Loup',
+            'email'  => 'BartoCH@archstrike.org',
+            'github' => 'https://github.com/vloup',
+            'pgp'    => 'C177 DF0E 1E7B DC3F 7C82 153A E9E0 21DE FFEC FFE9',
+            'status' => true
+        ],
+
+        [
             'nick'   => 'xorond',
             'name'   => 'Oğuz Bektaş',
             'email'  => 'xorond@archstrike.org',
@@ -27,6 +36,15 @@ class Team {
             'email'  => 'prurigro@archstrike.org',
             'github' => 'https://github.com/prurigro',
             'pgp'    => '9D5F 1C05 1D14 6843 CDA4 858B DE64 825E 7CBC 0D51',
+            'status' => true
+        ],
+
+        [
+            'nick'   => 'comrumino',
+            'name'   => 'James Stronz',
+            'email'  => '@archstrike.org',
+            'github' => 'https://github.com/c',
+            'pgp'    => '9DAC 07EC 8F2C 4B67 489F CEC1 A712 FE63 286C A73E',
             'status' => true
         ],
 
