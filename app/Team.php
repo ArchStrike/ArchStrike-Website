@@ -6,7 +6,7 @@ class Team {
         [
             'nick'   => 'BartoCH',
             'name'   => 'Vincent Loup',
-            'email'  => 'BartoCH@archstrike.org',
+            'email'  => 'bartoch@archstrike.org',
             'github' => 'https://github.com/vloup',
             'pgp'    => 'C177 DF0E 1E7B DC3F 7C82 153A E9E0 21DE FFEC FFE9',
             'status' => true
