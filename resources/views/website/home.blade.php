@@ -67,9 +67,11 @@
                     @endcache
                 </div>
 
+                {{--
                 <div class="sidebar-box sponsors">
                     <div class="sidebar-box-heading">Sponsors</div>
                 </div>
+                --}}
             </div>
         </div>
     </div>
