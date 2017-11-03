@@ -69,7 +69,6 @@
 
                 <div class="sidebar-box sponsors">
                     <div class="sidebar-box-heading">Sponsors</div>
-                    <div class="item"><a href="https://www.linode.com/?utm_source=referral&utm_medium=website&utm_content=Archstrike&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer"><img src="/img/sponsors/linode.svg" alt="linode" class="img-responsive" /></a></div>
                 </div>
             </div>
         </div>
