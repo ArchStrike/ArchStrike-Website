@@ -4,15 +4,15 @@
     "gulp-livereload": "^3.8.1"
   },
   "dependencies": {
-    "autoprefixer": "^6.7.7",
+    "autoprefixer": "^7.1.6",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-less": "^3.3.0",
+    "gulp-less": "^3.3.2",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.4.0",
-    "gulp-uglify": "^2.1.2",
+    "gulp-postcss": "^7.0.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "less-plugin-clean-css": "^1.5.1",
-    "less-plugin-glob": "^2.0.0"
+    "less-plugin-glob": "^2.0.1"
   }
 }
