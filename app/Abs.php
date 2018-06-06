@@ -10,6 +10,11 @@ use App\Armv6;
 use App\Armv7;
 use App\Armv8;
 
+// Disable warnings on PHP 7.2
+if (version_compare(PHP_VERSION, '7.2.0', '>=')) {
+    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+}
+
 class Abs extends Model {
 
     // The abs table
