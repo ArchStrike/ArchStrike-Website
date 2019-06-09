@@ -52,6 +52,7 @@
                     <li>To log in as standard user, use <code>archstrike</code> for the <strong>username</strong> <em>and</em> <strong>password</strong></li>
                 </ul>
 
+                {{--
                 <h3>Torrent Download (Recommended)</h3>
 
                 {{--
@@ -69,6 +70,7 @@
                         <li><a href="{{ $torrent_mirror }}/os/{{ $iso32 }}.torrent">{{ $iso_name }} (i686)</a></li>
                     </ul>
                 </div>
+                --}}
 
                 <div id="downloads-form-container">
                     <h3>Direct Download</h3>
