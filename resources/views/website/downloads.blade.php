@@ -174,13 +174,13 @@
 
                 <h3>Checksums</h3>
 
-                {{--
                 <div class="space-above space-below">
                     <h4>{{ $iso_minimal64 }}</h4>
                     <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_64_256') }}" readonly /></p>
                     <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_64_512') }}" readonly /></p>
                 </div>
 
+                {{--
                 <div class="space-below">
                     <h4>{{ $iso_minimal32 }}</h4>
                     <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_32_256') }}" readonly /></p>
