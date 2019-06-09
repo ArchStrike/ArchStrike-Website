@@ -200,11 +200,13 @@
                     <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_64_512') }}" readonly /></p>
                 </div>
 
+                {{--
                 <div class="space-below">
                     <h4>{{ $iso32 }}</h4>
                     <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_32_256') }}" readonly /></p>
                     <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_32_512') }}" readonly /></p>
                 </div>
+                --}}
 
                 {{--
                 <h2>ArchStrike VirtualBox &amp; VMWare OVA</h2>
