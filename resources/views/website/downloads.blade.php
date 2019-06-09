@@ -29,18 +29,20 @@
                 <h3>Release Info</h3>
                 <p>The image can be burned to a CD, mounted as an ISO file, or be directly written to a USB stick using a utility like <code>dd</code>.</p>
 
-                {{--
                 <div class="space-above space-below">
                     <p><strong>{{ $iso_minimal_variant }} Release:</strong> {{ $iso_minimal_release }}</p>
                     <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_MINIMAL_64_SIZE') }}</p>
+                    {{--
                     <p><strong>ISO Size (i686):</strong> {{ env('ISO_MINIMAL_32_SIZE') }}</p>
+                    --}}
                 </div>
-                --}}
 
                 <div class="space-below">
                     <p><strong>{{ $iso_variant }} Release:</strong> {{ $iso_release }}</p>
                     <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_64_SIZE') }}</p>
-                    //<p><strong>ISO Size (i686):</strong> {{ env('ISO_32_SIZE') }}</p>
+                    {{--
+                    <p><strong>ISO Size (i686):</strong> {{ env('ISO_32_SIZE') }}</p>
+                    --}}
                 </div>
 
                 <p><a href="/wiki/setup">Installation Guide</a></p>
@@ -74,12 +76,14 @@
                     <form>
                         <select id="downloads-form-iso">
                             <option value="">Select an ISO</option>
-                            {{--
                             <option value="{{ $iso_minimal64 }}">{{ $iso_minimal_name }} (64 bit)</option>
+                            {{--
                             <option value="{{ $iso_minimal32 }}">{{ $iso_minimal_name }} (32 bit)</option>
                             --}}
                             <option value="{{ $iso64 }}">{{ $iso_name }} (64 bit)</option>
+                            {{--
                             <option value="{{ $iso32 }}">{{ $iso_name }} (32 bit)</option>
+                            --}}
                         </select>
 
                         <select id="downloads-form-mirror">
@@ -101,7 +105,6 @@
                 <noscript>
                     <h3>Direct Download Links</h3>
 
-                    {{--
                     <h4>{{ $iso_minimal_name }} x86_64 (64 bit)</h4>
                     <h5>Official Mirrors</h5>
 
@@ -119,6 +122,7 @@
                         @endforeach
                     </ul>
 
+                    {{--
                     <h4>{{ $iso_minimal_name }} i686 (32 bit)</h4>
                     <h5>Official Mirrors</h5>
 
@@ -154,6 +158,7 @@
                         @endforeach
                     </ul>
 
+                    {{--
                     <h4>{{ $iso_name }} i686 (32 bit)</h4>
                     <h5>Official Mirrors</h5>
 
@@ -170,6 +175,7 @@
                             <li><a href="{{ $mirror['url'] }}os/{{ $iso32 }}">{{ $mirror['name'] }}</a></li>
                         @endforeach
                     </ul>
+                    --}}
                 </noscript>
 
                 <h3>Checksums</h3>
