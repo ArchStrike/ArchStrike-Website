@@ -55,14 +55,12 @@
                 {{--
                 <h3>Torrent Download (Recommended)</h3>
 
-                {{--
                 <div class="space-above">
                     <ul>
                         <li><a href="{{ $torrent_mirror }}/os/{{ $iso_minimal64 }}.torrent">{{ $iso_minimal_name }} (x86_64)</a></li>
                         <li><a href="{{ $torrent_mirror }}/os/{{ $iso_minimal32 }}.torrent">{{ $iso_minimal_name }} (i686)</a></li>
                     </ul>
                 </div>
-                --}}
 
                 <div class="space-above">
                     <ul>
