@@ -17,9 +17,7 @@
                 @set('iso_minimal_variant', ucfirst(preg_replace([ '/^[^\-]*-/', '/-.*/' ], [ '', '' ], $iso_minimal_name)))
                 @set('iso_minimal_release', preg_replace('/^.*-/', '', $iso_minimal_name))
                 @set('iso_minimal32', $iso_minimal_name . '-i686.iso')
-                {{--
-                @set('iso_minimal64', $iso_minimal_name . '-x86_64.iso')
-                --}}
+                @set('iso_minimal64', $iso_minimal_name . '.iso')
 
                 @set('iso_name', env('ISO_NAME'))
                 @set('iso_variant', ucfirst(preg_replace([ '/^[^\-]*-/', '/-.*/' ], [ '', '' ], $iso_name)))
