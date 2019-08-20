@@ -7,16 +7,11 @@
         <script src="/js/lib.js?version={{ env('CACHE_BUST') }}"></script>
         <script src="/js/app.js?version={{ env('CACHE_BUST') }}"></script>
 
-        @if(Config::get('app.debug'))
-            <script type="text/javascript">
-                document.write('<script src="//{{ env('LR_HOST', 'localhost') }}:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
-            </script>
-        @endif
-
         @if(App::environment('production'))
             @include('tracking.piwik')
         @endif
     </head>
+
     <body class="{{ Request::path() == '/' ? 'home' : preg_replace('/\/.*/', '', Request::path()) }}">
         <div id="page-content">
             @include('sections.nav')
@@ -24,5 +19,11 @@
         </div>
 
         @include('sections.footer')
+
+        @if(Config::get('app.debug'))
+            <script id="__bs_script__">//<![CDATA[
+                document.write("<script async src='http://{{ env('BS_HOST', 'localhost') }}:3000/browser-sync/browser-sync-client.js?version={{ env('CACHE_BUST') }}'><\/script>".replace("HOST", location.hostname));
+            //]]></script>
+        @endif
     </body>
 </html>
