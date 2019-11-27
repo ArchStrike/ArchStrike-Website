@@ -61,7 +61,7 @@
                         @foreach(Twitter::getUserTimeline([ 'screen_name' => 'ArchStrike', 'count' => 4, 'format' => 'object' ]) as $tweet)
                             <div class="sidebar-box-item">
                                 <div><a href="{!! Twitter::linkTweet($tweet) !!}" target="_blank" rel="noopener noreferrer">ArchStrike</a> <span>{{ Twitter::ago($tweet->created_at) }}</span></div>
-                                {!! Twitter::linkify($tweet->text) !!}
+                                <a href="https://twitter.com/ArchStrike/status/{{ $tweet->id_str }}" target="_blank">{{ $tweet->text }}</a>
                             </div>
                         @endforeach
                     @endcache
