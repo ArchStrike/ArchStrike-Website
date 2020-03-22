@@ -56,8 +56,8 @@ php artisan down
 msg "Updating cache busting variable"
 sed -i 's|^CACHE_BUST=.*|CACHE_BUST='"$(</dev/urandom tr -dc A-Za-z0-9 | head -c"${1:-32}")"'|' .env
 
-msg "Running: ${c_m}composer installl --no-dev"
-composer install --no-interaction --no-dev || error "${c_m}composer install --no-interaction --no-dev$c_w exited with an error status"
+# msg "Running: ${c_m}composer installl --no-dev"
+# composer install --no-interaction --no-dev || error "${c_m}composer install --no-interaction --no-dev$c_w exited with an error status"
 
 msg "Running: ${c_m}npm install"
 npm install --production || error "${c_m}npm install$c_w exited with an error status"
