@@ -8,7 +8,7 @@
         <script src="/js/app.js?version={{ env('CACHE_BUST') }}"></script>
 
         @if(App::environment('production'))
-            @include('tracking.piwik')
+            @include('tracking.matomo')
         @endif
     </head>
 
