@@ -32,17 +32,13 @@
                 <div class="space-above space-below">
                     <p><strong>{{ $iso_minimal_variant }} Release:</strong> {{ $iso_minimal_release }}</p>
                     <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_MINIMAL_64_SIZE') }}</p>
-                    {{--
-                    <p><strong>ISO Size (i686):</strong> {{ env('ISO_MINIMAL_32_SIZE') }}</p>
-                    --}}
+                    {{-- <p><strong>ISO Size (i686):</strong> {{ env('ISO_MINIMAL_32_SIZE') }}</p> --}}
                 </div>
 
                 <div class="space-below">
                     <p><strong>{{ $iso_variant }} Release:</strong> {{ $iso_release }}</p>
                     <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_64_SIZE') }}</p>
-                    {{--
-                    <p><strong>ISO Size (i686):</strong> {{ env('ISO_32_SIZE') }}</p>
-                    --}}
+                    {{-- <p><strong>ISO Size (i686):</strong> {{ env('ISO_32_SIZE') }}</p> --}}
                 </div>
 
                 <p><a href="/wiki/setup">Installation Guide</a></p>
@@ -77,13 +73,9 @@
                         <select id="downloads-form-iso">
                             <option value="">Select an ISO</option>
                             <option value="{{ $iso_minimal64 }}">{{ $iso_minimal_name }} (64 bit)</option>
-                            {{--
-                            <option value="{{ $iso_minimal32 }}">{{ $iso_minimal_name }} (32 bit)</option>
-                            --}}
-                            <option value="{{ $iso64 }}">{{ $iso_name }} (64 bit)</option>
-                            {{--
-                            <option value="{{ $iso32 }}">{{ $iso_name }} (32 bit)</option>
-                            --}}
+                            {{-- <option value="{{ $iso_minimal32 }}">{{ $iso_minimal_name }} (32 bit)</option> --}}
+                            {{-- <option value="{{ $iso64 }}">{{ $iso_name }} (64 bit)</option> --}}
+                            {{-- <option value="{{ $iso32 }}">{{ $iso_name }} (32 bit)</option> --}}
                         </select>
 
                         <select id="downloads-form-mirror">
@@ -110,7 +102,7 @@
 
                     <ul>
                         @foreach($official_mirrors as $mirror)
-                            <li><a href="{{ $mirror['url'] }}os/{{ $iso_minimal64 }}">{{ $mirror['name'] }}</a></li>
+                            <li><a href="{{ $mirror['url'] }}os/new_iso/{{ $iso_minimal64 }}">{{ $mirror['name'] }}</a></li>
                         @endforeach
                     </ul>
 
@@ -118,7 +110,7 @@
 
                     <ul>
                         @foreach($community_mirrors as $mirror)
-                            <li><a href="{{ $mirror['url'] }}os/{{ $iso_minimal64 }}">{{ $mirror['name'] }}</a></li>
+                            <li><a href="{{ $mirror['url'] }}os/new_iso/{{ $iso_minimal64 }}">{{ $mirror['name'] }}</a></li>
                         @endforeach
                     </ul>
 
@@ -139,7 +131,6 @@
                             <li><a href="{{ $mirror['url'] }}os/{{ $iso_minimal32 }}">{{ $mirror['name'] }}</a></li>
                         @endforeach
                     </ul>
-                    --}}
 
                     <h4>{{ $iso_name }} x86_64 (64 bit)</h4>
                     <h5>Official Mirrors</h5>
@@ -158,7 +149,6 @@
                         @endforeach
                     </ul>
 
-                    {{--
                     <h4>{{ $iso_name }} i686 (32 bit)</h4>
                     <h5>Official Mirrors</h5>
 
@@ -192,7 +182,6 @@
                     <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_32_256') }}" readonly /></p>
                     <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_MINIMAL_32_512') }}" readonly /></p>
                 </div>
-                --}}
 
                 <div class="space-below">
                     <h4>{{ $iso64 }}</h4>
@@ -200,7 +189,6 @@
                     <p class="checksum"><strong>SHA512:</strong> <input class="click-select" type="text" value="{{ env('ISO_64_512') }}" readonly /></p>
                 </div>
 
-                {{--
                 <div class="space-below">
                     <h4>{{ $iso32 }}</h4>
                     <p class="checksum"><strong>SHA256:</strong> <input class="click-select" type="text" value="{{ env('ISO_32_256') }}" readonly /></p>

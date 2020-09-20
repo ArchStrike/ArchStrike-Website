@@ -22,7 +22,7 @@ function initDownloads() {
 
         // start the download if both values are not blank, otherwise apply the appropriate error classes
         if (iso !== "" && mirror !== "") {
-            window.location.href = mirror + "os/" + iso;
+            window.location.href = mirror + "os/new_iso/" + iso;
         } else {
             if (iso === "") {
                 $dlISO.closest(".fs-dropdown").addClass("error");
