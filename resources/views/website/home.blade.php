@@ -54,6 +54,7 @@
                     </div>
                 @endif
 
+                {{--
                 <div class="sidebar-box">
                     <div class="sidebar-box-heading"><a href="https://twitter.com/ArchStrike" target="_blank" rel="noopener noreferrer">Twitter Feed</a></div>
 
@@ -66,6 +67,7 @@
                         @endforeach
                     @endcache
                 </div>
+                --}}
 
                 {{--
                 <div class="sidebar-box sponsors">
