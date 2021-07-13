@@ -51,7 +51,7 @@ trap 'error "script killed"' SIGINT SIGQUIT
 }
 
 msg "Running: ${c_m}php artisan down"
-php artisan down
+php7 artisan down
 
 msg "Updating cache busting variable"
 sed -i 's|^CACHE_BUST=.*|CACHE_BUST='"$(</dev/urandom tr -dc A-Za-z0-9 | head -c"${1:-32}")"'|' .env
@@ -69,4 +69,4 @@ msg "Running: ${c_m}gulp --production"
 gulp --production || error "${c_m}gulp --production$c_w exited with an error status"
 
 msg "Running: ${c_m}php artisan up"
-php artisan up
+php7 artisan up
