@@ -34,4 +34,4 @@ done < "$mirrorlist"
 printf '        %s\n    %s\n\n%s\n' '];' '}' '}' >> "$output"
 
 cd "$base_dir" || exit
-php artisan update_mirrorlist
+php7 artisan update_mirrorlist
