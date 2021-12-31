@@ -32,14 +32,8 @@
                 <div class="space-above space-below">
                     <p><strong>{{ $iso_minimal_variant }} Release:</strong> {{ $iso_minimal_release }}</p>
                     <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_MINIMAL_64_SIZE') }}</p>
-                    {{-- <p><strong>ISO Size (i686):</strong> {{ env('ISO_MINIMAL_32_SIZE') }}</p> --}}
                 </div>
-
-                <div class="space-below">
-                    <p><strong>{{ $iso_variant }} Release:</strong> {{ $iso_release }}</p>
-                    <p><strong>ISO Size (x86_64):</strong> {{ env('ISO_64_SIZE') }}</p>
-                    {{-- <p><strong>ISO Size (i686):</strong> {{ env('ISO_32_SIZE') }}</p> --}}
-                </div>
+           
 
                 <p><a href="/wiki/setup">Installation Guide</a></p>
 
