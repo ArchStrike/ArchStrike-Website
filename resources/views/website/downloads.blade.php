@@ -19,12 +19,6 @@
                 @set('iso_minimal32', $iso_minimal_name . '-i686.iso')
                 @set('iso_minimal64', $iso_minimal_name . '.iso')
 
-                @set('iso_name', env('ISO_NAME'))
-                @set('iso_variant', ucfirst(preg_replace([ '/^[^\-]*-/', '/-.*/' ], [ '', '' ], $iso_name)))
-                @set('iso_release', preg_replace('/^.*-/', '', $iso_name))
-                @set('iso32', $iso_name . '-i686.iso')
-                @set('iso64', $iso_name . '-x86_64.iso')
-
                 <h2>Archstrike Live ISO</h2>
                 <h3>Release Info</h3>
                 <p>The image can be burned to a CD, mounted as an ISO file, or be directly written to a USB stick using a utility like <code>dd</code>.</p>
