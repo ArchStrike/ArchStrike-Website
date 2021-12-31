@@ -29,13 +29,6 @@
                 </div>
            
 
-                <p><a href="/wiki/setup">Installation Guide</a></p>
-
-                <ul>
-                    <li>To log in as root, use <code>root</code> for the <strong>username</strong> <em>and</em> <strong>password</strong></li>
-                    <li>To log in as standard user, use <code>archstrike</code> for the <strong>username</strong> <em>and</em> <strong>password</strong></li>
-                </ul>
-
                 {{--
                 <h3>Torrent Download (Recommended)</h3>
 
